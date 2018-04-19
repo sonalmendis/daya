@@ -1,0 +1,100 @@
+// Browser upgrade warning for <IE8
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/*********************
+EXTERNAL CSS (TO MAKE LESS CSS REQUESTS)
+*********************/
+@import "normalize";
+@import "formalize";
+@import "typography";
+
+/*********************
+SOME VARIABLES
+*********************/
+
+@import "flex";
+
+/*********************
+BASE (MOBILE) SIZE
+These are the majority of mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+
+This is based off using 320px as the lowest width (in accordance with Roar's analytics).
+*********************/
+
+// styles in base.scss
+@import "breakpoints/base";
+
+/*********************
+BASE+ (MOBILE) SIZE
+For when base is just too narrow and you need to loosen up.
+*********************/
+
+@media only screen and (min-width: 360px) {
+  // styles in 360up.scss
+  @import "breakpoints/360up";
+} //
+
+/*********************
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*********************/
+@media only screen and (min-width: 481px) {
+  // styles in 481up.scss
+  @import "breakpoints/481up";
+} // end of media query
+
+/*********************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 768px) {
+  // styles in 768up.scss
+  @import "breakpoints/768up";
+} // end of media query
+
+/*********************
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 1030px) {
+  // styles in 1030up.scss
+  @import "breakpoints/1030up";
+} // end of media query
+
+/*********************
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*********************/
+@media only screen and (min-width: 1240px) {
+  // styles in 1240up.scss
+  @import "breakpoints/1240up";
+} // end of media query
+
+/*********************
+SUPER LARGE VIEWING SIZE
+This is for the larger monitors and 1080p screens
+*********************/
+@media only screen and (min-width: 1600px) {
+  // styles in 1600up.scss
+  @import "breakpoints/1600up";
+} // end of media query
+
+/*********************
+CUSTOM SIZES
+For those little bits that just need their own media queries
+*********************/
+
+@import "breakpoints/custom";
