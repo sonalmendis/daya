@@ -1,4 +1,4 @@
-<?php include '/includes/head.php' ?>
+<?php include './includes/head.php' ?>
 
 <cms:template title="Company Profile" clonable='1'>
     <cms:editable name="profile_intro" title="Profile Intro" type="richtext" order="1">
@@ -12,7 +12,7 @@
     <cms:editable name="blog_image" crop="1" width='610' height='150' type="image" />
 </cms:template>
 
-<?php include '/includes/header.php' ?>
+<?php include './includes/header.php' ?>
 
 <div class="main-container">
     <div class="main-wrapper">
@@ -20,4 +20,4 @@
         <img src="<cms:show blog_image />" alt="image" />
     </div>
 </div>
-<?php include '/includes/footer.php' ?>
+<?php include './includes/footer.php' ?>

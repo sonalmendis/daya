@@ -1,7 +1,7 @@
-<?php include '/includes/head.php' ?>
+<?php include './includes/head.php' ?>
 <cms:template title="Home Page" />
 
-<?php include '/includes/header.php' ?>
+<?php include './includes/header.php' ?>
 
 <div class="main-container home">
     <div class="main-wrapper">
@@ -57,4 +57,4 @@
 <!-- #main-container -->
 
 
-<?php include '/includes/footer.php' ?>
+<?php include './includes/footer.php' ?>
