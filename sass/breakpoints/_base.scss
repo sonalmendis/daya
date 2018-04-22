@@ -128,7 +128,9 @@ h1.logo-text {
   line-height: 42px;
 }
 
-h2 {
+h2,
+a,
+button {
   font-family: $petrona;
   letter-spacing: 0.2px;
 }
@@ -186,104 +188,208 @@ HOME PAGE
   .splash {
     margin-bottom: 47px;
     text-align: center;
-    height: 100%;
-    background-image: url(../img/splashbg.jpg);
-    background-size: cover;
-    background-position: center;
-    @include flexbox();
-    @include justify-content(center);
-    @include align-items(center);
-  }
-  .white-overlay {
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0.3;
-  }
 
-  .splash-inner-container {
-    @include inner-grid();
-    margin-bottom: 22px;
-    z-index: 2;
-    h1 {
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 19px;
-      margin-bottom: 37px;
-    }
-
-    .divider {
-      position: relative;
-      margin-bottom: 22px;
-      border-bottom: 1px solid $black;
-    }
-
-    .logo {
-      width: 68px;
-    }
-  }
-
-  .splash-nav {
-    @include flexbox();
-    @include flex-wrap(wrap);
-    @include justify-content(center);
-    h3 {
-      margin: 0px 12px 13px 12px;
-    }
-  }
-
-  .main-content {
-    @include inner-grid();
-    text-align: center;
-  }
-  .intro-section {
-    margin-bottom: 47px;
-    p {
-      margin-bottom: 27px;
-    }
-  }
-
-  .our-industries-section {
-    .industry-block {
-      position: relative;
+    .fixed-header-bar {
+      height: 60px;
+      position: fixed;
+      background-color: white;
+      box-shadow: 0 0 3px 0 grey;
       width: 100%;
-      max-width: 300px;
-      height: 300px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 27px;
+      margin-top: -183px; /*Header height + box-shadow*/
+      transition: margin 0.3s ease-in-out;
+      z-index: 999;
+      @include flexbox();
+      @include justify-content(space-around);
+      @include align-items(center);
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+        height: 100%;
+
+        span {
+          @include flexbox();
+          @include align-items(center);
+          height: 100%;
+        }
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        z-index: -1;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      > a {
+        height: 50px;
+        @include flexbox();
+        @include justify-content(space-around);
+        @include align-items(center);
+        text-decoration: none;
+        margin-left: 60px;
+
+        h3 {
+          margin: 0;
+          padding-left: 15px;
+          color: black;
+          font-family: $petrona;
+          font-weight: 400;
+        }
+      }
+
+      img {
+        height: 45px;
+      }
+    }
+
+    .show {
+      margin-top: 0;
+    }
+
+    .fixed-header-links {
+      height: 100%;
+      width: 60%;
+      @include flexbox();
+      @include justify-content(flex-end);
+      @include align-items(center);
+
+      a {
+        color: black;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 15px;
+        margin-right: 40px;
+      }
+
+      a:hover {
+        cursor: pointer;
+      }
+
+      .dropdown-content {
+        a {
+          width: 100%;
+        }
+      }
+    }
+
+    .splash {
+      margin-bottom: 47px;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      background-image: url(../img/splashbg.jpg);
+      background-size: cover;
+      background-position: center;
       @include flexbox();
       @include justify-content(center);
       @include align-items(center);
-      img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        position: absolute;
-      }
-      .black-overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.63);
-        z-index: 2;
-      }
-      .inner-container {
-        z-index: 2;
-      }
+    }
+    .white-overlay {
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0.3;
+    }
+
+    .splash-inner-container {
+      @include inner-grid();
+      margin-bottom: 22px;
+      z-index: 2;
       h1 {
-        color: #fff;
-        margin-bottom: 17px;
-        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: 19px;
+        margin-bottom: 37px;
+      }
+
+      .divider {
+        position: relative;
+        margin-bottom: 22px;
+        border-bottom: 1px solid $black;
+      }
+
+      .logo {
+        width: 68px;
+      }
+    }
+
+    .splash-nav {
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      h3 {
+        margin: 0px 12px 13px 12px;
+      }
+    }
+
+    .main-content {
+      @include inner-grid();
+      text-align: center;
+    }
+    .intro-section {
+      margin-bottom: 47px;
+      p {
+        margin-bottom: 27px;
+      }
+    }
+
+    .our-industries-section {
+      .industry-block {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 27px;
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          position: absolute;
+        }
+        .black-overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.63);
+          z-index: 2;
+        }
+        .inner-container {
+          z-index: 2;
+        }
+        h1 {
+          color: #fff;
+          margin-bottom: 17px;
+          font-weight: 700;
+        }
       }
     }
   }
 }
-
 /**************
 COMPANY PROFILE PAGE
 **************/
