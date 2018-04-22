@@ -9,7 +9,9 @@
             areas of business including apparel manufacturing, construction, transport, fashion, micro-banking, household
             and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.</p>
     </cms:editable>
+
     <cms:editable name="blog_image" crop="1" width='610' height='150' type="image" />
+    
 </cms:template>
 
 <?php include './includes/header.php' ?>
