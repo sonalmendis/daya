@@ -64,7 +64,7 @@
             </div>
             <div class="divider-outer-container">
                 <div class="divider">
-                    <img class="marker" src="img/diamond-marker-white.svg" alt="Marker" />
+                    <img class="marker" src="img/diamond-marker-white.svg " alt="Marker" />
                 </div>
             </div>
 
