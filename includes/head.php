@@ -19,7 +19,7 @@
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Petrona" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Neuton:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neuton:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
     
     <!-- FAVICONS -->

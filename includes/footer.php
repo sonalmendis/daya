@@ -1,9 +1,14 @@
 
         <div class="footer-container">
             <footer>
-
+                COPYRIGHT DAYA GROUP OF COMPANIES 2018
             </footer>
         </div> <!-- Footer end -->
+
+        </div>
+    <!-- #main -->
+</div>
+<!-- #main-container -->
 
 
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
