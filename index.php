@@ -1,10 +1,13 @@
 <?php include './includes/head.php' ?>
 <cms:template title="Home Page" />
 
-<?php include './includes/header.php' ?>
+
 
 <div class="main-container home">
     <div class="main-wrapper">
+
+        <?php include './includes/header.php' ?>
+        
         <div class="splash">
             <div class="splash-inner-container">
                 <img class="logo" src="img/logo.svg" alt="Logo" />
@@ -21,6 +24,7 @@
                 </div>
             </div>
         </div>
+
         <div class="main-content">
             <div class="intro-section">
                 <cms:editable name='intro_text' title="Intro Text" type='richtext'>
