@@ -36,9 +36,6 @@
                     </a>
                 </cms:editable>
             </div>
-            <div class="divider-outer-container">
-                <div class="divider"></div>
-            </div>
 
             <div class="our-industries-section">
              <cms:embed 'company-profile-list.php' />
