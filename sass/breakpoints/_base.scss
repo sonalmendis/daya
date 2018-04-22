@@ -57,11 +57,13 @@ body {
 }
 
 .divider-outer-container {
+  width: 100%;
   @include outer-grid();
 }
 .divider {
   width: 100%;
   border-bottom: 1px solid $grey;
+  margin-bottom: 47px;
   .marker {
     position: absolute;
     top: 0;
@@ -111,28 +113,37 @@ span {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 34px;
   color: $green;
   text-align: center;
   line-height: 32px;
   margin-bottom: 27px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
 }
 h1.logo-text {
   color: $black;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 42px;
 }
 
 h2 {
   font-family: $petrona;
+  letter-spacing: 0.2px;
 }
 
 // For header links
 h3 {
   font-family: $neuton;
+  font-weight: 400;
 }
 
 p,
 span,
 li {
+  font-size: 17px;
+  line-height: 26px;
 }
 
 p {
@@ -175,7 +186,6 @@ HOME PAGE
   .splash {
     margin-bottom: 47px;
     text-align: center;
-    width: 10%;
     height: 100%;
     background-image: url(../img/splashbg.jpg);
     background-size: cover;
@@ -184,18 +194,25 @@ HOME PAGE
     @include justify-content(center);
     @include align-items(center);
   }
+  .white-overlay {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.3;
+  }
 
   .splash-inner-container {
     @include inner-grid();
     margin-bottom: 22px;
-
+    z-index: 2;
     h1 {
       margin-bottom: 12px;
     }
 
     h2 {
       font-size: 19px;
-      margin-bottom: 22px;
+      margin-bottom: 37px;
     }
 
     .divider {
@@ -206,7 +223,6 @@ HOME PAGE
 
     .logo {
       width: 68px;
-      margin-bottom: 8px;
     }
   }
 
@@ -225,8 +241,6 @@ HOME PAGE
   }
   .intro-section {
     margin-bottom: 47px;
-    padding-bottom: 47px;
-    border-bottom: 1px solid $grey;
     p {
       margin-bottom: 27px;
     }
@@ -264,7 +278,141 @@ HOME PAGE
       h1 {
         color: #fff;
         margin-bottom: 17px;
+        font-weight: 700;
       }
     }
   }
+}
+
+/**************
+COMPANY PROFILE PAGE
+**************/
+.main-container.company-profile {
+  .splash {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    position: relative;
+    margin-bottom: 47px;
+    .black-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: #000;
+      opacity: 0.5;
+    }
+    .divider {
+      margin-bottom: 27px;
+      position: relative;
+      .marker {
+        top: 2px;
+      }
+    }
+    .splash-inner-container {
+      z-index: 2;
+      position: relative;
+      h1 {
+        color: #fff;
+        margin-bottom: 12px;
+      }
+      h3 {
+        color: #fff;
+        font-family: $montserrat;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+        font-size: 13px;
+        margin-bottom: 27px;
+      }
+    }
+  }
+  .main-content {
+    @include inner-grid();
+    .intro-section {
+      margin-bottom: 47px;
+      p {
+        margin-bottom: 47px;
+      }
+      img {
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+      }
+    }
+    .latest-projects-section {
+      .col {
+        padding-bottom: 47px;
+        margin-bottom: 47px;
+        border-bottom: 1px solid $grey;
+      }
+      .col:last-child {
+        border-bottom: none;
+      }
+      h1,
+      h2,
+      h3 {
+        color: $green !important;
+        text-align: center !important;
+        margin-bottom: 17px;
+        font-size: 22px !important;
+        font-weight: 300 !important;
+      }
+      p {
+        margin-bottom: 27px;
+      }
+      img {
+        width: 100%;
+        min-height: 140px;
+      }
+    }
+  }
+  .profile-details-section {
+    text-align: center;
+    color: #fff;
+    padding: 60px 0;
+    background-color: #08150a;
+    .inner-block {
+      margin-bottom: 67px;
+    }
+    .inner-block:last-child {
+      margin-bottom: 0;
+    }
+    h1 {
+      color: #fff;
+      margin-bottom: 27px;
+    }
+    p {
+      text-align: center;
+    }
+    .outline-btn {
+      border: 1px solid #fff;
+      padding: 15px;
+      color: #fff;
+      font-family: $montserrat;
+      font-weight: 300;
+      text-transform: uppercase;
+      width: 226px;
+      display: block;
+      margin: 0 auto 17px auto;
+      font-size: 14px;
+    }
+  }
+}
+
+.footer-container {
+  height: 70px;
+  background-color: $green;
+  text-align: center;
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  color: #fff;
+  font-family: $montserrat;
+  font-size: 13px;
 }

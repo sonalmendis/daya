@@ -1,0 +1,190 @@
+/**** IMPORTANT GRIDS ****/
+@mixin outer-grid() {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin inner-grid() {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/****/
+.divider {
+  margin-bottom: 67px;
+}
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+span {
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 42px;
+}
+h1.logo-text {
+  font-size: 50px;
+  line-height: 50px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 23px;
+}
+
+// For header links
+h3 {
+}
+
+p,
+span,
+li {
+}
+
+p {
+}
+
+p.large {
+  font-size: 21px;
+  line-height: 31px;
+}
+
+.btn {
+}
+
+.btn.big {
+}
+
+.btn.small {
+}
+
+.right-arrows {
+}
+
+/**************
+HOME PAGE
+**************/
+
+.main-container.home {
+  .splash {
+    margin-bottom: 67px;
+  }
+
+  .splash-inner-container {
+    @include inner-grid();
+    h1 {
+    }
+
+    h2 {
+    }
+
+    .divider {
+    }
+
+    .logo {
+    }
+  }
+
+  .splash-nav {
+    h3 {
+    }
+  }
+
+  .main-content {
+    @include outer-grid();
+  }
+  .intro-section {
+    @include inner-grid();
+    margin-bottom: 67px;
+    p {
+    }
+  }
+
+  .our-industries-section {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+    margin-bottom: 62px;
+    .industry-block {
+      width: 24%;
+      height: 270px;
+      margin: 0;
+      margin-bottom: 16px;
+      img {
+      }
+      .black-overlay {
+      }
+      .inner-container {
+      }
+      h1 {
+        font-size: 34px;
+        line-height: 34px;
+      }
+    }
+  }
+}
+
+/**************
+COMPANY PROFILE PAGE
+**************/
+.main-container.company-profile {
+  .splash {
+    .black-overlay {
+    }
+    .divider {
+      .marker {
+      }
+    }
+    .splash-inner-container {
+      @include inner-grid();
+
+      h1 {
+      }
+      h3 {
+      }
+    }
+  }
+  .main-content {
+    @include outer-grid();
+    .intro-section {
+      p {
+      }
+      img {
+      }
+    }
+    .latest-projects-section {
+      .col {
+      }
+      .col:last-child {
+      }
+      h2 {
+      }
+      p {
+      }
+    }
+    img {
+    }
+  }
+}

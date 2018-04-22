@@ -6,6 +6,7 @@
 <div class="main-container home">
     <div class="main-wrapper">
         <div class="splash">
+            <div class="white-overlay"></div>
             <div class="splash-inner-container">
                 <img class="logo" src="img/logo.svg" alt="Logo" />
                 <h1 class="logo-text">Daya Group of Companies</h1>
@@ -36,9 +37,9 @@
                     </a>
                 </cms:editable>
             </div>
-
+            <div class="divider"></div>
             <div class="our-industries-section">
-             <cms:embed 'company-profile-list.php' />
+                <cms:embed 'company-profile-list.php' />
             </div>
         </div>
         <!-- <cms:if k_is_page> -->
@@ -47,11 +48,8 @@
             <cms:else />
             <cms:embed 'home.php' />
         </cms:if> -->
-        
-    </div>
-    <!-- #main -->
-</div>
-<!-- #main-container -->
 
 
-<?php include './includes/footer.php' ?>
+
+
+        <?php include './includes/footer.php' ?>

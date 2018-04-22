@@ -1,5 +1,4 @@
 <cms:pages masterpage='company-profile.php'>
-    
     <div class="industry-block">
         <div class="black-overlay"></div>
         <img src="<cms:show blog_image />" alt="image" />
