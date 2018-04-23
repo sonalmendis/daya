@@ -34,7 +34,7 @@
                         In 1984, Daya Group (Pvt) Ltd commenced operations, starting out initially as a construction company. Over the years, it
                         has expanded into one of Sri Lanka’s pre-eminent privately owned conglomerates, continuing to grow
                         through strategic investments. While having a strong emphasis on quality and performance, our company
-                        strives to achieve excellence in customer satisfactory.
+                        strives to achieve excellence in customer satisfaciton.
                     </p>
                     <a class="btn big">Learn More
                         <img class="right-arrows" src="img/right-arrows.svg" alt="Right Arrows" />
