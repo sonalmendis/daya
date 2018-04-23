@@ -4,22 +4,25 @@
     <cms:editable name="profile_intro" title="Profile Intro" type="richtext" order="1">
         <h1>Who We Are</h1>
 
-        <p>We are Olympus Tea Company, the most recent addition to the ever-growing Sri Lankan conglomerate, Daya Group of Companies.
+        <p>
+            We are Olympus Tea Company, the most recent addition to the ever-growing Sri Lankan conglomerate, Daya Group of Companies.
             With an annual turnover in excess of USD 50 million, Daya Group of Companies is emerging as a leader in several
             areas of business including apparel manufacturing, construction, transport, fashion, micro-banking, household
-            and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.</p>
+            and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.
+        </p>
 
         <h1>What We Do</h1>
 
-        <p>We are Olympus Tea Company, the most recent addition to the ever-growing Sri Lankan conglomerate, Daya Group of Companies.
+        <p>
+            We are Olympus Tea Company, the most recent addition to the ever-growing Sri Lankan conglomerate, Daya Group of Companies.
             With an annual turnover in excess of USD 50 million, Daya Group of Companies is emerging as a leader in several
             areas of business including apparel manufacturing, construction, transport, fashion, micro-banking, household
-            and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.</p>
+            and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.
+        </p>
     </cms:editable>
 
     <cms:editable name="blog_image" crop="1" width='610' height='150' type="image" />
     <cms:editable name="intro_image" type="image" />
-
     <cms:editable name="profile_splash_image" type="image" />
 
     <cms:repeatable name='latest_project_column'>
@@ -49,6 +52,7 @@
     <div class="main-wrapper">
 
         <div class="splash" style="background-image:url('<cms:show profile_splash_image />')">
+            
             <div class="black-overlay"></div>
 
             <div class="divider-outer-container">
@@ -56,12 +60,14 @@
                     <img class="marker" src="img/diamond-marker-white.svg" alt="Marker" />
                 </div>
             </div>
+            
             <div class="splash-inner-container">
                 <h1>
                     <cms:show k_page_title />
                 </h1>
                 <h3>Company Profile</h3>
             </div>
+            
             <div class="divider-outer-container">
                 <div class="divider">
                     <img class="marker" src="img/diamond-marker-white.svg " alt="Marker" />
@@ -70,14 +76,21 @@
 
         </div>
         <div class="main-content">
+
             <div class="intro-section">
-                <cms:show profile_intro />
+                
+                <div class="intro-text">
+                    <cms:show profile_intro />
+                </div>
+
                 <img src="<cms:show intro_image />" alt="Intro Image" />
             </div>
+
             <div class="divider-outer-container">
                 <div class="divider">
                 </div>
             </div>
+
             <div class="latest-projects-section">
                 <h1>Latest Projects</h1>
                 <div class="column-container">
