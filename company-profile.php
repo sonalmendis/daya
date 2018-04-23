@@ -27,10 +27,8 @@
 
     <cms:repeatable name='latest_project_column'>
         <div class="col">
-            <cms:editable name="column_title" title="Column Title" type="richtext">
-                <h2>Golden Panda Range</h2>
-            </cms:editable>
             <cms:editable name="column_content" title="Column Content" type="richtext">
+                <h2>Golden Panda Range</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque
                     lacus cursus. Aliquam pellentesque eros eros, vitae convallis sem scelerisque vel. Integer sit amet nibh
@@ -64,6 +62,35 @@
         <div class="splash" style="background-image:url('<cms:show profile_splash_image />')">
             
             <div class="black-overlay"></div>
+
+            <div class="header-container">
+                <div class="static-header">
+                    <a href="">
+                        <img src="img/logo.svg" alt="Logo" />
+                        <h3>Daya Group of Companies</h3>
+                    </a>
+                    <div class="static-header-links">
+                        <a href="#services">About Us</a>
+                        <a href="#about">Contact Us</a>
+                                
+                        <div class="static-dropdown">
+
+                            <span><a>Companies &#8811</a></span>
+                                
+                            <div class="static-dropdown-content">
+                              <a href="#">Company 1</a>
+                              <a href="#">Company 2</a>
+                              <a href="#">Company 3</a>
+                            </div>
+
+                        </div>
+                            
+                        <a href="#contact">Board of Directors</a>
+                    </div>
+                </div>                
+            </div>
+
+
 
             <div class="divider-outer-container">
                 <div class="divider">
@@ -114,9 +141,6 @@
                         </div>
 
                     </cms:show_repeatable>
-
-                    <div>
-                    </div>
                 </div>
             </div>
 

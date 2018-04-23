@@ -4,6 +4,7 @@ CONTENTS:
 ***************************/
 
 $(document).ready(function() {
+$(document).ready(function() {
 	objectFitImages(); // Object-fit polyfill https://github.com/bfred-it/object-fit-images/ works on new images too
 });
 
@@ -111,3 +112,13 @@ document.addEventListener("scroll", function(event) {
 //   $(".cross").addClass("hidden");
 //   $(".nav-text").fadeOut(300);
 // });
+
+
+
+
+
+// Company-profiles columns add empty divs
+
+var columns = document.querySelectorAll(".col");
+
+});

@@ -188,14 +188,26 @@ HEADER STYLES
   position: fixed;
   background-color: white;
   box-shadow: 0 0 3px 0 grey;
-  width: 100%;
-  margin-top: -183px; /*Header height + box-shadow*/
+  margin-top: -183px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
   transition: margin 0.3s ease-in-out;
   z-index: 999;
-  @include flexbox();
-  @include justify-content(space-around);
-  @include align-items(center);
+  width: 100%;
 
+  .fixed-header-inner{
+
+    // Desktop outer-grid styles
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    height: 100%;
+  }
   .dropdown {
     float: left;
     overflow: hidden;
@@ -230,13 +242,12 @@ HEADER STYLES
     display: block;
   }
 
-  > a {
+  a {
     height: 50px;
     @include flexbox();
     @include justify-content(space-around);
     @include align-items(center);
     text-decoration: none;
-    margin-left: 60px;
 
     h3 {
       margin: 0;
@@ -258,7 +269,6 @@ HEADER STYLES
 
 .fixed-header-links {
   height: 100%;
-  width: 60%;
   @include flexbox();
   @include justify-content(flex-end);
   @include align-items(center);
@@ -269,6 +279,10 @@ HEADER STYLES
     font-weight: 400;
     font-size: 15px;
     margin-right: 40px;
+  }
+
+  a:nth-of-type(3) {
+    margin-right: 0;
   }
 
   a:hover {
