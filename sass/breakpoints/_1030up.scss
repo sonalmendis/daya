@@ -172,27 +172,48 @@ COMPANY PROFILE PAGE
     
     .intro-section {
       @include inner-grid;
+      @include flex();
+      @include flex-direction(row);
 
       .intro-text {
         width: 45%;
-        margin: 0 !IMPORTANT;
+        margin-right: -40000px;
       }
+
       p {
+        text-align: left;
       }
 
       img {
         width: 45%;
+        height: auto;
       }
     }
+
     .latest-projects-section {
+      
       .col {
+        width: 30%;
       }
+      
       .col:last-child {
       }
+
+      h1 {
+        text-align: left !IMPORTANT;
+        font-size: 34px !IMPORTANT;
+        line-height: 32px !IMPORTANT;
+        margin-bottom: 27px !IMPORTANT;
+        font-weight: 400 !IMPORTANT;
+        letter-spacing: 0.8px !IMPORTANT;
+      }
+
       h2 {
       }
+
       p {
       }
+
     }
     img {
     }

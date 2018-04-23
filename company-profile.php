@@ -28,7 +28,7 @@
     <cms:repeatable name='latest_project_column'>
         <div class="col">
             <cms:editable name="column_content" title="Column Content" type="richtext">
-                <h2>Golden Panda Range</h2>
+            <h2>Golden Panda Range</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque
                     lacus cursus. Aliquam pellentesque eros eros, vitae convallis sem scelerisque vel. Integer sit amet nibh
@@ -78,7 +78,7 @@
         <div class="main-content">
 
             <div class="intro-section">
-                
+
                 <div class="intro-text">
                     <cms:show profile_intro />
                 </div>
