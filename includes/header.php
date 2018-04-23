@@ -8,35 +8,33 @@
 
     	  <nav>
 
-			<div class="fixed-header">
 				<div class="fixed-header-bar">
-					<a href="">
-						<img src="img/logo.svg" alt="Logo" />
-						<h3>Daya Group of Companies</h3>
-					</a>
-					<div class="fixed-header-links">
-						<a href="#services">About Us</a>
-						<a href="#about">Contact Us</a>
-						
-						<div class="dropdown">
+					<div class="fixed-header-inner">
+						<a href="">
+							<img src="img/logo.svg" alt="Logo" />
+							<h3>Daya Group of Companies</h3>
+						</a>
+						<div class="fixed-header-links">
+							<a href="#services">About Us</a>
+							<a href="#about">Contact Us</a>
+							
+							<div class="dropdown">
 
-							<span><a>Companies &#8811</a></span>
-						
-						    <div class="dropdown-content">
-			    			  <a href="#">Company 1</a>
-						      <a href="#">Company 2</a>
-						      <a href="#">Company 3</a>
-						    </div>
+								<span><a>Companies &#8811</a></span>
+							
+							    <div class="dropdown-content">
+				    			  <a href="#">Company 1</a>
+							      <a href="#">Company 2</a>
+							      <a href="#">Company 3</a>
+							    </div>
 
+							</div>
+							
+							<a href="#contact">Board of Directors</a>
 						</div>
-						
-						<a href="#contact">Board of Directors</a>
 					</div>
-
 				</div>
 
-
-			</div>
 
 <!-- 		<div class="nav-bar fixed-header-mobile">
 				<img class="nav-img" src="img/logo-icon.svg">

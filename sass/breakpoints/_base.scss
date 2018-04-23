@@ -188,14 +188,26 @@ HEADER STYLES
   position: fixed;
   background-color: white;
   box-shadow: 0 0 3px 0 grey;
-  width: 100%;
-  margin-top: -183px; /*Header height + box-shadow*/
+  margin-top: -183px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
   transition: margin 0.3s ease-in-out;
   z-index: 999;
-  @include flexbox();
-  @include justify-content(space-around);
-  @include align-items(center);
+  width: 100%;
 
+  .fixed-header-inner{
+
+    // Desktop outer-grid styles
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    height: 100%;
+  }
   .dropdown {
     float: left;
     overflow: hidden;
@@ -230,13 +242,12 @@ HEADER STYLES
     display: block;
   }
 
-  > a {
+  a {
     height: 50px;
     @include flexbox();
     @include justify-content(space-around);
     @include align-items(center);
     text-decoration: none;
-    margin-left: 60px;
 
     h3 {
       margin: 0;
@@ -258,7 +269,6 @@ HEADER STYLES
 
 .fixed-header-links {
   height: 100%;
-  width: 60%;
   @include flexbox();
   @include justify-content(flex-end);
   @include align-items(center);
@@ -271,6 +281,10 @@ HEADER STYLES
     margin-right: 40px;
   }
 
+  a:nth-of-type(3) {
+    margin-right: 0;
+  }
+
   a:hover {
     cursor: pointer;
   }
@@ -281,6 +295,7 @@ HEADER STYLES
     }
   }
 }
+
 
 /**************
 HOME PAGE
@@ -395,7 +410,7 @@ COMPANY PROFILE PAGE
 .main-container.company-profile {
   .splash {
     text-align: center;
-    height: 100%;
+    height: 90%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -416,6 +431,7 @@ COMPANY PROFILE PAGE
     .divider {
       margin-bottom: 27px;
       position: relative;
+      
       .marker {
         top: 2px;
       }
@@ -437,28 +453,50 @@ COMPANY PROFILE PAGE
       }
     }
   }
+
   .main-content {
     @include inner-grid();
+    
     .intro-section {
       margin-bottom: 47px;
+
+      div {
+        margin: 0;
+        padding: 0;
+      }
+
+      .intro-text {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0;
+        border: none;
+      }
+      
       p {
         margin-bottom: 47px;
+        text-align: justify;
+        width: 100%;
       }
+      
       img {
         width: 100%;
-        max-width: 460px;
         height: auto;
       }
     }
+
     .latest-projects-section {
+
       .col {
         padding-bottom: 47px;
-        margin-bottom: 47px;
+        margin: 0 0 47px 0 !important;
         border-bottom: 1px solid $grey;
+        width: 100%;
       }
+
       .col:last-child {
         border-bottom: none;
       }
+
       h1,
       h2,
       h3 {
@@ -468,15 +506,19 @@ COMPANY PROFILE PAGE
         font-size: 22px !important;
         font-weight: 300 !important;
       }
+
       p {
         margin-bottom: 27px;
+        text-align: justify;
       }
+
       img {
         width: 100%;
         min-height: 140px;
       }
     }
   }
+
   .profile-details-section {
     text-align: center;
     color: #fff;
@@ -509,6 +551,11 @@ COMPANY PROFILE PAGE
     }
   }
 }
+
+
+/**************
+FOOTER
+**************/
 
 .footer-container {
   height: 70px;
