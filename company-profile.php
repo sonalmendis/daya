@@ -27,8 +27,10 @@
 
     <cms:repeatable name='latest_project_column'>
         <div class="col">
+            <cms:editable name="column_title" title="Column Title" type="richtext">
+                <h2>Golden Panda Range</h2>
+            </cms:editable>
             <cms:editable name="column_content" title="Column Content" type="richtext">
-            <h2>Golden Panda Range</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque
                     lacus cursus. Aliquam pellentesque eros eros, vitae convallis sem scelerisque vel. Integer sit amet nibh
@@ -45,6 +47,14 @@
     <cms:editable name="company_phone" title="Company Address" type="text" />
 
 </cms:template>
+
+
+
+<!-- 
+    END OF TEMPLATE 
+-->
+
+
 
 <?php include './includes/header.php' ?>
 
@@ -93,13 +103,16 @@
 
             <div class="latest-projects-section">
                 <h1>Latest Projects</h1>
+
                 <div class="column-container">
 
                     <cms:show_repeatable 'latest_project_column'>
+
                         <div class="col">
                             <cms:show column_content />
                             <img src="<cms:show latest_project_image />" />
                         </div>
+
                     </cms:show_repeatable>
 
                     <div>
@@ -109,31 +122,33 @@
 
         </div>
         <div class="profile-details-section">
-            <div class="inner-block">
-                <h1>
-                    <cms:show k_page_title />
-                </h1>
-                <a class="outline-btn">Visit Official Page</a>
-                <a class="outline-btn">Download Profile</a>
-            </div>
-            <div class="divider-outer-container">
-                <div class="divider"></div>
-            </div>
-            <div class="inner-block">
-                <h1>
-                    Where Are We?
-                </h1>
-                <p><cms:show company_address /></p>
-            </div>
-            <div class="divider-outer-container">
-                <div class="divider"></div>
-            </div>
-            <div class="inner-block">
-                <h1>
-                    Contact Us
-                </h1>
-                <strong>Email:</strong><p><cms:show company_email /></p>
-                <strong>Telephone:</strong><p><cms:show company_phone /></p>
+            <div class="blocks">
+                <div class="inner-block">
+                    <h1>
+                        <cms:show k_page_title />
+                    </h1>
+                    <a class="outline-btn">Visit Official Page</a>
+                    <a class="outline-btn">Download Profile</a>
+                </div>
+                <div class="divider-outer-container">
+                    <div class="divider"></div>
+                </div>
+                <div class="inner-block">
+                    <h1>
+                        Where Are We?
+                    </h1>
+                    <p><cms:show company_address /></p>
+                </div>
+                <div class="divider-outer-container">
+                    <div class="divider"></div>
+                </div>
+                <div class="inner-block">
+                    <h1>
+                        Contact Us
+                    </h1>
+                    <span class="contact"><strong>Email:</strong><p><cms:show company_email /></p></span>
+                    <span class="contact"><strong>Telephone:</strong><p><cms:show company_phone /></p></span>
+                </div>
             </div>
         </div>
         <!-- Main container ends in footer -->

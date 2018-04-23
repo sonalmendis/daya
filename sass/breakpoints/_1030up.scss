@@ -12,7 +12,7 @@
   padding-left: 0;
   padding-right: 0;
   width: 100%;
-  max-width: 1020px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -171,13 +171,13 @@ COMPANY PROFILE PAGE
     @include outer-grid();
     
     .intro-section {
-      @include inner-grid;
-      @include flex();
-      @include flex-direction(row);
+      @include flexbox();
+      @include justify-content(space-between);
+      @include align-items(center);
 
       .intro-text {
         width: 45%;
-        margin-right: -40000px;
+        margin: 0 !IMPORTANT;
       }
 
       p {
@@ -191,6 +191,11 @@ COMPANY PROFILE PAGE
     }
 
     .latest-projects-section {
+
+      .column-container {
+        @include flexbox();
+        @include justify-content(space-between);
+      }
       
       .col {
         width: 30%;
@@ -209,13 +214,56 @@ COMPANY PROFILE PAGE
       }
 
       h2 {
+        text-align: left !important;
       }
 
       p {
+        text-align: left;
       }
 
     }
     img {
+    }
+  }
+
+  .profile-details-section {
+
+    .blocks {
+      @include outer-grid;
+      @include flexbox();
+      @include justify-content(space-between);
+
+      .divider-outer-container {
+        display: none;
+      }
+
+      .inner-block {
+        width: 30%;
+
+
+        h1,
+        p, {
+          text-align: left;
+          line-height: 23px;
+        }
+
+        .outline-btn {
+          margin: 0 0 10px 0;
+        }
+
+        .contact {
+          @include flexbox();
+          @include inline-flex;
+          width: 100%;
+          text-align: left;
+          line-height: 23px;
+          
+          p {
+            margin-left: 6px;
+            margin-bottom: 0;
+          }
+        }
+      }
     }
   }
 }
