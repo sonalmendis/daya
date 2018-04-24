@@ -12,7 +12,8 @@
 
 
         <script src="js/vendor/jquery-3.2.1.min.js"></script>
-		<script src="js/vendor/ofi.min.js"></script>
+        <script src="js/vendor/ofi.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

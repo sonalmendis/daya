@@ -91,25 +91,59 @@ HOME PAGE
 .main-container.home {
   .splash {
     margin-bottom: 67px;
+    overflow: hidden;
+    position: relative;
+    .white-overlay {
+      opacity: 1;
+      background-color: rgba(6, 37, 36, 0.55);
+    }
+    video {
+      display: block;
+      height: 100%;
+      width: 177.77777778vh;
+      min-width: 100%;
+      min-height: 56.25vw;
+      position: absolute;
+    }
+    .down-arrows {
+      display: none;
+    }
+    .down-arrows.black {
+      display: none;
+    }
   }
 
   .splash-inner-container {
+    opacity: 0;
+    -webkit-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+    margin-bottom: 47px;
     @include inner-grid();
     h1 {
+      color: #fff;
     }
 
     h2 {
+      color: #fff;
     }
 
     .divider {
+      border-bottom: 1px solid #fff;
     }
 
     .logo {
+    }
+    .marker.black {
+      display: none;
+    }
+    .marker.white {
+      display: inline-block;
     }
   }
 
   .splash-nav {
     h3 {
+      color: #fff;
     }
   }
 
@@ -124,6 +158,9 @@ HOME PAGE
   }
 
   .our-industries-section {
+    > h1 {
+      margin-bottom: 67px;
+    }
     @include flexbox();
     @include flex-direction(row);
     @include flex-wrap(wrap);
@@ -152,11 +189,16 @@ HOME PAGE
 COMPANY PROFILE PAGE
 **************/
 .main-container.company-profile {
+  .header-container {
+    display: block;
+  }
   .splash {
     margin-bottom: 67px;
     .black-overlay {
     }
-
+    .company-logo {
+      margin-bottom: 12px;
+    }
     .header-container {
       @include flexbox();
       @include justify-content(space-between);
@@ -246,6 +288,10 @@ COMPANY PROFILE PAGE
     .splash-inner-container {
       @include inner-grid();
       z-index: 2;
+      h1 {
+        font-size: 48px;
+        line-height: 52px;
+      }
     }
   }
 
@@ -325,7 +371,9 @@ COMPANY PROFILE PAGE
         h1 {
           margin-bottom: 37px;
         }
-        h1,
+        h1 {
+          text-align: left;
+        }
         p {
           text-align: left;
           line-height: 23px;
@@ -341,9 +389,10 @@ COMPANY PROFILE PAGE
           width: 100%;
           text-align: left;
           line-height: 23px;
-
+          p.prefix {
+            margin-right: 6px;
+          }
           p {
-            margin-left: 6px;
             margin-bottom: 0;
           }
         }

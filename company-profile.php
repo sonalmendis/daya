@@ -1,7 +1,19 @@
 <?php include './includes/head.php' ?>
 
 <cms:template title="Company Profile" clonable='1'>
-    <cms:editable name="profile_intro" title="Profile Intro" type="richtext" order="1">
+
+    <cms:editable name="company_logo" order="1" label='Company Logo' quality="100"  show_preview='1' type="image" />
+    <cms:editable name="category_for_front_page" order="2" label="Company Industry/Category" desc="The industry this company belongs to" type="text" />
+    <cms:editable name="company_address" order="3" label="Company Address" type="textarea" />
+    <cms:editable name="company_email" order="4" label="Company Email" type="text" />
+    <cms:editable name="company_phone" order="5" label="Company Phone Number" type="text" />
+    <cms:editable name="company_website" order="6" label="Company Website" type="text" />
+    <cms:editable name="company_profile_download" order="7" label="Company Profile Download File" desc="This could be a PDF of the company's info" type="file" />
+    
+    <cms:editable name="splash_image" order="8" label='Splash Image' quality="100" desc='The first image that appears on a company profile page and the image used to its corresponding home page block' show_preview='1' width="1600" type="image" />
+    <cms:editable name="intro_image" order="9" label="Intro Image"  quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495px" width="495" type="image" />>
+
+    <cms:editable name="profile_intro" order="10" label="Intro Text" desc="The opening paragraph text" type="richtext" >
         <h1>Who We Are</h1>
 
         <p>
@@ -21,13 +33,9 @@
         </p>
     </cms:editable>
 
-    <cms:editable name="blog_image" crop="1" width='610' height='150' type="image" />
-    <cms:editable name="intro_image" type="image" />
-    <cms:editable name="profile_splash_image" type="image" />
-
-    <cms:repeatable name='latest_project_column'>
+    <cms:repeatable name='latest_project_column' label="Latest Projects" desc="Add as many projects as you need" order="11" >
         <div class="col">
-            <cms:editable name="column_content" title="Column Content" type="richtext">
+            <cms:editable name="column_content" label="Project text" type="richtext">
                 <h2>Golden Panda Range</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque
@@ -35,14 +43,12 @@
                     ligula. Praesent purus leo, ullamcorper id tellus eget, vehicula hendrerit ante.
                 </p>
             </cms:editable>
-            <cms:editable name="latest_project_image" title="Latest Project Image" type="image" />
+            <cms:editable name="latest_project_image" label="Project Image" width="400" type="image" />
 
         </div>
     </cms:repeatable>
 
-    <cms:editable name="company_address" title="Company Address" type="richtext" />
-    <cms:editable name="company_email" title="Company Address" type="text" />
-    <cms:editable name="company_phone" title="Company Address" type="text" />
+
 
 </cms:template>
 
@@ -59,7 +65,7 @@
 <div class="main-container company-profile">
     <div class="main-wrapper">
 
-        <div class="splash" style="background-image:url('<cms:show profile_splash_image />')">
+        <div class="splash" style="background-image:url('<cms:show splash_image />')">
 
             <div class="black-overlay"></div>
 
@@ -92,15 +98,8 @@
                 </div>
             </div>
 
-
-
-            <div class="divider-outer-container">
-                <div class="divider">
-                    <img class="marker" src="img/diamond-marker-white.svg" alt="Marker" />
-                </div>
-            </div>
-
             <div class="splash-inner-container">
+                <img class="company-logo" src="<cms:show company_logo />" alt="Company Logo" />
                 <h1>
                     <cms:show k_page_title />
                 </h1>
@@ -153,8 +152,8 @@
                     <h1>
                         <cms:show k_page_title />
                     </h1>
-                    <a class="outline-btn">Visit Official Page</a>
-                    <a class="outline-btn">Download Profile</a>
+                    <a href="<cms:show company_website />" class="outline-btn">Visit Official Page</a>
+                    <a href="<cms:show company_profile_download />" class="outline-btn">Download Profile</a>
                 </div>
                 <div class="divider-outer-container">
                     <div class="divider"></div>
@@ -175,13 +174,13 @@
                         Contact Us
                     </h1>
                     <span class="contact">
-                        <strong>Email:</strong>
+                        <p class="prefix" ><strong>Email: </strong></p>
                         <p>
                             <cms:show company_email />
                         </p>
                     </span>
                     <span class="contact">
-                        <strong>Telephone:</strong>
+                        <p class="prefix" ><strong>Telephone: </strong></p>
                         <p>
                             <cms:show company_phone />
                         </p>
