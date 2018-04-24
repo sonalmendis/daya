@@ -3,7 +3,7 @@
         <a href="<cms:show k_page_link />" class="industry-block">
 
             <div class="black-overlay"></div>
-            <img src="<cms:thumbnail splash_image width='400' height='400' crop='1' />" alt="image" />
+            <img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="image" />
             <div class="inner-container">
                 <h3>
                     <cms:show category_for_front_page />
