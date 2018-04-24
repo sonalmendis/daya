@@ -187,14 +187,15 @@ HEADER STYLES
   height: 60px;
   position: fixed;
   background-color: white;
-  box-shadow: 0 0 3px 0 grey;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
   margin-top: -183px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
   transition: margin 0.3s ease-in-out;
   z-index: 999;
   width: 100%;
 
-  .fixed-header-inner{
-
+  .fixed-header-inner {
     // Desktop outer-grid styles
     padding-left: 0;
     padding-right: 0;
@@ -295,7 +296,6 @@ HEADER STYLES
     }
   }
 }
-
 
 /**************
 HOME PAGE
@@ -426,12 +426,12 @@ COMPANY PROFILE PAGE
       height: 100%;
       position: absolute;
       background: #000;
-      opacity: 0.5;
+      opacity: 0.7;
     }
     .divider {
       margin-bottom: 27px;
       position: relative;
-      
+
       .marker {
         top: 2px;
       }
@@ -456,7 +456,7 @@ COMPANY PROFILE PAGE
 
   .main-content {
     @include inner-grid();
-    
+
     .intro-section {
       margin-bottom: 47px;
 
@@ -471,13 +471,13 @@ COMPANY PROFILE PAGE
         padding: 0;
         border: none;
       }
-      
+
       p {
         margin-bottom: 47px;
         text-align: justify;
         width: 100%;
       }
-      
+
       img {
         width: 100%;
         height: auto;
@@ -485,7 +485,6 @@ COMPANY PROFILE PAGE
     }
 
     .latest-projects-section {
-
       .col {
         padding-bottom: 47px;
         margin: 0 0 47px 0 !important;
@@ -551,7 +550,6 @@ COMPANY PROFILE PAGE
     }
   }
 }
-
 
 /**************
 FOOTER

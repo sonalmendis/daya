@@ -60,7 +60,7 @@
     <div class="main-wrapper">
 
         <div class="splash" style="background-image:url('<cms:show profile_splash_image />')">
-            
+
             <div class="black-overlay"></div>
 
             <div class="header-container">
@@ -72,22 +72,24 @@
                     <div class="static-header-links">
                         <a href="#services">About Us</a>
                         <a href="#about">Contact Us</a>
-                                
+
                         <div class="static-dropdown">
 
-                            <span><a>Companies &#8811</a></span>
-                                
+                            <span>
+                                <a>Companies &#8811</a>
+                            </span>
+
                             <div class="static-dropdown-content">
-                              <a href="#">Company 1</a>
-                              <a href="#">Company 2</a>
-                              <a href="#">Company 3</a>
+                                <a href="#">Company 1</a>
+                                <a href="#">Company 2</a>
+                                <a href="#">Company 3</a>
                             </div>
 
                         </div>
-                            
+
                         <a href="#contact">Board of Directors</a>
                     </div>
-                </div>                
+                </div>
             </div>
 
 
@@ -97,14 +99,14 @@
                     <img class="marker" src="img/diamond-marker-white.svg" alt="Marker" />
                 </div>
             </div>
-            
+
             <div class="splash-inner-container">
                 <h1>
                     <cms:show k_page_title />
                 </h1>
                 <h3>Company Profile</h3>
             </div>
-            
+
             <div class="divider-outer-container">
                 <div class="divider">
                     <img class="marker" src="img/diamond-marker-white.svg " alt="Marker" />
@@ -123,10 +125,10 @@
                 <img src="<cms:show intro_image />" alt="Intro Image" />
             </div>
 
-            <div class="divider-outer-container">
-                <div class="divider">
-                </div>
+
+            <div class="divider">
             </div>
+
 
             <div class="latest-projects-section">
                 <h1>Latest Projects</h1>
@@ -161,7 +163,9 @@
                     <h1>
                         Where Are We?
                     </h1>
-                    <p><cms:show company_address /></p>
+                    <p>
+                        <cms:show company_address />
+                    </p>
                 </div>
                 <div class="divider-outer-container">
                     <div class="divider"></div>
@@ -170,8 +174,18 @@
                     <h1>
                         Contact Us
                     </h1>
-                    <span class="contact"><strong>Email:</strong><p><cms:show company_email /></p></span>
-                    <span class="contact"><strong>Telephone:</strong><p><cms:show company_phone /></p></span>
+                    <span class="contact">
+                        <strong>Email:</strong>
+                        <p>
+                            <cms:show company_email />
+                        </p>
+                    </span>
+                    <span class="contact">
+                        <strong>Telephone:</strong>
+                        <p>
+                            <cms:show company_phone />
+                        </p>
+                    </span>
                 </div>
             </div>
         </div>

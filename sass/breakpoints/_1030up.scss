@@ -63,6 +63,8 @@ li {
 }
 
 p {
+  font-size: 19px;
+  line-height: 30px;
 }
 
 p.large {
@@ -151,6 +153,7 @@ COMPANY PROFILE PAGE
 **************/
 .main-container.company-profile {
   .splash {
+    margin-bottom: 67px;
     .black-overlay {
     }
 
@@ -212,7 +215,6 @@ COMPANY PROFILE PAGE
         .static-dropdown:hover .static-dropdown-content {
           display: block;
         }
-
       }
 
       img {
@@ -249,15 +251,17 @@ COMPANY PROFILE PAGE
 
   .main-content {
     @include outer-grid();
-    
+
     .intro-section {
       @include flexbox();
       @include justify-content(space-between);
-      @include align-items(center);
-
+      @include align-items(flex-start);
+      * {
+        text-align: left !important;
+      }
       .intro-text {
         width: 45%;
-        margin: 0 !IMPORTANT;
+        margin: 0 !important;
       }
 
       p {
@@ -265,32 +269,32 @@ COMPANY PROFILE PAGE
       }
 
       img {
-        width: 45%;
-        height: auto;
+        width: 495px;
+        height: 495px;
+        @include object-fit(cover);
       }
     }
 
     .latest-projects-section {
-
       .column-container {
         @include flexbox();
         @include justify-content(space-between);
       }
-      
+
       .col {
         width: 30%;
       }
-      
+
       .col:last-child {
       }
 
       h1 {
-        text-align: left !IMPORTANT;
-        font-size: 34px !IMPORTANT;
-        line-height: 32px !IMPORTANT;
-        margin-bottom: 27px !IMPORTANT;
-        font-weight: 400 !IMPORTANT;
-        letter-spacing: 0.8px !IMPORTANT;
+        text-align: left !important;
+        font-size: 34px !important;
+        line-height: 32px !important;
+        margin-bottom: 47px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.8px !important;
       }
 
       h2 {
@@ -300,14 +304,12 @@ COMPANY PROFILE PAGE
       p {
         text-align: left;
       }
-
     }
     img {
     }
   }
 
   .profile-details-section {
-
     .blocks {
       @include outer-grid;
       @include flexbox();
@@ -319,10 +321,12 @@ COMPANY PROFILE PAGE
 
       .inner-block {
         width: 30%;
-
-
+        margin-bottom: 0;
+        h1 {
+          margin-bottom: 37px;
+        }
         h1,
-        p, {
+        p {
           text-align: left;
           line-height: 23px;
         }
@@ -337,7 +341,7 @@ COMPANY PROFILE PAGE
           width: 100%;
           text-align: left;
           line-height: 23px;
-          
+
           p {
             margin-left: 6px;
             margin-bottom: 0;
