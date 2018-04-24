@@ -11,7 +11,7 @@
     <cms:editable name="company_profile_download" order="7" label="Company Profile Download File" desc="This could be a PDF of the company's info" type="file" />
     
     <cms:editable name="splash_image" order="8" label='Splash Image' quality="100" desc='The first image that appears on a company profile page and the image used to its corresponding home page block' show_preview='1' width="1600" type="image" />
-    <cms:editable name="intro_image" order="9" label="Intro Image"  quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495px" width="495" type="image" />>
+    <cms:editable name="intro_image" order="9" label="Intro Image"  quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
 
     <cms:editable name="profile_intro" order="10" label="Intro Text" desc="The opening paragraph text" type="richtext" >
         <h1>Who We Are</h1>
@@ -71,7 +71,7 @@
 
             <div class="header-container">
                 <div class="static-header">
-                    <a href="">
+                    <a href="index.php">
                         <img src="img/logo.svg" alt="Logo" />
                         <h3>Daya Group of Companies</h3>
                     </a>

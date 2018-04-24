@@ -44,14 +44,15 @@
                         through strategic investments. While having a strong emphasis on quality and performance, our company
                         strives to achieve excellence in customer satisfaction.
                     </p>
-                    <a class="btn big">Learn More
+                </cms:editable>
+                <a class="btn big">Learn More
                         <img class="right-arrows" src="img/right-arrows.svg" alt="Right Arrows" />
                     </a>
-                </cms:editable>
             </div>
             <div class="divider"></div>
             <div class="our-industries-section">
                 <h1>Our Companies & Industries</h1>
+                <h3>Click below to find out more</h3>
                 <cms:embed 'company-profile-list.php' />
             </div>
         </div>
