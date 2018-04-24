@@ -71,7 +71,7 @@
 
             <div class="header-container">
                 <div class="static-header">
-                    <a href="">
+                    <a href="index.php">
                         <img src="img/logo.svg" alt="Logo" />
                         <h3>Daya Group of Companies</h3>
                     </a>
