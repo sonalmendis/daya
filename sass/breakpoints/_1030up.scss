@@ -223,6 +223,10 @@ COMPANY PROFILE PAGE
         @include flexbox();
         @include align-items(center);
 
+        a:nth-of-type(3) {
+          margin-right: 0;
+        }
+
         .static-dropdown-content {
           display: none;
         }
@@ -274,13 +278,16 @@ COMPANY PROFILE PAGE
         @include align-items(center);
         text-decoration: none;
         cursor: pointer;
+        font-weight: 400;
+        font-size: 15px;
       }
 
-      h3 {
+      a h3 {
         margin: 0;
         padding-left: 15px;
         font-family: $petrona;
         font-weight: 400;
+        font-size: 19px;
       }
     }
 

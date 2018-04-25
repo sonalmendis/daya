@@ -10,7 +10,7 @@
 
 				<div class="fixed-header-bar">
 					<div class="fixed-header-inner">
-						<a href="">
+						<a href="index.php">
 							<img src="img/logo.svg" alt="Logo" />
 							<h3>Daya Group of Companies</h3>
 						</a>
@@ -23,6 +23,21 @@
 								<span><a>Companies &#8811</a></span>
 							
 							    <div class="dropdown-content">
+				    			  <a href="#">Company 1</a>
+							      <a href="#">Company 2</a>
+							      <a href="#">Company 3</a>
+				    			  <a href="#">Company 1</a>
+							      <a href="#">Company 2</a>
+							      <a href="#">Company 3</a>
+				    			  <a href="#">Company 1</a>
+							      <a href="#">Company 2</a>
+							      <a href="#">Company 3</a>
+				    			  <a href="#">Company 1</a>
+							      <a href="#">Company 2</a>
+							      <a href="#">Company 3</a>
+				    			  <a href="#">Company 1</a>
+							      <a href="#">Company 2</a>
+							      <a href="#">Company 3</a>
 				    			  <a href="#">Company 1</a>
 							      <a href="#">Company 2</a>
 							      <a href="#">Company 3</a>

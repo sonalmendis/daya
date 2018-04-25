@@ -247,7 +247,10 @@ HEADER STYLES
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    z-index: -1;
+    z-index: -1;    
+    width: 320px;
+    @include flexbox();
+    @include flex-wrap(wrap);
   }
 
   .dropdown-content a {
@@ -257,6 +260,7 @@ HEADER STYLES
     text-decoration: none;
     display: block;
     text-align: left;
+    width: 150px;
   }
 
   .dropdown:hover .dropdown-content {
@@ -276,6 +280,7 @@ HEADER STYLES
       color: black;
       font-family: $petrona;
       font-weight: 400;
+      font-size: 19px;
     }
   }
 
