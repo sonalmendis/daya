@@ -227,10 +227,6 @@ COMPANY PROFILE PAGE
           margin-right: 0;
         }
 
-        .static-dropdown-content {
-          display: none;
-        }
-
         .static-dropdown {
           float: left;
           overflow: hidden;
@@ -244,7 +240,7 @@ COMPANY PROFILE PAGE
         }
 
         .static-dropdown-content {
-          display: none;
+          display: block;
           position: absolute;
           background-color: black;
           min-width: 160px;
