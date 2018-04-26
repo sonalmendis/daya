@@ -628,6 +628,151 @@ COMPANY PROFILE PAGE
 }
 
 /**************
+ABOUT US PAGE
+**************/
+
+
+.main-container.about-us {
+  .header-container {
+    display: none;
+  }
+
+  .splash {
+    text-align: center;
+    height: 90%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    position: relative;
+    margin-bottom: 47px;
+
+    .company-logo {
+      width: 83%;
+      max-width: 184px;
+      margin-bottom: 22px;
+    }
+
+    .black-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: #000;
+      opacity: 0.7;
+    }
+
+    .divider {
+      position: relative;
+      margin: 20px 0;
+
+      .marker {
+        top: 2px;
+      }
+    }
+
+    .splash-outer-container {
+      @include outer-grid;
+      width: 100%;
+    }
+
+    .splash-inner-container {
+      z-index: 2;
+      position: relative;
+
+      h1 {
+        color: #fff;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        color: #fff;
+        font-family: $montserrat;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+        font-size: 13px;
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+
+
+
+
+  .main-content {
+    @include inner-grid;
+
+    .intro {
+      @include flexbox();
+      @include justify-content(center);
+      @include flex-direction(column);
+      @include inner-grid;
+
+      .intro-img {
+        width: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 30vh;
+        @include flexbox;
+        @include align-items(center);
+        margin-bottom: 50px;
+      }
+
+      img {
+        width: 90px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .board {
+      @include outer-grid;
+
+      img {
+        width: 100%;
+      }
+
+      h3 {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        color: $green;
+      }
+
+      h2 {
+        text-align: center;
+        margin: 20px 0;
+      }
+    }
+
+    .achievements {
+      @include outer-grid;
+
+      img {
+        width: 100%;
+      }
+
+      h3 {
+        text-align: center;
+        font-weight: 700;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+/**************
 FOOTER
 **************/
 
