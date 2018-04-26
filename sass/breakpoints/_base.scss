@@ -600,6 +600,12 @@ COMPANY PROFILE PAGE
         text-align: justify;
       }
 
+
+
+      h2 {
+        color: $green;
+      }
+
       img {
         width: 100%;
         min-height: 140px;
@@ -618,10 +624,12 @@ COMPANY PROFILE PAGE
     .inner-block:last-child {
       margin-bottom: 0;
     }
+
     h1 {
       color: #fff;
       margin-bottom: 27px;
     }
+
     p {
       text-align: center;
     }
