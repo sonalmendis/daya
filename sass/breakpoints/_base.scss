@@ -637,9 +637,13 @@ ABOUT US PAGE
     display: none;
   }
 
+  .main-wrapper {
+    height: 90vh;
+  }
+
   .splash {
     text-align: center;
-    height: 90%;
+    height: 90vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -649,7 +653,6 @@ ABOUT US PAGE
     @include align-items(center);
     @include flex-direction(column);
     position: relative;
-    margin-bottom: 47px;
 
     .company-logo {
       width: 83%;
@@ -706,6 +709,11 @@ ABOUT US PAGE
   .main-content {
     @include inner-grid;
 
+    h1 {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
     .intro {
       @include flexbox();
       @include justify-content(center);
@@ -714,16 +722,17 @@ ABOUT US PAGE
 
       .intro-img {
         width: 90px;
-        margin-left: auto;
-        margin-right: auto;
         height: 30vh;
+        min-height: 215px;
         @include flexbox;
         @include align-items(center);
-        margin-bottom: 50px;
+        @include justify-content(center);
+        margin: 60px auto;
       }
 
       img {
         width: 90px;
+        margin: 60px 0;
       }
 
       p {
@@ -736,6 +745,7 @@ ABOUT US PAGE
 
       img {
         width: 100%;
+        margin-top: 30px;
       }
 
       h3 {
@@ -747,24 +757,44 @@ ABOUT US PAGE
 
       h2 {
         text-align: center;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        margin-top: 5px;
       }
     }
 
     .achievements {
       @include outer-grid;
 
-      img {
+      .awards_images {
         width: 100%;
+
+        img {
+          width: 100%;
+          margin-top: 30px;
+        }
       }
 
-      h3 {
-        text-align: center;
-        font-weight: 700;
-      }
+      .awards_txt {
+        margin: 65px 0;
 
-      p {
-        text-align: center;
+        h2 {
+          color: $green;
+          text-align: center;
+          margin: 65px 0;
+          line-height: 1.4;
+          font-weight: 400;
+        }
+
+        h3 {
+          text-align: center;
+          font-weight: 700;
+          margin-top: 40px;
+          margin-bottom: 5px;
+        }
+
+        p {
+          text-align: center;
+        }
       }
     }
   }

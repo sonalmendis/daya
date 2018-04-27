@@ -32,7 +32,9 @@
 
     </cms:repeatable>
 
-	<cms:repeatable name='awards' label="Awards" desc="Add as many awards as you need." order="5">
+    <cms:editable name="awards_intro" label="Awards Introduction Header" type="text" order="5" />
+
+	<cms:repeatable name='awards' label="Awards" desc="Add as many awards as you need." order="6">
     	
     	<cms:editable name="award" label="Award" type="richtext">
     		<h3>This is the name of the award</h3>
@@ -121,32 +123,41 @@ END OF TEMPLATE
     		<div class="timeline">
     		</div>
 
+			<h1>Board of Directors</h1>
+    		
     		<div class="board">
-				<h1>Board of Directors</h1>
 
 				<cms:show_repeatable 'directors'>
-					<img src="<cms:show director_image />" />
+					<div class="director_card">
+						<img src="<cms:show director_image />" />
 
-					<h3>
-						<cms:show director_title />
-					</h3>
+						<h3>
+							<cms:show director_title />
+						</h3>
 
-					<h2>
-						<cms:show director_name />
-    				</h2>
+						<h2>
+							<cms:show director_name />
+	    				</h2>
+    				</div>
     			</cms:show_repeatable>
     		</div>
 
     		<div class="achievements">
     			<h1>Achievements</h1>
 
-    			<cms:show_repeatable 'awards_image'>
-    				<img src="<cms:show award_img />" />
-				</cms:show_repeatable>
+    			<div class="awards_images">
+	    			<cms:show_repeatable 'awards_image'>
+	    				<img src="<cms:show award_img />" />
+					</cms:show_repeatable>
+				</div>
 
-				<cms:show_repeatable 'awards'>
-					<cms:show award />
-				</cms:show_repeatable>
+				<div class="awards_txt">
+					<h2> <cms:show awards_intro /> </h2>
+
+					<cms:show_repeatable 'awards'>
+						<cms:show award />
+					</cms:show_repeatable>
+				</div>
 			</div>
 
 
