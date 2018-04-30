@@ -54,6 +54,24 @@
                 <h1>Our Companies & Industries</h1>
                 <h3>Click below to find out more</h3>
                 <cms:embed 'company-profile-list.php' />
+<div class="industry-outer-container hvr-grow-shadow" style="opacity:0;">
+        <a href="<cms:show k_page_link />" class="industry-block">
+
+            <div class="black-overlay"></div>
+            <img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="image" />
+            <div class="inner-container">
+
+                <h1>
+                    <cms:show k_page_title />
+                </h1>
+                <h3>
+                    <cms:show category_for_front_page />
+                </h3>
+                <!-- <div class="btn small" class="btn small">Learn More</div> -->
+            </div>
+
+        </a>
+</div>
             </div>
         </div>
         <!-- <cms:if k_is_page> -->
