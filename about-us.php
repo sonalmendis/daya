@@ -123,7 +123,7 @@ END OF TEMPLATE
     		<div class="timeline">
     		</div>
 
-			<h1>Board of Directors</h1>
+			<h1 id="board">Board of Directors</h1>
     		
     		<div class="board">
 
