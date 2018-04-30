@@ -223,8 +223,8 @@ COMPANY PROFILE PAGE
         @include flexbox();
         @include align-items(center);
 
-        .static-dropdown-content {
-          display: none;
+        a:nth-of-type(3) {
+          margin-right: 0;
         }
 
         .static-dropdown {
@@ -274,13 +274,16 @@ COMPANY PROFILE PAGE
         @include align-items(center);
         text-decoration: none;
         cursor: pointer;
+        font-weight: 400;
+        font-size: 15px;
       }
 
-      h3 {
+      a h3 {
         margin: 0;
         padding-left: 15px;
         font-family: $petrona;
         font-weight: 400;
+        font-size: 19px;
       }
     }
 
@@ -304,17 +307,13 @@ COMPANY PROFILE PAGE
     .intro-section {
       @include flexbox();
       @include justify-content(space-between);
-      @include align-items(flex-start);
+      @include align-items(center);
       * {
         text-align: left !important;
       }
       .intro-text {
         width: 45%;
         margin: 0 !important;
-      }
-
-      p {
-        text-align: left;
       }
 
       img {

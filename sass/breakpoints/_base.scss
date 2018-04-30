@@ -238,7 +238,20 @@ HEADER STYLES
       @include flexbox();
       @include align-items(center);
       height: 100%;
+      width: 133px; //93px text + 40px margin
     }
+  }
+
+  .dropdown-content-outer {
+    padding-left: 0;
+    padding-right: 0;
+    width: 1vh;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: -155px; //133px + 122px
+    position: absolute;
+    @include flexbox();
+    @include justify-content(flex-end);
   }
 
   .dropdown-content {
@@ -247,7 +260,9 @@ HEADER STYLES
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    z-index: -1;
+    z-index: -1;    
+    width: 640px;
+    @include flex-wrap(wrap);
   }
 
   .dropdown-content a {
@@ -255,12 +270,13 @@ HEADER STYLES
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
+    display: inline-block;
     text-align: left;
+    width: 120px;
   }
 
   .dropdown:hover .dropdown-content {
-    display: block;
+    @include flexbox();
   }
 
   a {
@@ -276,6 +292,7 @@ HEADER STYLES
       color: black;
       font-family: $petrona;
       font-weight: 400;
+      font-size: 19px;
     }
   }
 
@@ -302,20 +319,16 @@ HEADER STYLES
     margin-right: 40px;
   }
 
-  a:nth-of-type(3) {
+  > a:nth-of-type(3) {
     margin-right: 0;
+    width: 122px;
   }
 
   a:hover {
     cursor: pointer;
   }
-
-  .dropdown-content {
-    a {
-      width: 100%;
-    }
-  }
 }
+
 
 /**************
 HOME PAGE
@@ -572,19 +585,25 @@ COMPANY PROFILE PAGE
         border-bottom: none;
       }
 
-      h1,
-      h2,
-      h3 {
-        color: $green !important;
-        text-align: center !important;
-        margin-bottom: 17px;
-        font-size: 22px !important;
-        font-weight: 300 !important;
-      }
+      // h1,
+      // h2,
+      // h3 {
+      //   color: $green !important;
+      //   text-align: center !important;
+      //   margin-bottom: 17px;
+      //   font-size: 22px !important;
+      //   font-weight: 300 !important;
+      // }
 
       p {
         margin-bottom: 27px;
         text-align: justify;
+      }
+
+
+
+      h2 {
+        color: $green;
       }
 
       img {
@@ -605,10 +624,12 @@ COMPANY PROFILE PAGE
     .inner-block:last-child {
       margin-bottom: 0;
     }
+
     h1 {
       color: #fff;
       margin-bottom: 27px;
     }
+
     p {
       text-align: center;
     }
