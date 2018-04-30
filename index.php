@@ -49,7 +49,7 @@
                         <img class="right-arrows" src="img/right-arrows.svg" alt="Right Arrows" />
                     </a>
             </div>
-            <div class="divider"></div>
+            <div class="divider" id="companies"></div>
             <div class="our-industries-section">
                 <h1>Our Companies & Industries</h1>
                 <h3>Click below to find out more</h3>

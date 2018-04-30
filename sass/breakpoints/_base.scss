@@ -649,6 +649,181 @@ COMPANY PROFILE PAGE
 }
 
 /**************
+ABOUT US PAGE
+**************/
+
+
+.main-container.about-us {
+  .header-container {
+    display: none;
+  }
+
+  .main-wrapper {
+    height: 90vh;
+  }
+
+  .splash {
+    text-align: center;
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    position: relative;
+
+    .company-logo {
+      width: 83%;
+      max-width: 184px;
+      margin-bottom: 22px;
+    }
+
+    .black-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: #000;
+      opacity: 0.7;
+    }
+
+    .divider {
+      position: relative;
+      margin: 20px 0;
+
+      .marker {
+        top: 2px;
+      }
+    }
+
+    .splash-outer-container {
+      @include outer-grid;
+      width: 100%;
+    }
+
+    .splash-inner-container {
+      z-index: 2;
+      position: relative;
+
+      h1 {
+        color: #fff;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        color: #fff;
+        font-family: $montserrat;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+        font-size: 13px;
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+
+
+
+
+  .main-content {
+    @include inner-grid;
+
+    h1 {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      @include flexbox();
+      @include justify-content(center);
+      @include flex-direction(column);
+      @include inner-grid;
+
+      .intro-img {
+        width: 90px;
+        height: 30vh;
+        min-height: 215px;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        margin: 60px auto;
+      }
+
+      img {
+        width: 90px;
+        margin: 60px 0;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .board {
+      @include outer-grid;
+
+      img {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      h3 {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        color: $green;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+    }
+
+    .achievements {
+      @include outer-grid;
+
+      .awards_images {
+        width: 100%;
+
+        img {
+          width: 100%;
+          margin-top: 30px;
+        }
+      }
+
+      .awards_txt {
+        margin: 65px 0;
+
+        h2 {
+          color: $green;
+          text-align: center;
+          margin: 65px 0;
+          line-height: 1.4;
+          font-weight: 400;
+        }
+
+        h3 {
+          text-align: center;
+          font-weight: 700;
+          margin-top: 40px;
+          margin-bottom: 5px;
+        }
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+
+
+/**************
 FOOTER
 **************/
 

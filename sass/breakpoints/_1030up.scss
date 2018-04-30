@@ -17,6 +17,15 @@
   margin-right: auto;
 }
 
+@mixin inner-inner-grid() {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /****/
 .divider {
   margin-bottom: 67px;
@@ -152,9 +161,11 @@ HOME PAGE
   }
   .intro-section {
     @include inner-grid();
-    margin-bottom: 67px;
     p {
     }
+  }
+  #companies {
+    padding-top: 60px;
   }
 
   .our-industries-section {
@@ -195,6 +206,7 @@ COMPANY PROFILE PAGE
   .header-container {
     display: block;
   }
+
   .splash {
     margin-bottom: 67px;
     .black-overlay {
@@ -399,6 +411,66 @@ COMPANY PROFILE PAGE
           }
         }
       }
+    }
+  }
+}
+
+/**************
+ABOUT US PAGE
+**************/
+
+.main-container.about-us {
+
+  .main-content {
+    @include outer-grid;
+
+    .intro {
+      @include inner-inner-grid;
+      margin-top: 80px;
+      margin-bottom: 20px;
+
+      img {
+        margin-top: 20px;
+      }
+    }
+
+    .board {
+      @include outer-grid;
+      @include flexbox();
+      @include justify-content(space-around);
+
+      .director_card {
+        width: 165px;
+
+        img {
+          height: 165px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    #board {
+      padding-top: 90px;
+      margin-top: 0;
+    }
+
+    .achievements {
+      @include inner-grid;
+
+      .awards_images {
+        @include flexbox;
+        @include justify-content(space-around);
+        img {
+          width: 235px;
+          height: 160px;
+          object-fit: cover;
+        }
+      }
+
+      .awards_txt {
+        @include inner-inner-grid;
+
+      }      
     }
   }
 }
