@@ -272,8 +272,11 @@ HEADER STYLES
   }
 
   .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s, opacity 0.2s linear;
+    transition: visibility 0s, opacity 0.2s linear;
     right: -82px;
-    display: none;
     position: absolute;
     background-color: white;
     min-width: 400px;
@@ -285,7 +288,8 @@ HEADER STYLES
   }
 
   .dropdown:hover .dropdown-content {
-    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 
   /*

@@ -167,7 +167,9 @@ $(document).ready(function() {
    *
    * ****/
   window.sr = ScrollReveal();
-  sr.reveal(".intro-section", { duration: 1000 });
+  sr.reveal(".intro-section", {
+    duration: 1000
+  });
   sr.reveal(".industry-block");
   // sr.reveal(".industry-block", { duration: 1000, viewFactor: 0.1 }, 50);
 
@@ -200,7 +202,7 @@ Video output depending on mobile or not
   //
   var scroll = new SmoothScroll('a[href*="#"]');
 
-  // Timeline - About Us
+  /**** TIMELINE - About Us ****/
   (function() {
     function VerticalTimeline(element) {
       this.element = element;
@@ -281,5 +283,5 @@ Video output depending on mobile or not
       });
       scrolling = false;
     }
-  })();
+  })(); // end of timeline function
 }); // end of document ready, put everything inside here

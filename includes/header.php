@@ -35,25 +35,6 @@
 										
 									</a>
 										</cms:pages>
-
-										<!-- <a href="#">Company 1</a>
-										<a href="#">Company 2</a>
-										<a href="#">Company 3</a>
-										<a href="#">Company 1</a>
-										<a href="#">Company 2</a>
-										<a href="#">Company 3</a>
-										<a href="#">Company 1</a>
-										<a href="#">Company 2</a>
-										<a href="#">Company 3</a>
-										<a href="#">Company 1</a>
-										<a href="#">Company 2</a>
-										<a href="#">Company 3</a>
-										<a href="#">Company 1</a>
-										<a href="#">Company 2</a>
-										<a href="#">Company 3</a>
-										<a href="#">Company 1</a>
-										<a href="#">Company 2</a>
-										<a href="#">Company 3</a> -->
 									</div>
 								</div>
 							</div>
