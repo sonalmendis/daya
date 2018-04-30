@@ -194,3 +194,9 @@ Video output depending on mobile or not
   } else {
   }
 });
+
+// SMOOTH ANCHOR LINK SCROLLING
+//
+//
+//
+var scroll = new SmoothScroll('a[href*="#"]');

@@ -161,9 +161,11 @@ HOME PAGE
   }
   .intro-section {
     @include inner-grid();
-    margin-bottom: 67px;
     p {
     }
+  }
+  #companies {
+    padding-top: 60px;
   }
 
   .our-industries-section {
@@ -424,6 +426,12 @@ ABOUT US PAGE
 
     .intro {
       @include inner-inner-grid;
+      margin-top: 80px;
+      margin-bottom: 20px;
+
+      img {
+        margin-top: 20px;
+      }
     }
 
     .board {
@@ -439,6 +447,11 @@ ABOUT US PAGE
           object-fit: cover;
         }
       }
+    }
+
+    #board {
+      padding-top: 90px;
+      margin-top: 0;
     }
 
     .achievements {
