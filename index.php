@@ -46,42 +46,54 @@
                     </p>
                 </cms:editable>
                 <a class="btn big">Learn More
-                        <img class="right-arrows" src="img/right-arrows.svg" alt="Right Arrows" />
-                    </a>
+                    <img class="right-arrows" src="img/right-arrows.svg" alt="Right Arrows" />
+                </a>
             </div>
             <div class="divider" id="companies"></div>
+
+             <!-- Company profile list -->
             <div class="our-industries-section">
                 <h1>Our Companies & Industries</h1>
                 <h3>Click below to find out more</h3>
-                <cms:embed 'company-profile-list.php' />
-<div class="industry-outer-container hvr-grow-shadow" style="opacity:0;">
-        <a href="<cms:show k_page_link />" class="industry-block">
+                <cms:pages masterpage='company-profile.php'>
+                    <div class="industry-outer-container hvr-grow-shadow">
+                        <a href="<cms:show k_page_link />" class="industry-block">
 
-            <div class="black-overlay"></div>
-            <img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="image" />
-            <div class="inner-container">
+                            <div class="black-overlay"></div>
+                            <img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="image" />
+                            <div class="inner-container">
 
-                <h1>
-                    <cms:show k_page_title />
-                </h1>
-                <h3>
-                    <cms:show category_for_front_page />
-                </h3>
-                <!-- <div class="btn small" class="btn small">Learn More</div> -->
+                                <h1>
+                                    <cms:show k_page_title />
+                                </h1>
+                                <h3>
+                                    <cms:show category_for_front_page />
+                                </h3>
+                                <!-- <div class="btn small" class="btn small">Learn More</div> -->
+                            </div>
+
+                        </a>
+                    </div>
+                </cms:pages>
+                <div class="industry-outer-container hvr-grow-shadow" style="opacity:0;">
+                    <a href="<cms:show k_page_link />" class="industry-block">
+
+                        <div class="black-overlay"></div>
+                        <img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="image" />
+                        <div class="inner-container">
+
+                            <h1>
+                                <cms:show k_page_title />
+                            </h1>
+                            <h3>
+                                <cms:show category_for_front_page />
+                            </h3>
+                            <!-- <div class="btn small" class="btn small">Learn More</div> -->
+                        </div>
+
+                    </a>
+                </div>
             </div>
-
-        </a>
-</div>
-            </div>
-        </div>
-        <!-- <cms:if k_is_page> -->
-        <!-- SNIPPETS ARE AT couch/snippets -->
-        <!-- <cms:embed 'company_profile.php' />
-            <cms:else />
-            <cms:embed 'home.php' />
-        </cms:if> -->
-
-
-
+        </div> <!-- end company profile list -->
 
         <?php include './includes/footer.php' ?>
