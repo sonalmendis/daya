@@ -100,6 +100,7 @@
 
             <div class="splash-inner-container">
                 <img class="company-logo" src="<cms:show company_logo />" alt="Company Logo" />
+
                 <h1>
                     <cms:show k_page_title />
                 </h1>
