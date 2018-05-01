@@ -76,13 +76,13 @@
                         <h3>Daya Group of Companies</h3>
                     </a>
                     <div class="static-header-links">
-                        <a href="#services">About Us</a>
+                        <a href="about-us.php">About Us</a>
                         <a href="#about">Contact Us</a>
 
                         <div class="static-dropdown">
 
                             <span>
-                                <a>Companies &#8811</a>
+                                <a href="index.php#companies">Companies &#8811</a>
                             </span>
 
                             <div class="static-dropdown-content">
@@ -93,7 +93,7 @@
 
                         </div>
 
-                        <a href="#contact">Board of Directors</a>
+                        <a href="about-us.php#board">Board of Directors</a>
                     </div>
                 </div>
             </div>

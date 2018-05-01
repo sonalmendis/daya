@@ -421,6 +421,95 @@ ABOUT US PAGE
 **************/
 
 .main-container.about-us {
+
+  .splash {
+
+    .header-container {
+      @include flexbox();
+      @include justify-content(space-between);
+      @include align-items(flex-start);
+      @include outer-grid;
+      height: 100%;
+      z-index: 1;
+      position: absolute;
+    }
+
+    .static-header {
+      @include flexbox();
+      @include justify-content(space-between);
+      height: 60px;
+      width: 100%;
+
+      .static-header-links {
+        height: 100%;
+        @include flexbox();
+        @include align-items(center);
+
+        a:nth-of-type(3) {
+          margin-right: 0;
+        }
+
+        .static-dropdown {
+          float: left;
+          overflow: hidden;
+          height: 100%;
+
+          span {
+            @include flexbox();
+            @include align-items(center);
+            height: 100%;
+          }
+        }
+
+        .static-dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: black;
+          min-width: 160px;
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+          z-index: -1;
+        }
+
+        .static-dropdown-content a {
+          float: none;
+          color: white;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+
+        .static-dropdown:hover .static-dropdown-content {
+          display: block;
+        }
+      }
+
+      img {
+        height: 50px;
+      }
+
+      a {
+        color: white;
+        margin-right: 40px;
+        @include flexbox();
+        @include justify-content(space-around);
+        @include align-items(center);
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 15px;
+      }
+
+      a h3 {
+        margin: 0;
+        padding-left: 15px;
+        font-family: $petrona;
+        font-weight: 400;
+        font-size: 19px;
+      }
+    }
+  }
+
   .main-content {
     @include outer-grid;
 

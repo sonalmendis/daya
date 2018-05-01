@@ -63,6 +63,35 @@ END OF TEMPLATE
 
 			<div class="black-overlay"></div>
 
+            <div class="header-container">
+                <div class="static-header">
+                    <a href="index.php">
+                        <img src="img/logo.svg" alt="Logo" />
+                        <h3>Daya Group of Companies</h3>
+                    </a>
+                    <div class="static-header-links">
+                        <a href="about-us.php">About Us</a>
+                        <a href="#about">Contact Us</a>
+
+                        <div class="static-dropdown">
+
+                            <span>
+                                <a href="index.php#companies">Companies &#8811</a>
+                            </span>
+
+                            <div class="static-dropdown-content">
+                                <a href="#">Company 1</a>
+                                <a href="#">Company 2</a>
+                                <a href="#">Company 3</a>
+                            </div>
+
+                        </div>
+
+                        <a href="about-us.php#board">Board of Directors</a>
+                    </div>
+                </div>
+            </div>
+
 			<div class="header-container">
 				<div class="static-header">
 					<a href="index.php">
