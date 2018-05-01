@@ -11,10 +11,33 @@
 
 				<div class="fixed-header-bar">
 					<div class="fixed-header-inner">
+
 						<a href="index.php">
 							<img src="img/logo.svg" alt="Logo" />
 							<h3>Daya Group of Companies</h3>
 						</a>
+
+					  <div class="nav-mobile">
+				      <a id="nav-toggle" href="#!"><span></span></a>
+					  </div>
+
+						<div class="fixed-header-mobile">
+
+						  <ul class="nav-list">
+						    <li><a href="#!">About Us</a></li>
+						    <li><a href="#!">Contact Us</a></li>
+					    	<li><a href="#!">Companies &#8811</a>
+						      <ul class="nav-dropdown">
+						        <li><a href="#!">Company 1</a></li>
+						        <li><a href="#!">Company 2</a></li>
+						        <li><a href="#!">Company 3 Long Name</a></li>
+						      </ul>
+						    </li>
+						    <li><a href="#!">Board of Directors</a></li>
+						  </ul>
+					  </div>
+
+
 						<div class="fixed-header-links">
 							<a href="about-us.php">About Us</a>
 							<a href="contact-us.php">Contact Us</a>

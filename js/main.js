@@ -202,6 +202,9 @@ Video output depending on mobile or not
   //
   var scroll = new SmoothScroll('a[href*="#"]');
 
+
+
+
   /**** TIMELINE - About Us ****/
   (function() {
     function VerticalTimeline(element) {
@@ -284,4 +287,20 @@ Video output depending on mobile or not
       scrolling = false;
     }
   })(); // end of timeline function
+
+
+// MOBILE NAV-BAR
+// 
+// 
+// 
+  $("ul li > a:not(:only-child)").click(function(e) {
+    $(this).siblings('.nav-dropdown').toggle();
+    console.log("hi");
+    $('.nav-dropdown').not($(this).siblings()).hide();
+    e.stopPropagation();
+  });
+  $('html').click(function() {
+    $('.nav-dropdown').hide();
+  });
+
 }); // end of document ready, put everything inside here

@@ -223,35 +223,72 @@ p.large {
 HEADER STYLES
 *************/
 .fixed-header-bar {
-  height: 60px;
+  height: 50px;
   position: fixed;
   background-color: white;
   -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
-  margin-top: -183px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
+  margin-top: -50px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
   transition: margin 0.3s ease-in-out;
   z-index: 999;
   width: 100%;
 
   .fixed-header-inner {
-    // Desktop outer-grid styles
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-
     @include flexbox();
-    @include justify-content(space-between);
+    @include justify-content(space-around);
     @include align-items(center);
+    @include flex-wrap(wrap);
     height: 100%;
+
+    .fixed-header-mobile {
+      width: 100%;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          float: left;
+          position: relative;
+          width: 100%;
+
+          a {
+            display: block;
+            padding: 0 20px;
+            line-height: 70px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+
+            &:not(:only-child):after {
+              padding-left: 4px;
+              content: ' ▾';
+            }
+          }
+
+          ul li {
+            width: 100%;
+            a {
+
+            }
+          }
+        }
+      }
+    }
+
+    > a {
+      width: 100%;
+    }
   }
+
+  .nav-dropdown {
+    display: none;
+  }
+
   .dropdown {
-    float: left;
-    overflow: hidden;
-    height: 100%;
+
 
     span {
       @include flexbox();
@@ -347,12 +384,20 @@ HEADER STYLES
     }
   }
 
+  .fixed-header-links {
+    display: none;
+    a {
+      display: none;
+    }
+  }
+
   a {
     height: 50px;
     @include flexbox();
-    @include justify-content(space-around);
+    @include justify-content(center);
     @include align-items(center);
     text-decoration: none;
+  }
 
     h3 {
       margin: 0;
@@ -362,10 +407,9 @@ HEADER STYLES
       font-weight: 400;
       font-size: 19px;
     }
-  }
 
   img {
-    height: 45px;
+    height: 40px;
   }
 }
 
