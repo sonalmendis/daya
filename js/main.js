@@ -56,75 +56,82 @@ $(document).ready(function() {
   /****
    HEADER
    ****/
-  // Fixed header
-  var splashInnerContentContainer = document.querySelectorAll(
-    ".splash-inner-container"
-  )[0];
-  var splashInnerContentContainerHeight =
-    splashInnerContentContainer.scrollHeight;
-  var splashInnerContentContainerDistanceFromTop = getPosition(
-    splashInnerContentContainer
-  ).y;
+  if (!$(".main-container").hasClass("contact-us")) {
+    // Fixed header
+    var splashInnerContentContainer = document.querySelectorAll(
+      ".splash-inner-container"
+    )[0];
+    var splashInnerContentContainerHeight =
+      splashInnerContentContainer.scrollHeight;
+    var splashInnerContentContainerDistanceFromTop = getPosition(
+      splashInnerContentContainer
+    ).y;
 
-  var fixedHeader = document.querySelectorAll(".fixed-header-bar")[0];
-  var fixedHeaderMobile = document.querySelectorAll(".fixed-header-mobile")[0];
-  var scrollTop;
+    var fixedHeader = document.querySelectorAll(".fixed-header-bar")[0];
+    var fixedHeaderMobile = document.querySelectorAll(
+      ".fixed-header-mobile"
+    )[0];
+    var scrollTop;
 
-  // This function gets the distance of an element from the top
-  function getPosition(element) {
-    var xPosition = 0;
-    var yPosition = 0;
+    // This function gets the distance of an element from the top
+    function getPosition(element) {
+      var xPosition = 0;
+      var yPosition = 0;
 
-    while (element) {
-      xPosition += element.offsetLeft - element.scrollLeft + element.clientLeft;
-      yPosition += element.offsetTop - element.scrollTop + element.clientTop;
-      element = element.offsetParent;
+      while (element) {
+        xPosition +=
+          element.offsetLeft - element.scrollLeft + element.clientLeft;
+        yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+        element = element.offsetParent;
+      }
+
+      return {
+        x: xPosition,
+        y: yPosition
+      };
     }
 
-    return {
-      x: xPosition,
-      y: yPosition
-    };
-  }
-
-  // Add an event listener so the function below runs everytime a scroll is done
-  document.addEventListener("scroll", function(event) {
-    /* Define vars that help with determining vertical scroll position 
+    // Add an event listener so the function below runs everytime a scroll is done
+    document.addEventListener("scroll", function(event) {
+      /* Define vars that help with determining vertical scroll position 
   (https://stackoverflow.com/questions/11193453/find-the-vertical-position-of-scrollbar-without-jquery)
   These need constant re-defining otherwise they give old values */
-    supportPageOffset = window.pageXOffset !== undefined;
-    isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+      supportPageOffset = window.pageXOffset !== undefined;
+      isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
 
-    scrollTop = supportPageOffset
-      ? window.pageYOffset
-      : isCSS1Compat
-        ? document.documentElement.scrollTop
-        : document.body.scrollTop;
+      scrollTop = supportPageOffset
+        ? window.pageYOffset
+        : isCSS1Compat
+          ? document.documentElement.scrollTop
+          : document.body.scrollTop;
 
-    // Uncomment these two console logs below if you want an idea of how this works
-    //   console.log("hit");
-    console.log(scrollTop);
-    console.log(splashInnerContentContainerHeight);
-    console.log(splashInnerContentContainerDistanceFromTop);
+      // Uncomment these two console logs below if you want an idea of how this works
+      //   console.log("hit");
+      console.log(scrollTop);
+      console.log(splashInnerContentContainerHeight);
+      console.log(splashInnerContentContainerDistanceFromTop);
 
-    if (
-      scrollTop >=
-      splashInnerContentContainerHeight +
-        splashInnerContentContainerDistanceFromTop
-    ) {
-      if (!fixedHeader.classList.contains("show")) {
-        fixedHeader.classList.add("show");
+      if (
+        scrollTop >=
+        splashInnerContentContainerHeight +
+          splashInnerContentContainerDistanceFromTop
+      ) {
+        if (!fixedHeader.classList.contains("show")) {
+          fixedHeader.classList.add("show");
+        }
+      } else if (
+        scrollTop <
+        splashInnerContentContainerHeight +
+          splashInnerContentContainerDistanceFromTop
+      ) {
+        if (fixedHeader.classList.contains("show")) {
+          fixedHeader.classList.remove("show");
+        }
       }
-    } else if (
-      scrollTop <
-      splashInnerContentContainerHeight +
-        splashInnerContentContainerDistanceFromTop
-    ) {
-      if (fixedHeader.classList.contains("show")) {
-        fixedHeader.classList.remove("show");
-      }
-    }
-  });
+    });
+  } else {
+    document.querySelectorAll(".fixed-header-bar")[0].classList.add("show");
+  }
 
   //   if (scrollTop >= splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && !fixedHeaderMobile.classList.contains("show")) {
   //     fixedHeaderMobile.classList.add("show");
@@ -201,9 +208,6 @@ Video output depending on mobile or not
   //
   //
   var scroll = new SmoothScroll('a[href*="#"]');
-
-
-
 
   /**** TIMELINE - About Us ****/
   (function() {
@@ -288,19 +292,63 @@ Video output depending on mobile or not
     }
   })(); // end of timeline function
 
-
-// MOBILE NAV-BAR
-// 
-// 
-// 
+  // MOBILE NAV-BAR
+  //
+  //
+  //
   $("ul li > a:not(:only-child)").click(function(e) {
-    $(this).siblings('.nav-dropdown').toggle();
+    $(this)
+      .siblings(".nav-dropdown")
+      .toggle();
     console.log("hi");
-    $('.nav-dropdown').not($(this).siblings()).hide();
+    $(".nav-dropdown")
+      .not($(this).siblings())
+      .hide();
     e.stopPropagation();
   });
-  $('html').click(function() {
-    $('.nav-dropdown').hide();
+  $("html").click(function() {
+    $(".nav-dropdown").hide();
   });
 
+  /****
+   * CONTACT FORM SUBMIT
+   ****/
+
+  if ($(".main-container").hasClass("contact-us")) {
+    // The actual form submission
+    $("#contact-form").submit(function(event) {
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      var $this = $("#contact-form .btn");
+      if ($this.hasClass("active") || $this.hasClass("success")) {
+        return false;
+      }
+      // Init loding
+      $this.addClass("active");
+      //Loading
+      $this.addClass("loader");
+
+      /* get some values from elements on the page: */
+      var $form = $(this),
+        name_value = $form.find('input[name="name"]').val(),
+        email_value = $form.find('input[name="email"]').val(),
+        message_value = $form.find('textarea[name="message"]').val(),
+        url = $form.attr("action");
+
+      /* Send the data using post */
+      var posting = $.post(url, {
+        name: name_value,
+        email: email_value,
+        message: message_value
+      });
+
+      posting.done(function(data) {
+        //Success
+        $this.removeClass("loader active");
+        $this.text("Your message has been sent successfully");
+        $this.addClass("success animated pulse");
+      });
+    });
+  }
 }); // end of document ready, put everything inside here

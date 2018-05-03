@@ -20,7 +20,7 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Petrona" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Neuton:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
     
     <!-- FAVICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=zXrKnYgOdk">
