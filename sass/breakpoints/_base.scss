@@ -264,14 +264,13 @@ HEADER STYLES
 
             &:not(:only-child):after {
               padding-left: 4px;
-              content: ' ▾';
+              content: " ▾";
             }
           }
 
           ul li {
             width: 100%;
             a {
-
             }
           }
         }
@@ -288,8 +287,6 @@ HEADER STYLES
   }
 
   .dropdown {
-
-
     span {
       @include flexbox();
       @include align-items(center);
@@ -399,14 +396,14 @@ HEADER STYLES
     text-decoration: none;
   }
 
-    h3 {
-      margin: 0;
-      padding-left: 15px;
-      color: black;
-      font-family: $petrona;
-      font-weight: 400;
-      font-size: 19px;
-    }
+  h3 {
+    margin: 0;
+    padding-left: 15px;
+    color: black;
+    font-family: $petrona;
+    font-weight: 400;
+    font-size: 19px;
+  }
 
   img {
     height: 40px;

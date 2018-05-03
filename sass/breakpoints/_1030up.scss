@@ -111,7 +111,6 @@ HEADER STYLES
     .fixed-header-mobile {
       display: none;
     }
-
   }
 
   .dropdown {
@@ -181,7 +180,6 @@ HEADER STYLES
       text-decoration: none;
       font-weight: 400;
       font-size: 15px;
-      margin-right: 40px;
     }
 
     > a:nth-of-type(3) {
@@ -531,9 +529,8 @@ ABOUT US PAGE
 **************/
 
 .main-container.about-us {
-
   .splash {
-
+    background-attachment: fixed;
     .header-container {
       @include flexbox();
       @include justify-content(space-between);
