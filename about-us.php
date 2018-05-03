@@ -77,6 +77,7 @@ END OF TEMPLATE
 
 						<div class="static-dropdown">
 
+							<div></div>
 							<span>
 								<a href="index.php#companies">Companies &#8811</a>
 							</span>
