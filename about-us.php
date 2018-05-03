@@ -76,7 +76,7 @@ END OF TEMPLATE
 						<a href="#about">Contact Us</a>
 
 						<div class="static-dropdown">
-
+<div></div>
 							<span>
 								<a href="index.php#companies">Companies &#8811</a>
 							</span>
