@@ -23,6 +23,8 @@
 
 				      <button class="nav-toggle"><img src="img/hamburger-menu.svg"></button>
 
+				      <button class="nav-toggle-cross"><img src="img/cross.svg"></button>
+
 				    </div>
 
 						<div class="fixed-header-mobile">

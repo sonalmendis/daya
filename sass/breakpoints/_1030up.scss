@@ -163,6 +163,14 @@ HEADER STYLES
     max-height: 400px;
     overflow: scroll;
     overflow-x: hidden;
+
+    a {
+      height: 106px;
+
+      h3 {
+        font-size: 22px;
+      }
+    }
   }
 
   .hvr-grow-shadow {
