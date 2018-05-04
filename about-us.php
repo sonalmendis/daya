@@ -89,7 +89,7 @@ END OF TEMPLATE
 
 						</div>
 
-						<a href="about-us.php#board">Board of Directors</a>
+						<a href="#board">Board of Directors</a>
 					</div>
 				</div>
 			</div>

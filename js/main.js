@@ -200,8 +200,7 @@ Video output depending on mobile or not
 	//
 	//
 	//
-	var scroll = new SmoothScroll('a[href*="#"]');
-
+	var scroll = new SmoothScroll('a[href*=".#"]');
 
 
 
