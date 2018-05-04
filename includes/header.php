@@ -21,15 +21,16 @@
 								</a>
 							</div>
 
-				      <a class="nav-toggle"><img src="img/hamburger-menu.svg"></a>
+				      <button class="nav-toggle"><img src="img/hamburger-menu.svg"></button>
+
 				    </div>
 
 						<div class="fixed-header-mobile">
 
 						  <ul class="nav-list">
-						    <li><a href="#!">About Us</a></li>
-						    <li><a href="#!">Contact Us</a></li>
-						    <li><a href="#!">Board of Directors</a></li>
+						    <li><a href="about-us.php">About Us</a></li>
+						    <li><a href="contact-us.php">Contact Us</a></li>
+						    <li><a href="about-us.php#board">Board of Directors</a></li>
 					    	<li><a href="#!">Companies &#8811</a>
 									<div class="nav-dropdown">
 									<div class="dropdown-content">

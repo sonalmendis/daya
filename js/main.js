@@ -292,22 +292,38 @@ Video output depending on mobile or not
 // MOBILE NAV-BAR
 // 
 // 
-// 
+//
+// Click listener Companies, toggles dropdown
   $("ul li > a:not(:only-child)").click(function(e) {
     $(this).siblings('.nav-dropdown').toggle();
-    console.log("hi");
     $('.nav-dropdown').not($(this).siblings()).hide();
+    $('.nav-list').toggleClass("nav-list-show");
     e.stopPropagation();
   });
-  $('html').click(function() {
-    $('.nav-dropdown').hide();
-  });
 
+// Click listener hamburger, toggles nav-list
   $(".nav-toggle").click(function() {
     $(".nav-list").toggle();
     $("body").toggleClass("body-scroll");
-    console.log("hello");
+
+    if ($(".nav-dropdown").css("display", "block")) {
+      $(".nav-dropdown").hide();
+      $('.nav-list').removeClass("nav-list-show");
+    };
   });
+
+// Click listener to close nav-list
+  $(document).click(function(){
+    $(".nav-list").hide();
+    $("body").removeClass("body-scroll");
+    $('.nav-list').removeClass("nav-list-show");
+  });
+
+// Click listener makes sure above is correctly selected
+  $(".nav-list, .fixed-header-inner-inner").click(function(e){
+    e.stopPropagation();
+  });
+
 
   // if (
   //   scrollTop >= 140

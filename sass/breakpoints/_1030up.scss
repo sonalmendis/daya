@@ -105,8 +105,15 @@ HEADER STYLES
     @include justify-content(space-between);
 
     .fixed-header-inner-inner {
+      @include justify-content(center);
+      width: auto;
+
       .nav-toggle{
         display: none;
+      }
+
+      .daya-index-anchor {
+        position: relative;
       }
 
       a {
@@ -156,6 +163,11 @@ HEADER STYLES
     max-height: 400px;
     overflow: scroll;
     overflow-x: hidden;
+  }
+
+  .hvr-grow-shadow {
+    margin: 0;
+    width: 100%;
   }
 
   .dropdown:hover .dropdown-content {
