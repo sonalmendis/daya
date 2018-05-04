@@ -80,11 +80,11 @@ END OF TEMPLATE
 								<a href="index.php#companies">Companies &#8811</a>
 							</span>
 
-							<div class="static-dropdown-content">
+<!-- 							<div class="static-dropdown-content">
 								<a href="#">Company 1</a>
 								<a href="#">Company 2</a>
 								<a href="#">Company 3</a>
-							</div>
+							</div> -->
 
 						</div>
 

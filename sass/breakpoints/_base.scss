@@ -113,6 +113,11 @@ body {
   }
 }
 
+// Stops body scrolling when menu is open in mobile
+.body-scroll {
+  overflow: hidden;
+}
+
 /*
   Mixin to fix object-fit in IE without having to write out font-family everywhere
   https://github.com/bfred-it/object-fit-images
@@ -242,6 +247,77 @@ HEADER STYLES
     @include flex-wrap(wrap);
     height: 100%;
 
+    .fixed-header-inner-inner {
+      @include flexbox;
+      @include flex-direction(row);
+      @include justify-content(flex-end);
+      @include align-items(center);
+      width: 100%;
+      height: 100%;
+
+      .daya-index-anchor {
+        @include flexbox;
+        position: absolute;
+        width: 100%;
+        @include justify-content(center);
+        z-index: 1;
+
+        h3 {
+          padding-left: 15px;
+        }
+      }
+
+      .nav-toggle {
+        margin-right: 20px;
+        z-index: 2;
+
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        box-shadow: none;
+        outline: 0;
+
+        @include flexbox;
+        @include align-items(center);
+
+        img {
+          width: 20px;
+          height: 15px;
+        }
+      }
+
+      .nav-toggle-cross {
+        margin-right: 22px;
+        margin-top: 5px;
+        z-index: 2;
+
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        box-shadow: none;
+        outline: 0;
+
+        @include flexbox;
+        @include align-items(center);
+        display: none;
+
+        img {
+          width: 14px;
+          height: auto;
+        }
+      }
+
+      button:focus {
+        outline: none!important;
+      }
+    }
+
     .fixed-header-mobile {
       width: 100%;
 
@@ -254,14 +330,18 @@ HEADER STYLES
           float: left;
           position: relative;
           width: 100%;
+          background-color: black;
 
-          a {
-            display: block;
-            padding: 0 20px;
+          > a {
             line-height: 70px;
-            background-color: black;
             color: white;
             text-decoration: none;
+            width: 60%;
+            margin: 0 auto;
+            border-top: solid 1px #3a3a3a;
+            min-width: 260px;
+            max-width: 360px;
+            font-size: 17px;
 
             &:not(:only-child):after {
               padding-left: 4px;
@@ -275,12 +355,24 @@ HEADER STYLES
             }
           }
         }
+
+        li:nth-of-type(1) > a {
+          border-top: none;
+        }
       }
     }
+  }
 
-    > a {
-      width: 100%;
-    }
+  .nav-list  {
+    display: none;
+    margin-top: 50px;    
+    // box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-list-show {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 40px); //height of fixed header - 10px weird space ul
   }
 
   .nav-dropdown {
@@ -296,6 +388,13 @@ HEADER STYLES
     }
   }
 
+
+
+// SHOULD BE ABLE TO REMOVE THIS WHEN DOING POSITIONING OF DESKTOP DROPDOWN
+// 
+// 
+// 
+// 
   .dropdown-content-outer {
     padding-left: 0;
     padding-right: 0;
@@ -305,49 +404,37 @@ HEADER STYLES
     margin-right: -155px; //133px + 122px
     position: absolute;
   }
+  // 
+  // 
+  // 
+  // 
+  // 
 
-  .dropdown-content {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: visibility 0s, opacity 0.2s linear;
-    transition: visibility 0s, opacity 0.2s linear;
-    right: -82px;
-    position: absolute;
-    background-color: white;
-    min-width: 400px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    z-index: -1;
-    max-height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
-  }
 
-  .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-  }
+  // .dropdown-content {
+  //   opacity: 0;
+  //   -webkit-transition: visibility 0s, opacity 0.2s linear;
+  //   transition: visibility 0s, opacity 0.2s linear;
+  //   position: absolute;
+  //   background-color: white;
+  //   min-width: 400px;
+  //   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  //   z-index: 2;
+  //   max-height: 400px;
+  //   overflow: scroll;
+  //   overflow-x: hidden;
+  // }
 
-  /*
- *  SCROLLBAR FOR DROPDOWN */
-
-  .dropdown-content::-webkit-scrollbar-track {
-    border-radius: 0px;
-    background-color: #cacaca;
-  }
-
-  .dropdown-content::-webkit-scrollbar {
-    width: 9px;
-    background-color: #f5f5f5;
-  }
-
-  .dropdown-content::-webkit-scrollbar-thumb {
-    border-radius: 0px;
-    background-color: #555;
-  }
+  // .dropdown-content {
+  //   @include flexbox;
+  //   @include align-items(center);
+  //   @include justify-content(center);
+  //   @include flex-direction(column);
+  // }
 
   .dropdown-content a {
     position: relative;
-    height: 106px;
+    height: 90px;
     float: none;
     color: black;
     text-decoration: none;
@@ -374,7 +461,7 @@ HEADER STYLES
       z-index: 1;
     }
     h3 {
-      font-size: 22px;
+      font-size: 18px;
       font-family: $neuton;
       font-weight: 400;
       color: #fff;
@@ -399,11 +486,10 @@ HEADER STYLES
 
   h3 {
     margin: 0;
-    padding-left: 15px;
     color: black;
     font-family: $petrona;
     font-weight: 400;
-    font-size: 19px;
+    font-size: 16px;
   }
 
   img {

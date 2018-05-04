@@ -9,10 +9,10 @@ $(document).ready(function() {
   });
 
   /*
-   * Get Viewport Dimensions
-   * returns object with viewport dimensions to match css in width and height properties
-   * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
-   */
+	 * Get Viewport Dimensions
+	 * returns object with viewport dimensions to match css in width and height properties
+	 * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
+	 */
 
   var w = window,
     d = document,
@@ -54,84 +54,77 @@ $(document).ready(function() {
   });
 
   /****
-   HEADER
-   ****/
-  if (!$(".main-container").hasClass("contact-us")) {
-    // Fixed header
-    var splashInnerContentContainer = document.querySelectorAll(
-      ".splash-inner-container"
-    )[0];
-    var splashInnerContentContainerHeight =
-      splashInnerContentContainer.scrollHeight;
-    var splashInnerContentContainerDistanceFromTop = getPosition(
-      splashInnerContentContainer
-    ).y;
+	 HEADER
+	 ****/
+  // Fixed header
+  var splashInnerContentContainer = document.querySelectorAll(
+    ".splash-inner-container"
+  )[0];
+  var splashInnerContentContainerHeight =
+    splashInnerContentContainer.scrollHeight;
+  var splashInnerContentContainerDistanceFromTop = getPosition(
+    splashInnerContentContainer
+  ).y;
 
-    var fixedHeader = document.querySelectorAll(".fixed-header-bar")[0];
-    var fixedHeaderMobile = document.querySelectorAll(
-      ".fixed-header-mobile"
-    )[0];
-    var scrollTop;
+  var fixedHeader = document.querySelectorAll(".fixed-header-bar")[0];
+  var fixedHeaderMobile = document.querySelectorAll(".fixed-header-mobile")[0];
+  var scrollTop;
 
-    // This function gets the distance of an element from the top
-    function getPosition(element) {
-      var xPosition = 0;
-      var yPosition = 0;
+  // This function gets the distance of an element from the top
+  function getPosition(element) {
+    var xPosition = 0;
+    var yPosition = 0;
 
-      while (element) {
-        xPosition +=
-          element.offsetLeft - element.scrollLeft + element.clientLeft;
-        yPosition += element.offsetTop - element.scrollTop + element.clientTop;
-        element = element.offsetParent;
-      }
-
-      return {
-        x: xPosition,
-        y: yPosition
-      };
+    while (element) {
+      xPosition += element.offsetLeft - element.scrollLeft + element.clientLeft;
+      yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+      element = element.offsetParent;
     }
 
-    // Add an event listener so the function below runs everytime a scroll is done
-    document.addEventListener("scroll", function(event) {
-      /* Define vars that help with determining vertical scroll position 
-  (https://stackoverflow.com/questions/11193453/find-the-vertical-position-of-scrollbar-without-jquery)
-  These need constant re-defining otherwise they give old values */
-      supportPageOffset = window.pageXOffset !== undefined;
-      isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
-
-      scrollTop = supportPageOffset
-        ? window.pageYOffset
-        : isCSS1Compat
-          ? document.documentElement.scrollTop
-          : document.body.scrollTop;
-
-      // Uncomment these two console logs below if you want an idea of how this works
-      //   console.log("hit");
-      console.log(scrollTop);
-      console.log(splashInnerContentContainerHeight);
-      console.log(splashInnerContentContainerDistanceFromTop);
-
-      if (
-        scrollTop >=
-        splashInnerContentContainerHeight +
-          splashInnerContentContainerDistanceFromTop
-      ) {
-        if (!fixedHeader.classList.contains("show")) {
-          fixedHeader.classList.add("show");
-        }
-      } else if (
-        scrollTop <
-        splashInnerContentContainerHeight +
-          splashInnerContentContainerDistanceFromTop
-      ) {
-        if (fixedHeader.classList.contains("show")) {
-          fixedHeader.classList.remove("show");
-        }
-      }
-    });
-  } else {
-    document.querySelectorAll(".fixed-header-bar")[0].classList.add("show");
+    return {
+      x: xPosition,
+      y: yPosition
+    };
   }
+
+  // Add an event listener so the function below runs everytime a scroll is done
+  document.addEventListener("scroll", function(event) {
+    /* Define vars that help with determining vertical scroll position 
+	(https://stackoverflow.com/questions/11193453/find-the-vertical-position-of-scrollbar-without-jquery)
+	These need constant re-defining otherwise they give old values */
+    supportPageOffset = window.pageXOffset !== undefined;
+    isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+
+    scrollTop = supportPageOffset
+      ? window.pageYOffset
+      : isCSS1Compat
+        ? document.documentElement.scrollTop
+        : document.body.scrollTop;
+
+    // Uncomment these two console logs below if you want an idea of how this works
+    //   console.log("hit");
+    console.log(scrollTop);
+    console.log(splashInnerContentContainerHeight);
+    console.log(splashInnerContentContainerDistanceFromTop);
+
+    if (
+      scrollTop >=
+      splashInnerContentContainerHeight +
+        splashInnerContentContainerDistanceFromTop
+    ) {
+      if (!fixedHeader.classList.contains("show")) {
+        fixedHeader.classList.add("show");
+      }
+    } else if (
+      scrollTop <
+      splashInnerContentContainerHeight +
+        splashInnerContentContainerDistanceFromTop
+    ) {
+      if (fixedHeader.classList.contains("show")) {
+        fixedHeader.classList.remove("show");
+      }
+    }
+  });
 
   //   if (scrollTop >= splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && !fixedHeaderMobile.classList.contains("show")) {
   //     fixedHeaderMobile.classList.add("show");
@@ -296,19 +289,74 @@ Video output depending on mobile or not
   //
   //
   //
+  // Click listener Companies, toggles dropdown
   $("ul li > a:not(:only-child)").click(function(e) {
-    $(this)
-      .siblings(".nav-dropdown")
-      .toggle();
-    console.log("hi");
+    // $(this).siblings('.nav-dropdown').toggle();
+    $(".nav-dropdown").slideToggle("600", "swing", function() {
+      // Animation complete.
+    });
     $(".nav-dropdown")
       .not($(this).siblings())
       .hide();
+    $(".nav-list").toggleClass("nav-list-show");
     e.stopPropagation();
   });
-  $("html").click(function() {
-    $(".nav-dropdown").hide();
+
+  // Click listener hamburger, toggles nav-list
+  $(".nav-toggle").click(function() {
+    $(".nav-toggle").toggle();
+    $(".nav-toggle-cross").toggle();
+
+    $(".nav-list").slideToggle(function() {
+      $("body").toggleClass("body-scroll");
+      $(".nav-dropdown").hide();
+      $(".nav-list").removeClass("nav-list-show");
+    });
   });
+
+  $(".nav-toggle-cross").click(function() {
+    $(".nav-toggle").toggle();
+    $(".nav-toggle-cross").toggle();
+
+    $(".nav-list").slideToggle(function() {
+      $("body").toggleClass("body-scroll");
+      $(".nav-dropdown").hide();
+      $(".nav-list").removeClass("nav-list-show");
+    });
+  });
+
+  // Click listener to close nav-list
+  $(document).click(function() {
+    $(".nav-list").slideUp("600", "swing", function() {
+      $(".nav-list").hide();
+      $("body").removeClass("body-scroll");
+      $(".nav-list").removeClass("nav-list-show");
+    });
+
+    $(".nav-toggle").show();
+    $(".nav-toggle-cross").hide();
+  });
+
+  // Click listener makes sure above is correctly selected
+  $(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").click(function(
+    e
+  ) {
+    e.stopPropagation();
+  });
+
+  // if (
+  //   scrollTop >= 140
+  // ) {
+  //   if (!$("ul li > a:not(:only-child)").contains("company-fixed")) {
+  //     $("ul li > a:not(:only-child)").classList.add("company-fixed");
+  //   }
+  // } else if (
+  //   scrollTop < 140
+  // ) {
+  //   if ($("ul li > a:not(:only-child)").classList.contains("company-fixed")) {
+  //     $("ul li > a:not(:only-child)").classList.remove("company-fixed");
+  //   }
+  // }
 
   /****
    * CONTACT FORM SUBMIT
