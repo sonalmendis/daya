@@ -303,4 +303,24 @@ Video output depending on mobile or not
     $('.nav-dropdown').hide();
   });
 
+  $(".nav-toggle").click(function() {
+    $(".nav-list").toggle();
+    $("body").toggleClass("body-scroll");
+    console.log("hello");
+  });
+
+  // if (
+  //   scrollTop >= 140
+  // ) {
+  //   if (!$("ul li > a:not(:only-child)").contains("company-fixed")) {
+  //     $("ul li > a:not(:only-child)").classList.add("company-fixed");
+  //   }
+  // } else if (
+  //   scrollTop < 140
+  // ) {
+  //   if ($("ul li > a:not(:only-child)").classList.contains("company-fixed")) {
+  //     $("ul li > a:not(:only-child)").classList.remove("company-fixed");
+  //   }
+  // }
+
 }); // end of document ready, put everything inside here

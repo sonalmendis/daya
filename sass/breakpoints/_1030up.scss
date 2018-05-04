@@ -104,8 +104,16 @@ HEADER STYLES
     @include outer-grid;
     @include justify-content(space-between);
 
-    > a {
-      width: auto;
+    .fixed-header-inner-inner {
+      .nav-toggle{
+        display: none;
+      }
+
+      a {
+        h3 {
+          font-size: 19px;
+        }
+      }
     }
 
     .fixed-header-mobile {
@@ -131,6 +139,7 @@ HEADER STYLES
     @include outer-grid;
     margin-right: -155px;
     width: 1vh;
+    position: absoulte;
   }
 
   .dropdown-content {
@@ -153,6 +162,9 @@ HEADER STYLES
     opacity: 1;
     visibility: visible;
   }
+
+  /*
+ *  SCROLLBAR FOR DROPDOWN */
 
   .dropdown-content::-webkit-scrollbar-track {
     border-radius: 0px;

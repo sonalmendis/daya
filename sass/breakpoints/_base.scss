@@ -113,6 +113,11 @@ body {
   }
 }
 
+// Stops body scrolling when menu is open in mobile
+.body-scroll {
+  overflow: hidden;
+}
+
 /*
   Mixin to fix object-fit in IE without having to write out font-family everywhere
   https://github.com/bfred-it/object-fit-images
@@ -241,6 +246,27 @@ HEADER STYLES
     @include flex-wrap(wrap);
     height: 100%;
 
+    .fixed-header-inner-inner {
+      @include flexbox;
+      @include flex-direction(row);
+      @include justify-content(flex-end);
+      width: 100%;
+
+      .daya-index-anchor {
+        @include flexbox;
+        position: absolute;
+        width: 100%;
+        @include justify-content(center);
+        z-index: 1;
+      }
+
+      .nav-toggle {
+        width: 30px;
+        margin-right: 10px;
+        z-index: 2;
+      }
+    }
+
     .fixed-header-mobile {
       width: 100%;
 
@@ -255,7 +281,7 @@ HEADER STYLES
           width: 100%;
 
           a {
-            display: block;
+            @include flexbox;
             padding: 0 20px;
             line-height: 70px;
             background-color: black;
@@ -283,6 +309,14 @@ HEADER STYLES
     }
   }
 
+  .nav-list  {
+    display: none;
+    margin-top: 50px;
+    height: calc(100vh - 40px); //height of fixed header - 10px weird space ul
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
   .nav-dropdown {
     display: none;
   }
@@ -298,6 +332,17 @@ HEADER STYLES
     }
   }
 
+  .company-fixed {
+    position: absolute;
+  }
+
+
+
+// SHOULD BE ABLE TO REMOVE THIS WHEN DOING POSITIONING OF DESKTOP DROPDOWN
+// 
+// 
+// 
+// 
   .dropdown-content-outer {
     padding-left: 0;
     padding-right: 0;
@@ -307,45 +352,33 @@ HEADER STYLES
     margin-right: -155px; //133px + 122px
     position: absolute;
   }
+  // 
+  // 
+  // 
+  // 
+  // 
 
-  .dropdown-content {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: visibility 0s, opacity 0.2s linear;
-    transition: visibility 0s, opacity 0.2s linear;
-    right: -82px;
-    position: absolute;
-    background-color: white;
-    min-width: 400px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    z-index: -1;
-    max-height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
-  }
 
-  .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-  }
+  // .dropdown-content {
+  //   opacity: 0;
+  //   -webkit-transition: visibility 0s, opacity 0.2s linear;
+  //   transition: visibility 0s, opacity 0.2s linear;
+  //   position: absolute;
+  //   background-color: white;
+  //   min-width: 400px;
+  //   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  //   z-index: 2;
+  //   max-height: 400px;
+  //   overflow: scroll;
+  //   overflow-x: hidden;
+  // }
 
-  /*
- *  SCROLLBAR FOR DROPDOWN */
-
-  .dropdown-content::-webkit-scrollbar-track {
-    border-radius: 0px;
-    background-color: #cacaca;
-  }
-
-  .dropdown-content::-webkit-scrollbar {
-    width: 9px;
-    background-color: #f5f5f5;
-  }
-
-  .dropdown-content::-webkit-scrollbar-thumb {
-    border-radius: 0px;
-    background-color: #555;
-  }
+  // .dropdown-content {
+  //   @include flexbox;
+  //   @include align-items(center);
+  //   @include justify-content(center);
+  //   @include flex-direction(column);
+  // }
 
   .dropdown-content a {
     position: relative;
@@ -399,6 +432,7 @@ HEADER STYLES
     text-decoration: none;
   }
 
+<<<<<<< Updated upstream
     h3 {
       margin: 0;
       padding-left: 15px;
@@ -407,6 +441,16 @@ HEADER STYLES
       font-weight: 400;
       font-size: 19px;
     }
+=======
+  h3 {
+    margin: 0;
+    padding-left: 15px;
+    color: black;
+    font-family: $petrona;
+    font-weight: 400;
+    font-size: 16px;
+  }
+>>>>>>> Stashed changes
 
   img {
     height: 40px;
