@@ -313,7 +313,7 @@ HEADER STYLES
       }
 
       button:focus {
-        outline: none!important;
+        outline: none !important;
       }
     }
 
@@ -362,9 +362,9 @@ HEADER STYLES
     }
   }
 
-  .nav-list  {
+  .nav-list {
     display: none;
-    margin-top: 50px;    
+    margin-top: 50px;
     // box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.2);
   }
 
@@ -387,13 +387,11 @@ HEADER STYLES
     }
   }
 
-
-
-// SHOULD BE ABLE TO REMOVE THIS WHEN DOING POSITIONING OF DESKTOP DROPDOWN
-// 
-// 
-// 
-// 
+  // SHOULD BE ABLE TO REMOVE THIS WHEN DOING POSITIONING OF DESKTOP DROPDOWN
+  //
+  //
+  //
+  //
   .dropdown-content-outer {
     padding-left: 0;
     padding-right: 0;
@@ -403,12 +401,11 @@ HEADER STYLES
     margin-right: -155px; //133px + 122px
     position: absolute;
   }
-  // 
-  // 
-  // 
-  // 
-  // 
-
+  //
+  //
+  //
+  //
+  //
 
   // .dropdown-content {
   //   opacity: 0;
