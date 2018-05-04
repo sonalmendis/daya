@@ -340,7 +340,7 @@ Video output depending on mobile or not
 	});
 
 // Click listener makes sure above is correctly selected
-	$(".nav-list, .fixed-header-inner-inner").click(function(e){
+	$(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").click(function(e){
 		e.stopPropagation();
 	});
 
