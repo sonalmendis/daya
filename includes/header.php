@@ -32,16 +32,16 @@
 						    <li><a href="#!">Board of Directors</a></li>
 					    	<li><a href="#!">Companies &#8811</a>
 									<div class="nav-dropdown">
-										<div class="dropdown-content">
-											<cms:pages masterpage='company-profile.php'>
-											<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
-											<h3><cms:show k_page_title /></h3>
-											<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
-											<div class="black-overlay"></div>
-											
-										</a>
-											</cms:pages>
-										</div>
+									<div class="dropdown-content">
+										<cms:pages masterpage='company-profile.php'>
+										<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
+										<h3><cms:show k_page_title /></h3>
+										<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
+										<div class="black-overlay"></div>
+										
+									</a>
+										</cms:pages>
+									</div>
 									</div>
 						    </li>
 						  </ul>
