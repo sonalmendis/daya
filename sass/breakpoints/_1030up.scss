@@ -302,11 +302,10 @@ HOME PAGE
   }
   .intro-section {
     @include inner-grid();
+    margin-bottom: 67px;
+
     p {
     }
-  }
-  #companies {
-    padding-top: 60px;
   }
 
   .our-industries-section {
@@ -694,7 +693,7 @@ ABOUT US PAGE
     }
 
     .cd-timeline {
-      margin-bottom: 67px;
+      margin-bottom: 0;
       padding-top: 67px;
       padding-bottom: 67px;
     }
@@ -780,7 +779,7 @@ ABOUT US PAGE
     }
 
     #board {
-      margin-top: 0;
+      padding-top: 67px;
     }
 
     .achievements {

@@ -170,7 +170,13 @@ $(document).ready(function() {
   sr.reveal(".intro-section", {
     duration: 1000
   });
+	sr.reveal(".intro", {
+    duration: 1000
+  });
   sr.reveal(".industry-block");
+  sr.reveal(".director_card", {
+  	duration: 1000
+  });
   // sr.reveal(".industry-block", { duration: 1000, viewFactor: 0.1 }, 50);
 
   /****

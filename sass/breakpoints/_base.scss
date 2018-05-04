@@ -918,6 +918,10 @@ ABOUT US PAGE
       margin-bottom: 47px;
     }
 
+    #board {
+      padding-top: 47px;
+    }
+
     .intro {
       @include flexbox();
       @include justify-content(center);
@@ -948,7 +952,8 @@ ABOUT US PAGE
       overflow: hidden;
       border-top: 1px solid $grey;
       border-bottom: 1px solid $grey;
-      margin: 47px auto;
+      margin-top: 47px;
+      margin-bottom: 0;
       padding-top: 47px;
       padding-bottom: 47px;
     }
