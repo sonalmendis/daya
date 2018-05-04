@@ -850,12 +850,12 @@ ABOUT US PAGE
   }
 
   .main-wrapper {
-    height: 90vh;
   }
 
   .splash {
     margin-bottom: 27px;
     text-align: center;
+    height: 340px;
     height: 90vh;
     width: 100%;
     background-repeat: no-repeat;
@@ -901,7 +901,6 @@ ABOUT US PAGE
 
       h1 {
         color: #fff;
-        margin-bottom: 12px;
       }
 
       h3 {
@@ -1276,6 +1275,207 @@ ABOUT US PAGE
   }
 }
 
+/****
+CONTACT US PAGE
+****/
+.main-container.contact-us {
+  height: auto;
+  .splash {
+    position: relative;
+    margin-bottom: 27px;
+    text-align: center;
+    height: 340px;
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    position: relative;
+
+    h1 {
+      font-size: 42px;
+      margin: 45px 0 51px 0;
+    }
+    .divider {
+      margin: 0;
+      position: relative;
+      margin: 20px 0;
+      border-bottom: 1px solid $black;
+      .marker {
+        top: 2px;
+      }
+    }
+
+    .splash-outer-container {
+      @include outer-grid;
+      margin-top: -67px;
+      width: 100%;
+    }
+
+    .splash-inner-container {
+      z-index: 2;
+      position: relative;
+
+      h1 {
+        color: $black;
+      }
+
+      h3 {
+        color: $black;
+        font-family: $montserrat;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+        font-size: 13px;
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  .main-content {
+    margin-top: -147px;
+    z-index: 2;
+    position: relative;
+    .contact-block {
+      text-align: center;
+      margin-bottom: 47px;
+      h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: $montserrat;
+        font-weight: 300;
+        margin-bottom: 8px;
+      }
+      h2 {
+        font-family: $montserrat;
+        font-weight: 700;
+        margin: 0;
+        font-size: 18px;
+      }
+    }
+    .contact-block:not(.address) {
+      @include inner-grid();
+      text-align: center;
+    }
+
+    // FORM
+    #contact-form {
+      margin-bottom: 47px;
+      @include inner-grid();
+      h1 {
+        margin-bottom: 12px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 47px;
+        font-weight: 300;
+        letter-spacing: 0;
+      }
+      input,
+      textarea {
+        transition: background-color 0.2s;
+        display: block;
+        resize: none;
+        background-color: #e4e4e4;
+        outline: none;
+        border: none;
+        padding: 14px 12px;
+        color: #4d4d4d;
+        width: 100%;
+        margin-bottom: 22px;
+        font-size: 18px;
+      }
+      input:focus,
+      textarea:focus {
+        background-color: $green;
+        outline: none;
+        border: none;
+        box-shadow: none;
+        color: #fff;
+      }
+      textarea {
+        height: 180px;
+      }
+
+      $buttonColor: $green;
+      $successColor: $green;
+
+      %flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      button.btn {
+        @extend %flex;
+        width: 100px;
+        padding: 20px 20px;
+        background: transparent;
+        will-change: transform;
+        border-radius: 0;
+        transition: all 0.2s ease;
+        border: 2px solid $buttonColor;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 18px;
+        color: $buttonColor;
+        outline: none;
+        text-align: center;
+        box-shadow: none !important;
+        margin-left: auto;
+        margin-right: auto;
+        &:hover {
+          background: $buttonColor;
+          color: #ffffff;
+        }
+        &:active {
+          font-size: 15px;
+          transform: translateY(1px);
+        }
+        &.active {
+          font-size: 0;
+          border-radius: 100%;
+          width: 50px;
+          height: 50px;
+          background: transparent;
+        }
+        &.loader {
+          border-right: 2px solid #ffffff;
+          animation: loader 0.4s linear infinite;
+        }
+        &.success {
+          background: $successColor;
+          border-color: $successColor;
+          font-size: 18px;
+          color: #ffffff;
+          width: 100%;
+        }
+      }
+      button.btn:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      @keyframes loader {
+        0% {
+          transform: rotateZ(0);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+    }
+  }
+}
 /**************
 FOOTER
 **************/

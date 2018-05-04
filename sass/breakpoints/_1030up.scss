@@ -97,6 +97,7 @@ p.large {
 HEADER STYLES
 *************/
 .fixed-header-bar {
+  display: block;
   height: 60px;
   margin-top: -183px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
 
@@ -561,8 +562,24 @@ ABOUT US PAGE
 **************/
 
 .main-container.about-us {
+  .main-wrapper {
+    height: auto;
+  }
   .splash {
+    height: 560px;
     background-attachment: fixed;
+    h1 {
+      margin: 57px 0 62px 0;
+    }
+    .splash-outer-container {
+      @include inner-grid();
+    }
+    .divider-outer-container {
+      @include inner-grid();
+    }
+    .divider {
+      margin: 0;
+    }
     .header-container {
       @include flexbox();
       @include justify-content(space-between);
@@ -781,6 +798,56 @@ ABOUT US PAGE
 
       .awards_txt {
         @include inner-inner-grid;
+      }
+    }
+  }
+}
+
+/****
+CONTACT US PAGE
+*****/
+.main-container.contact-us {
+  .splash {
+    height: 560px;
+    .divider {
+      margin: 0;
+    }
+    h1 {
+      margin: 57px 0 62px 0;
+      font-size: 56px;
+    }
+    .header-container {
+      @include flexbox();
+      @include justify-content(space-between);
+      @include align-items(flex-start);
+      @include outer-grid;
+      height: 100%;
+      z-index: 1;
+      position: absolute;
+    }
+    .splash-outer-container {
+      @include inner-grid();
+    }
+    .divider-outer-container {
+      @include inner-grid();
+    }
+  }
+
+  .main-content {
+    .contact-block {
+      margin-bottom: 67px;
+    }
+    .contact-block:not(.address) {
+      @include inner-grid();
+      h2 {
+        font-size: 26px;
+      }
+    }
+    #contact-form {
+      margin-bottom: 87px;
+      @include inner-grid();
+      button.btn {
+        width: auto;
       }
     }
   }
