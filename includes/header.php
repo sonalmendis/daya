@@ -12,28 +12,41 @@
 				<div class="fixed-header-bar">
 					<div class="fixed-header-inner">
 
-						<a href="index.php">
-							<img src="img/logo.svg" alt="Logo" />
-							<h3>Daya Group of Companies</h3>
-						</a>
+						<div class="fixed-header-inner-inner">
 
-					  <div class="nav-mobile">
-				      <a id="nav-toggle" href="#!"><span></span></a>
-					  </div>
+							<div class="daya-index-anchor">
+								<a href="index.php">
+									<img src="img/logo.svg" alt="Logo" />
+									<h3>Daya Group of Companies</h3>
+								</a>
+							</div>
+
+				      <button class="nav-toggle"><img src="img/hamburger-menu.svg"></button>
+
+				      <button class="nav-toggle-cross"><img src="img/cross.svg"></button>
+
+				    </div>
 
 						<div class="fixed-header-mobile">
 
 						  <ul class="nav-list">
-						    <li><a href="#!">About Us</a></li>
-						    <li><a href="#!">Contact Us</a></li>
+						    <li><a href="about-us.php">About Us</a></li>
+						    <li><a href="contact-us.php">Contact Us</a></li>
+						    <li><a href="about-us.php#board">Board of Directors</a></li>
 					    	<li><a href="#!">Companies &#8811</a>
-						      <ul class="nav-dropdown">
-						        <li><a href="#!">Company 1</a></li>
-						        <li><a href="#!">Company 2</a></li>
-						        <li><a href="#!">Company 3 Long Name</a></li>
-						      </ul>
+									<div class="nav-dropdown">
+									<div class="dropdown-content">
+										<cms:pages masterpage='company-profile.php'>
+										<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
+										<h3><cms:show k_page_title /></h3>
+										<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
+										<div class="black-overlay"></div>
+										
+									</a>
+										</cms:pages>
+									</div>
+									</div>
 						    </li>
-						    <li><a href="#!">Board of Directors</a></li>
 						  </ul>
 					  </div>
 
