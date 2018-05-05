@@ -301,6 +301,16 @@ Video output depending on mobile or not
       // Animation styles
     });
     $(".nav-list").toggleClass("nav-list-show");
+    $(this).toggleClass("companies-pressed", "400");
+  });
+
+  // Click listener to close the menu when an option has been picked
+  $("ul li > a:only-child, .nav-dropdown").click(function() {
+    $(".nav-list").slideToggle( "fast", function() {
+      $("body").toggleClass("body-scroll");
+      $(".nav-dropdown").hide();
+      $(".nav-list").removeClass("nav-list-show");
+    });
   });
 
   // Click listener hamburger, toggles nav-list

@@ -118,6 +118,11 @@ body {
   overflow: hidden;
 }
 
+.companies-pressed {
+  background-color: #e2e2e2!important;
+  transition: background-color 0.4s;
+}
+
 /*
   Mixin to fix object-fit in IE without having to write out font-family everywhere
   https://github.com/bfred-it/object-fit-images
@@ -357,11 +362,19 @@ HEADER STYLES
             &:not(:only-child):after {
                 content: " ▾";
             }
+
+            &:not(:only-child) {
+              transition: background-color 0.4s;
+            }
           }
 
-          > a:hover, > a:active {
+          > a:only-child:hover, > a:only-child:active {
             background-color: #e2e2e2;
           }
+
+          // > a:not(:only-child):hover, a:not(:only-child):active {
+          //   background-color: white;
+          // }
 
           ul li {
             width: 100%;
