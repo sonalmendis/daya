@@ -77,7 +77,7 @@
                     </a>
                     <div class="static-header-links">
                         <a href="about-us.php">About Us</a>
-                        <a href="#about">Contact Us</a>
+                        <a href="contact-us.php">Contact Us</a>
 
                         <div class="static-dropdown">
 

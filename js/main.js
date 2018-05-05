@@ -298,14 +298,12 @@ Video output depending on mobile or not
   // Click listener Companies, toggles dropdown
   $("ul li > a:not(:only-child)").click(function(e) {
     // $(this).siblings('.nav-dropdown').toggle();
-    $(".nav-dropdown").slideToggle("600", "swing", function() {
+    $(".nav-dropdown").slideToggle("400", "swing", function() {
       // Animation complete.
     });
-    $(".nav-dropdown")
-      .not($(this).siblings())
-      .hide();
+    // $('.nav-dropdown').not($(this).siblings()).hide();
+    // e.stopPropagation();
     $(".nav-list").toggleClass("nav-list-show");
-    e.stopPropagation();
   });
 
   // Click listener hamburger, toggles nav-list
@@ -313,7 +311,7 @@ Video output depending on mobile or not
     $(".nav-toggle").toggle();
     $(".nav-toggle-cross").toggle();
 
-    $(".nav-list").slideToggle(function() {
+    $(".nav-list").slideToggle( "fast", function() {
       $("body").toggleClass("body-scroll");
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
@@ -324,45 +322,28 @@ Video output depending on mobile or not
     $(".nav-toggle").toggle();
     $(".nav-toggle-cross").toggle();
 
-    $(".nav-list").slideToggle(function() {
+    $(".nav-list").slideToggle( "fast", function() {
       $("body").toggleClass("body-scroll");
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
     });
   });
 
-  // Click listener to close nav-list
-  $(document).click(function() {
-    $(".nav-list").slideUp("600", "swing", function() {
-      $(".nav-list").hide();
+  // Touch listener to close nav-list
+  $(document).on("touchstart", function() {
+	    $(".nav-list").slideUp("fast", "swing", function() {
+	      $(".nav-list").hide();
+    	});
       $("body").removeClass("body-scroll");
       $(".nav-list").removeClass("nav-list-show");
-    });
+	    $(".nav-toggle").show();
+	    $(".nav-toggle-cross").hide();
+	});
 
-    $(".nav-toggle").show();
-    $(".nav-toggle-cross").hide();
-  });
-
-  // Click listener makes sure above is correctly selected
-  $(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").click(function(
-    e
-  ) {
+  // Touch listener makes sure above is correctly selected
+  $(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").on("touchstart", function(e) {
     e.stopPropagation();
   });
-
-  // if (
-  //   scrollTop >= 140
-  // ) {
-  //   if (!$("ul li > a:not(:only-child)").contains("company-fixed")) {
-  //     $("ul li > a:not(:only-child)").classList.add("company-fixed");
-  //   }
-  // } else if (
-  //   scrollTop < 140
-  // ) {
-  //   if ($("ul li > a:not(:only-child)").classList.contains("company-fixed")) {
-  //     $("ul li > a:not(:only-child)").classList.remove("company-fixed");
-  //   }
-  // }
 
   /****
    * CONTACT FORM SUBMIT

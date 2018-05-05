@@ -228,13 +228,13 @@ p.large {
 HEADER STYLES
 *************/
 .fixed-header-bar {
-  height: 50px;
+  height: 72px;
   position: fixed;
   background-color: white;
   -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.07);
-  margin-top: -50px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
+  margin-top: -72px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
   transition: margin 0.3s ease-in-out;
   z-index: 999;
   width: 100%;
@@ -261,6 +261,9 @@ HEADER STYLES
         @include justify-content(center);
         z-index: 1;
 
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+
         h3 {
           padding-left: 15px;
         }
@@ -273,7 +276,7 @@ HEADER STYLES
         background: none;
         color: inherit;
         border: none;
-        padding: 0;
+        padding: 5px;
         font: inherit;
         cursor: pointer;
         box-shadow: none;
@@ -281,6 +284,9 @@ HEADER STYLES
 
         @include flexbox;
         @include align-items(center);
+
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
 
         img {
           width: 20px;
@@ -296,7 +302,7 @@ HEADER STYLES
         background: none;
         color: inherit;
         border: none;
-        padding: 0;
+        padding: 5px;
         font: inherit;
         cursor: pointer;
         box-shadow: none;
@@ -305,6 +311,9 @@ HEADER STYLES
         @include flexbox;
         @include align-items(center);
         display: none;
+
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
 
         img {
           width: 14px;
@@ -324,26 +333,26 @@ HEADER STYLES
         list-style: none;
         margin: 0;
         padding: 0;
+        -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
 
         li {
-          float: left;
           position: relative;
           width: 100%;
-          background-color: black;
 
           > a {
+            -webkit-tap-highlight-color: #e2e2e2;
             line-height: 70px;
-            color: white;
             text-decoration: none;
-            width: 60%;
+            color: black;
             margin: 0 auto;
-            border-top: solid 1px #3a3a3a;
-            min-width: 260px;
-            max-width: 360px;
+            border-top: solid 1px #e2e2e2;
+            width: 100%;
             font-size: 17px;
+            background-color: white;
 
             &:not(:only-child):after {
-              padding-left: 4px;
               content: " ▾";
             }
           }
@@ -355,9 +364,9 @@ HEADER STYLES
           }
         }
 
-        li:nth-of-type(1) > a {
-          border-top: none;
-        }
+        // li:nth-of-type(1) > a {
+        //   border-top: none;
+        // }
       }
     }
   }
@@ -371,7 +380,7 @@ HEADER STYLES
   .nav-list-show {
     overflow: scroll;
     overflow-x: hidden;
-    height: calc(100vh - 40px); //height of fixed header - 10px weird space ul
+    height: calc(100vh - 72px); //height of fixed header - 10px weird space ul
   }
 
   .nav-dropdown {
@@ -384,6 +393,7 @@ HEADER STYLES
       @include align-items(center);
       height: 100%;
       width: 133px; //93px text + 40px margin
+      float: right;
     }
   }
 
@@ -440,6 +450,10 @@ HEADER STYLES
     @include flexbox();
     @include justify-content(center);
     @include align-items(center);
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+
     img {
       position: absolute;
       height: 100%;
@@ -473,7 +487,7 @@ HEADER STYLES
   }
 
   a {
-    height: 50px;
+    height: 72px;
     @include flexbox();
     @include justify-content(center);
     @include align-items(center);
@@ -793,6 +807,10 @@ COMPANY PROFILE PAGE
 
       h2 {
         color: $green;
+        font-weight: 400;
+        text-align: center;
+        padding: 0 50px;
+        line-height: 1.25;
       }
 
       img {

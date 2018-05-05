@@ -45,7 +45,7 @@
                         strives to achieve excellence in customer satisfaction.
                     </p>
                 </cms:editable>
-                <a class="btn big">Learn More
+                <a class="btn big" href="about-us.php">Learn More
                     <img class="right-arrows" src="img/right-arrows.svg" alt="Right Arrows" />
                 </a>
             </div>
