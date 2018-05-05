@@ -33,7 +33,7 @@
 						    <li><a href="about-us.php">About Us</a></li>
 						    <li><a href="contact-us.php">Contact Us</a></li>
 						    <li><a href="about-us.php#board">Board of Directors</a></li>
-					    	<li><a href="#!">Companies</a>
+					    	<li><a href="#!">Companies &nbsp</a>
 									<div class="nav-dropdown">
 									<div class="dropdown-content">
 										<cms:pages masterpage='company-profile.php'>

@@ -297,12 +297,9 @@ Video output depending on mobile or not
   //
   // Click listener Companies, toggles dropdown
   $("ul li > a:not(:only-child)").click(function(e) {
-    // $(this).siblings('.nav-dropdown').toggle();
     $(".nav-dropdown").slideToggle("400", "swing", function() {
-      // Animation complete.
+      // Animation styles
     });
-    // $('.nav-dropdown').not($(this).siblings()).hide();
-    // e.stopPropagation();
     $(".nav-list").toggleClass("nav-list-show");
   });
 

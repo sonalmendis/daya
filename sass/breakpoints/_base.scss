@@ -227,6 +227,7 @@ p.large {
 /*************
 HEADER STYLES
 *************/
+
 .fixed-header-bar {
   height: 72px;
   position: fixed;
@@ -353,7 +354,7 @@ HEADER STYLES
             background-color: white;
 
             &:not(:only-child):after {
-              content: " ▾";
+                content: " ▾";
             }
           }
 
