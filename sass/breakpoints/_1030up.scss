@@ -539,6 +539,10 @@ COMPANY PROFILE PAGE
           margin: 0 0 10px 0;
         }
 
+        .outline-btn:hover {
+          background-color: #353535;
+        }
+
         .contact {
           @include flexbox();
           @include inline-flex;

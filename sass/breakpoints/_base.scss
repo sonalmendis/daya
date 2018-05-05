@@ -343,7 +343,8 @@ HEADER STYLES
           width: 100%;
 
           > a {
-            -webkit-tap-highlight-color: #e2e2e2;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-tap-highlight-color: transparent;
             line-height: 70px;
             text-decoration: none;
             color: black;
@@ -356,6 +357,10 @@ HEADER STYLES
             &:not(:only-child):after {
                 content: " ▾";
             }
+          }
+
+          > a:hover, > a:active {
+            background-color: #e2e2e2;
           }
 
           ul li {
@@ -852,6 +857,12 @@ COMPANY PROFILE PAGE
       display: block;
       margin: 0 auto 17px auto;
       font-size: 14px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .outline-btn:hover, .outline-btn:active {
+      background-color: #353535;
     }
   }
 }
@@ -871,8 +882,7 @@ ABOUT US PAGE
   .splash {
     margin-bottom: 27px;
     text-align: center;
-    height: 340px;
-    height: 90vh;
+    height: 90%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
