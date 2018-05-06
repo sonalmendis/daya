@@ -1,0 +1,18 @@
+p {
+    box-sizing: border-box;
+    color: rgb(32, 32, 32);
+    height: 660px;
+    text-align: left;
+    text-decoration: none solid rgb(32, 32, 32);
+    text-size-adjust: 100%;
+    width: 330px;
+    column-rule-color: rgb(32, 32, 32);
+    perspective-origin: 165px 330px;
+    transform-origin: 165px 330px;
+    caret-color: rgb(32, 32, 32);
+    border: 0px none rgb(32, 32, 32);
+    font: normal normal 400 normal 19px / 30px Neuton, serif;
+    margin: 0px 0px 27px;
+    outline: rgb(32, 32, 32) none 0px;
+}
+

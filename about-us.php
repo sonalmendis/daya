@@ -10,7 +10,7 @@
 	<cms:editable name="black_overlay_toggle" order="2" label="Black Overlay" desc="Enable opaque black overlay over splash image?"
 	    opt_values='Yes=display:block | No=display:none' type='radio' />
 
-	<cms:editable name="about_intro" order="3" label="Intro Text" desc="The opening paragraph text" type="richtext">
+	<cms:editable name="about_intro" order="3" label="Intro Text" desc="The opening paragraph text" type="richtext" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
 		<p>
 			In 1984, Daya Group (Pvt) Ltd commenced operations, starting out initially as a construction company. Over the years, it
 			has expanded into one of Sri Lanka’s pre-eminent privately owned conglomerates, continuing to grow through strategic investments.
@@ -39,7 +39,7 @@
 
 	<cms:repeatable name='awards' label="Awards" desc="Add as many awards as you need." order="7">
 
-		<cms:editable name="award" label="Award" type="richtext">
+		<cms:editable name="award" label="Award" type="richtext" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
 			<h3>This is the name of the award</h3>
 
 			<p>This is a concise description of it.</p>

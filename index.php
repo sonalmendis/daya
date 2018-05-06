@@ -36,7 +36,7 @@
 
         <div class="main-content">
             <div class="intro-section">
-                <cms:editable name='intro_text' title="Intro Text" type='richtext'>
+                <cms:editable name='intro_text' title="Intro Text" type='richtext' css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
                     <h1>Sri Lanka’s Leading Conglomerate</h1>
                     <p class="large">
                         In 1984, Daya Group (Pvt) Ltd commenced operations, starting out initially as a construction company. Over the years, it

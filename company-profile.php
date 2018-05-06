@@ -13,7 +13,7 @@
     <cms:editable name="splash_image" order="8" label='Splash Image' quality="100" desc='The first image that appears on a company profile page and the image used to its corresponding home page block' show_preview='1' width="1600" type="image" />
     <cms:editable name="intro_image" order="9" label="Intro Image"  quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
 
-    <cms:editable name="profile_intro" order="10" label="Intro Text" desc="The opening paragraph text" type="richtext" >
+    <cms:editable name="profile_intro" order="10" label="Intro Text" desc="The opening paragraph text" type="richtext" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
         <h1>Who We Are</h1>
 
         <p>
@@ -34,14 +34,11 @@
     </cms:editable>
 
     <cms:repeatable name='latest_project_column' label="Latest Projects" desc="Add as many projects as you need" order="11" >
-        <div class="col">
-            <cms:editable name="column_content" label="Project text" type="richtext">
+    <div class="col">
+            <cms:editable name="column_content" label="Project text" type="nicedit" >
+            <!-- css='/css/templates/latest-news.css | /css/templates/latest-news-text.css' -->
                 <h2>Golden Panda Range</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque
-                    lacus cursus. Aliquam pellentesque eros eros, vitae convallis sem scelerisque vel. Integer sit amet nibh
-                    ligula. Praesent purus leo, ullamcorper id tellus eget, vehicula hendrerit ante.
-                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque lacus cursus. Aliquam pellentesque eros eros, vitae convallis sem scelerisque vel. Integer sit amet nibhligula. Praesent purus leo, ullamcorper id tellus eget, vehicula hendrerit ante.</p>
             </cms:editable>
             <cms:editable name="latest_project_image" label="Project Image" width="400" type="image" />
 

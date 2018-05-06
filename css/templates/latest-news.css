@@ -1,0 +1,19 @@
+h2 {
+    box-sizing: border-box;
+    color: rgb(111, 184, 69);
+    height: 28px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    text-decoration: none solid rgb(111, 184, 69);
+    text-size-adjust: 100%;
+    width: 330px;
+    column-rule-color: rgb(111, 184, 69);
+    perspective-origin: 165px 14px;
+    transform-origin: 165px 14px;
+    caret-color: rgb(111, 184, 69);
+    border: 0px none rgb(111, 184, 69);
+    font: normal normal 400 normal 23px / 28.75px Petrona, serif;
+    margin: 0px 0px 19.09px;
+    outline: rgb(111, 184, 69) none 0px;
+}
+

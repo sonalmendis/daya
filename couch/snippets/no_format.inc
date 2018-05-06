@@ -1,0 +1,1 @@
+bold, italic, underline, strike, styles, -, numberedlist, bulletedlist, blockquote, link, unlink | undo, redo, removeformat, -, preview, maximise, source
