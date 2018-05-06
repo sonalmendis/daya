@@ -173,9 +173,9 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
     console.log(splashInnerContentContainerDistanceFromTop);
 
     $(".fixed-header-bar").css({
-      "-webkit-box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.07)",
-      "-moz-box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.07)",
-      "box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.07)"
+      "-webkit-box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.06)",
+      "-moz-box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.06)",
+      "box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.06)"
     });
 
 
