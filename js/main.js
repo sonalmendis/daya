@@ -77,9 +77,9 @@ $(document).ready(function () {
   /****
 HOME PAGE VIDEO & HOME PAGE PRELOADER
 ****/
-  if (viewport.width >= 1030) {
+  if (viewport.width >= 1030 && $(".main-container.home").length > 0) {
     var videoString = '<video width="320" preload="auto" id="introVideo" height="240" muted loop autoplay="autoplay"> <source src="video/video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>';
-    if ($(".main-container.home").length > 0) {
+
       $(".splash").prepend(videoString);
       var video = document.getElementById("introVideo");
       video.addEventListener(
@@ -100,8 +100,13 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
         },
         false
       );
-    }
-  } else {}
+    
+  } else if ($(".main-container.home").length > 0){
+              $(".preloader").addClass("loaded");
+          setTimeout(() => {
+            $(".preloader").hide();
+          }, 500);
+  }
 
   /****
 	 HEADER
@@ -380,6 +385,7 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
 
     $(".nav-toggle").toggle();
     $(".nav-toggle-cross").toggle();
+    $(".header-black-overlay").hide();
   });
 
   // Click listener hamburger, toggles nav-list

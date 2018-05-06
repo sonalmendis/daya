@@ -267,6 +267,10 @@ HOME PAGE
     h3 {
       color: #fff;
     }
+
+    a:hover {
+      color: $green;
+    }
   }
   .main-content {
     @include outer-grid();

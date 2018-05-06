@@ -685,6 +685,11 @@ HOME PAGE
     h3 {
       margin: 0px 12px 13px 12px;
     }
+
+    h3:hover {
+      color: $green!important;
+    }
+
   }
   .main-content {
     @include inner-grid();
