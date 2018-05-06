@@ -3,7 +3,15 @@
 	<!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+	<div class="preloader">
+		<div>
+			<img class="logo" src="img/logo.svg" alt="Logo" />
+			<img rel="preload" as="image" class="loader" src="img/loading.gif" alt="loading icon" />
+			<h3>Loading</h3>
+		</div>
+	</div>
 
+	<div class="header-black-overlay"></div>
 	<div class="header-container">
 		<header class="header-wrapper">
 
@@ -21,34 +29,47 @@
 								</a>
 							</div>
 
-				      <button class="nav-toggle"><img src="img/hamburger-menu.svg"></button>
+							<button class="nav-toggle">
+								<img src="img/hamburger-menu.svg">
+							</button>
 
-				      <button class="nav-toggle-cross"><img src="img/cross.svg"></button>
+							<button class="nav-toggle-cross">
+								<img src="img/cross.svg">
+							</button>
 
-				    </div>
+						</div>
 
 						<div class="fixed-header-mobile">
 
-						  <ul class="nav-list">
-						    <li><a href="about-us.php">About Us</a></li>
-						    <li><a href="contact-us.php">Contact Us</a></li>
-						    <li><a href="about-us.php#board">Board of Directors</a></li>
-					    	<li><a href="#!">Companies &nbsp</a>
+							<ul class="nav-list">
+								<li>
+									<a href="about-us.php">About Us</a>
+								</li>
+								<li>
+									<a href="contact-us.php">Contact Us</a>
+								</li>
+								<li>
+									<a href="about-us.php#board">Board of Directors</a>
+								</li>
+								<li>
+									<a href="#!">Companies &nbsp</a>
 									<div class="nav-dropdown">
-									<div class="dropdown-content">
-										<cms:pages masterpage='company-profile.php'>
-										<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
-										<h3><cms:show k_page_title /></h3>
-										<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
-										<div class="black-overlay"></div>
-										
-									</a>
-										</cms:pages>
+										<div class="dropdown-content">
+											<cms:pages masterpage='company-profile.php'>
+												<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
+													<h3>
+														<cms:show k_page_title />
+													</h3>
+													<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
+													<div class="black-overlay"></div>
+
+												</a>
+											</cms:pages>
+										</div>
 									</div>
-									</div>
-						    </li>
-						  </ul>
-					  </div>
+								</li>
+							</ul>
+						</div>
 
 
 						<div class="fixed-header-links">
@@ -65,10 +86,12 @@
 									<div class="dropdown-content">
 										<cms:pages masterpage='company-profile.php'>
 											<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
-												<h3><cms:show k_page_title /></h3>
+												<h3>
+													<cms:show k_page_title />
+												</h3>
 												<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
-										<div class="black-overlay"></div>
-										
+												<div class="black-overlay"></div>
+
 											</a>
 										</cms:pages>
 									</div>
