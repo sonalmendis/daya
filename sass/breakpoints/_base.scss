@@ -684,9 +684,10 @@ HOME PAGE
     @include justify-content(center);
     h3 {
       margin: 0px 12px 13px 12px;
+      color: #fff;
     }
 
-    h3:hover {
+    a:hover, a:active {
       color: $green!important;
     }
 

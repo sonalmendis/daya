@@ -73,7 +73,7 @@
                         <div class="static-dropdown">
 
                             <span>
-                                <a href="index.php#companies">Companies &#8811</a>
+                                <a href="index.php#companies">Companies</a>
                             </span>
 
                             <!--                             <div class="static-dropdown-content">
