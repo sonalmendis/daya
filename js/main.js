@@ -87,6 +87,21 @@ $(document).ready(function() {
     };
   }
 
+  // Check if contact us page, to change fixed header settings.
+	var pagePathname = window.location.pathname.split("/").slice(-1)[0] ;
+	if (pagePathname === 'contact-us.php') {
+		$(".fixed-header-bar").css({
+			"margin-top" : "0",
+			"transition" : "none",
+		  "-webkit-box-shadow" : "none",
+		  "-moz-box-shadow" : "none",
+		  "box-shadow" : "none"
+		});
+	}
+
+
+
+
   // Add an event listener so the function below runs everytime a scroll is done
   document.addEventListener("scroll", function(event) {
     /* Define vars that help with determining vertical scroll position 
@@ -106,6 +121,13 @@ $(document).ready(function() {
     console.log(scrollTop);
     console.log(splashInnerContentContainerHeight);
     console.log(splashInnerContentContainerDistanceFromTop);
+
+		$(".fixed-header-bar").css({
+		  "-webkit-box-shadow" : "0px 2px 8px 0px rgba(0, 0, 0, 0.07)",
+		  "-moz-box-shadow" : "0px 2px 8px 0px rgba(0, 0, 0, 0.07)",
+		  "box-shadow" : "0px 2px 8px 0px rgba(0, 0, 0, 0.07)"
+		});
+
 
     if (
       scrollTop >=
