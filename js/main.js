@@ -3,16 +3,18 @@
 CONTENTS:
 ***************************/
 
-$(document).ready(function() {
-  $(document).ready(function() {
+$(document).ready(function () {
+  $(document).ready(function () {
     objectFitImages(); // Object-fit polyfill https://github.com/bfred-it/object-fit-images/ works on new images too
   });
 
+
+
   /*
-	 * Get Viewport Dimensions
-	 * returns object with viewport dimensions to match css in width and height properties
-	 * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
-	 */
+   * Get Viewport Dimensions
+   * returns object with viewport dimensions to match css in width and height properties
+   * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
+   */
 
   var w = window,
     d = document,
@@ -37,7 +39,7 @@ $(document).ready(function() {
   // setting the viewport width
   var viewport = updateViewportDimensions();
   // If the window re-sizes we need to re-define the viewport var
-  $(window).resize(function() {
+  $(window).resize(function () {
     function updateViewportDimensions() {
       var w = window,
         d = document,
@@ -52,6 +54,54 @@ $(document).ready(function() {
     }
     viewport = updateViewportDimensions();
   });
+
+
+
+  /** PRELOADER FADE OUT (EXCLUDING HOME PAGE) */
+  // Fade out loading screen when done loading (except on home page which only fades it out once the video has loaded)
+  if (!$(".main-container").hasClass("home")) {
+    $(".preloader").addClass("loaded");
+    setTimeout(() => {
+      $(".preloader").hide();
+      $(".splash-outer-container").addClass("opacity-visible");
+      if ($(".main-container").hasClass("contact-us")) {
+        setTimeout(() => {
+          $(".contact-block").addClass("opacity-visible");
+        }, 1000);
+      }
+    }, 500);
+
+  };
+
+
+  /****
+HOME PAGE VIDEO & HOME PAGE PRELOADER
+****/
+  if (viewport.width >= 1030) {
+    var videoString = '<video width="320" preload="auto" id="introVideo" height="240" muted loop autoplay="autoplay"> <source src="video/video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>';
+    if ($(".main-container.home").length > 0) {
+      $(".splash").prepend(videoString);
+      var video = document.getElementById("introVideo");
+      video.addEventListener(
+        "loadeddata",
+        function () {
+          $(".preloader").addClass("loaded");
+          setTimeout(() => {
+            $(".preloader").hide();
+          }, 500);
+
+          setTimeout(() => {
+            $(".splash-inner-container").css({
+              opacity: "1"
+            });
+          }, 1000);
+
+          $(".down-arrows").fadeIn(1000);
+        },
+        false
+      );
+    }
+  } else {}
 
   /****
 	 HEADER
@@ -88,18 +138,18 @@ $(document).ready(function() {
   }
 
   // Add an event listener so the function below runs everytime a scroll is done
-  document.addEventListener("scroll", function(event) {
+  document.addEventListener("scroll", function (event) {
     /* Define vars that help with determining vertical scroll position 
 	(https://stackoverflow.com/questions/11193453/find-the-vertical-position-of-scrollbar-without-jquery)
 	These need constant re-defining otherwise they give old values */
     supportPageOffset = window.pageXOffset !== undefined;
     isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
 
-    scrollTop = supportPageOffset
-      ? window.pageYOffset
-      : isCSS1Compat
-        ? document.documentElement.scrollTop
-        : document.body.scrollTop;
+    scrollTop = supportPageOffset ?
+      window.pageYOffset :
+      isCSS1Compat ?
+      document.documentElement.scrollTop :
+      document.body.scrollTop;
 
     // Uncomment these two console logs below if you want an idea of how this works
     //   console.log("hit");
@@ -110,7 +160,7 @@ $(document).ready(function() {
     if (
       scrollTop >=
       splashInnerContentContainerHeight +
-        splashInnerContentContainerDistanceFromTop
+      splashInnerContentContainerDistanceFromTop
     ) {
       if (!fixedHeader.classList.contains("show")) {
         fixedHeader.classList.add("show");
@@ -118,13 +168,15 @@ $(document).ready(function() {
     } else if (
       scrollTop <
       splashInnerContentContainerHeight +
-        splashInnerContentContainerDistanceFromTop
+      splashInnerContentContainerDistanceFromTop
     ) {
       if (fixedHeader.classList.contains("show")) {
         fixedHeader.classList.remove("show");
       }
     }
   });
+
+
 
   //   if (scrollTop >= splashInnerContentContainerHeight + splashInnerContentContainerDistanceFromTop && !fixedHeaderMobile.classList.contains("show")) {
   //     fixedHeaderMobile.classList.add("show");
@@ -170,37 +222,29 @@ $(document).ready(function() {
   sr.reveal(".intro-section", {
     duration: 1000
   });
-	sr.reveal(".intro", {
+  sr.reveal(".intro", {
     duration: 1000
   });
   sr.reveal(".industry-block");
   sr.reveal(".director_card", {
-  	duration: 1000
+    duration: 1000
   });
   // sr.reveal(".industry-block", { duration: 1000, viewFactor: 0.1 }, 50);
 
-  /****
-Video output depending on mobile or not   
-****/
-  if (viewport.width >= 1030) {
-    var videoString =
-      '<video width="320" id="introVideo" height="240" muted loop autoplay="autoplay"> <source src="video/video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>';
-    if ($(".main-container.home").length > 0) {
-      $(".splash").prepend(videoString);
-      var video = document.getElementById("introVideo");
-      video.addEventListener(
-        "loadeddata",
-        function() {
-          $(".splash-inner-container").css({
-            opacity: "1"
-          });
-          $(".down-arrows").fadeIn(1000);
-        },
-        false
-      );
-    }
-  } else {
+
+
+
+
+
+  /***
+   * HOME PAGE FLEXBOX COMPANIES SECTION FIX (last row justify-content spread)
+   ****/
+
+  if ($(".main-container").hasClass("home") && $(".industry-outer-container").length % 3 === 2 && viewport.width >= 1030) {
+    var emptyBoxDiv = '<div class="industry-outer-container" style=""><div class="industry-block"></div></div>';
+    $(".our-industries-section").append(emptyBoxDiv);
   }
+
 
   // SMOOTH ANCHOR LINK SCROLLING
   //
@@ -209,7 +253,7 @@ Video output depending on mobile or not
   var scroll = new SmoothScroll('a[href*="#"]');
 
   /**** TIMELINE - About Us ****/
-  (function() {
+  (function () {
     function VerticalTimeline(element) {
       this.element = element;
       this.blocks = this.element.getElementsByClassName("js-cd-block");
@@ -219,14 +263,14 @@ Video output depending on mobile or not
       this.hideBlocks();
     }
 
-    VerticalTimeline.prototype.hideBlocks = function() {
+    VerticalTimeline.prototype.hideBlocks = function () {
       //hide timeline blocks which are outside the viewport
       if (!"classList" in document.documentElement) {
         return;
       }
       var self = this;
       for (var i = 0; i < this.blocks.length; i++) {
-        (function(i) {
+        (function (i) {
           if (
             self.blocks[i].getBoundingClientRect().top >
             window.innerHeight * self.offset
@@ -238,17 +282,17 @@ Video output depending on mobile or not
       }
     };
 
-    VerticalTimeline.prototype.showBlocks = function() {
+    VerticalTimeline.prototype.showBlocks = function () {
       if (!"classList" in document.documentElement) {
         return;
       }
       var self = this;
       for (var i = 0; i < this.blocks.length; i++) {
-        (function(i) {
+        (function (i) {
           if (
             self.contents[i].classList.contains("cd-is-hidden") &&
             self.blocks[i].getBoundingClientRect().top <=
-              window.innerHeight * self.offset
+            window.innerHeight * self.offset
           ) {
             // add bounce-in animation
             self.images[i].classList.add("cd-timeline__img--bounce-in");
@@ -265,7 +309,7 @@ Video output depending on mobile or not
       scrolling = false;
     if (verticalTimelines.length > 0) {
       for (var i = 0; i < verticalTimelines.length; i++) {
-        (function(i) {
+        (function (i) {
           verticalTimelinesArray.push(
             new VerticalTimeline(verticalTimelines[i])
           );
@@ -273,18 +317,18 @@ Video output depending on mobile or not
       }
 
       //show timeline blocks on scrolling
-      window.addEventListener("scroll", function(event) {
+      window.addEventListener("scroll", function (event) {
         if (!scrolling) {
           scrolling = true;
-          !window.requestAnimationFrame
-            ? setTimeout(checkTimelineScroll, 250)
-            : window.requestAnimationFrame(checkTimelineScroll);
+          !window.requestAnimationFrame ?
+            setTimeout(checkTimelineScroll, 250) :
+            window.requestAnimationFrame(checkTimelineScroll);
         }
       });
     }
 
     function checkTimelineScroll() {
-      verticalTimelinesArray.forEach(function(timeline) {
+      verticalTimelinesArray.forEach(function (timeline) {
         timeline.showBlocks();
       });
       scrolling = false;
@@ -296,8 +340,8 @@ Video output depending on mobile or not
   //
   //
   // Click listener Companies, toggles dropdown
-  $("ul li > a:not(:only-child)").click(function(e) {
-    $(".nav-dropdown").slideToggle("400", "swing", function() {
+  $("ul li > a:not(:only-child)").click(function (e) {
+    $(".nav-dropdown").slideToggle("400", "swing", function () {
       // Animation styles
     });
     $(".nav-list").toggleClass("nav-list-show");
@@ -305,8 +349,8 @@ Video output depending on mobile or not
   });
 
   // Click listener to close the menu when an option has been picked
-  $("ul li > a:only-child, .nav-dropdown").click(function() {
-    $(".nav-list").slideToggle( "fast", function() {
+  $("ul li > a:only-child, .nav-dropdown").click(function () {
+    $(".nav-list").slideToggle("fast", function () {
       $("body").toggleClass("body-scroll");
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
@@ -314,22 +358,24 @@ Video output depending on mobile or not
   });
 
   // Click listener hamburger, toggles nav-list
-  $(".nav-toggle").click(function() {
+  $(".nav-toggle").click(function () {
     $(".nav-toggle").toggle();
     $(".nav-toggle-cross").toggle();
+    $(".header-black-overlay").toggle();
 
-    $(".nav-list").slideToggle( "fast", function() {
+    $(".nav-list").slideToggle("fast", function () {
       $("body").toggleClass("body-scroll");
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
     });
   });
 
-  $(".nav-toggle-cross").click(function() {
+  $(".nav-toggle-cross").click(function () {
     $(".nav-toggle").toggle();
     $(".nav-toggle-cross").toggle();
+    $(".header-black-overlay").toggle();
 
-    $(".nav-list").slideToggle( "fast", function() {
+    $(".nav-list").slideToggle("fast", function () {
       $("body").toggleClass("body-scroll");
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
@@ -337,20 +383,25 @@ Video output depending on mobile or not
   });
 
   // Touch listener to close nav-list
-  $(document).on("touchstart", function() {
-	    $(".nav-list").slideUp("fast", "swing", function() {
-	      $(".nav-list").hide();
-    	});
-      $("body").removeClass("body-scroll");
-      $(".nav-list").removeClass("nav-list-show");
-	    $(".nav-toggle").show();
-	    $(".nav-toggle-cross").hide();
-	});
+  $(document).on("touchstart", function () {
+    $(".nav-list").slideUp("fast", "swing", function () {
+      $(".nav-list").hide();
+    });
+    $("body").removeClass("body-scroll");
+    $(".nav-list").removeClass("nav-list-show");
+    $(".nav-toggle").show();
+    $(".nav-toggle-cross").hide();
+    $(".header-black-overlay").hide();
+
+  });
 
   // Touch listener makes sure above is correctly selected
-  $(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").on("touchstart", function(e) {
-    e.stopPropagation();
-  });
+  $(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").on(
+    "touchstart",
+    function (e) {
+      e.stopPropagation();
+    }
+  );
 
   /****
    * CONTACT FORM SUBMIT
@@ -358,7 +409,7 @@ Video output depending on mobile or not
 
   if ($(".main-container").hasClass("contact-us")) {
     // The actual form submission
-    $("#contact-form").submit(function(event) {
+    $("#contact-form").submit(function (event) {
       /* stop form from submitting normally */
       event.preventDefault();
 
@@ -385,7 +436,7 @@ Video output depending on mobile or not
         message: message_value
       });
 
-      posting.done(function(data) {
+      posting.done(function (data) {
         //Success
         $this.removeClass("loader active");
         $this.text("Your message has been sent successfully");
@@ -393,4 +444,22 @@ Video output depending on mobile or not
       });
     });
   }
+
+  /****
+   * MASONRY FOR COMPANY PROFILE - LATEST NEWS SECTION
+   */
+
+  $('.column-container').masonry({
+    // options
+    itemSelector: '.col',
+    gutter: 42
+  });
+
+  /****
+   * Line Animation Effect (the dividers on contact-us splash screen for e.g)
+   */
+  setTimeout(() => {
+    $(".divider").addClass("animate");
+  }, 800);
+
 }); // end of document ready, put everything inside here

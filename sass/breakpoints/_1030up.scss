@@ -1,4 +1,5 @@
 /**** IMPORTANT GRIDS ****/
+
 @mixin outer-grid() {
   padding-left: 0;
   padding-right: 0;
@@ -27,6 +28,7 @@
 }
 
 /****/
+
 .divider {
   margin-bottom: 67px;
 }
@@ -45,13 +47,13 @@ h3,
 h4,
 p,
 li,
-span {
-}
+span {}
 
 h1 {
   font-size: 42px;
   line-height: 42px;
 }
+
 h1.logo-text {
   font-size: 50px;
   line-height: 50px;
@@ -63,13 +65,11 @@ h2 {
 }
 
 // For header links
-h3 {
-}
+h3 {}
 
 p,
 span,
-li {
-}
+li {}
 
 p {
   font-size: 19px;
@@ -81,59 +81,50 @@ p.large {
   line-height: 31px;
 }
 
-.btn {
-}
+.btn {}
 
-.btn.big {
-}
+.btn.big {}
 
-.btn.small {
-}
+.btn.small {}
 
-.right-arrows {
-}
+.right-arrows {}
 
 /*************
 HEADER STYLES
 *************/
+
+$header-height: 60px;
 .fixed-header-bar {
   display: block;
-  height: 60px;
-  margin-top: -183px; /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
-
+  height: $header-height;
+  margin-top: -183px;
+  /*Header height + box-shadow + companies dropdown height (needs to be refined)*/
   .fixed-header-inner {
     @include outer-grid;
     @include justify-content(space-between);
-
     .fixed-header-inner-inner {
       @include justify-content(center);
       width: auto;
-
-      .nav-toggle{
+      .nav-toggle {
         visibility: hidden;
       }
-
       .daya-index-anchor {
         position: relative;
       }
-
       a {
         h3 {
           font-size: 19px;
         }
       }
     }
-
     .fixed-header-mobile {
       display: none;
     }
   }
-
   .dropdown {
     float: left;
     overflow: hidden;
     height: 100%;
-
     span {
       @include flexbox();
       @include align-items(center);
@@ -141,14 +132,13 @@ HEADER STYLES
       width: 133px; //93px text + 40px margin
     }
   }
-
   .dropdown-content-outer {
+    margin-top: $header-height;
     @include outer-grid;
     margin-right: -155px;
     width: 1vh;
     position: absoulte;
   }
-
   .dropdown-content {
     visibility: hidden;
     opacity: 0;
@@ -163,50 +153,40 @@ HEADER STYLES
     max-height: 400px;
     overflow: scroll;
     overflow-x: hidden;
-
     a {
       height: 106px;
-
       h3 {
         font-size: 22px;
       }
     }
   }
-
   .hvr-grow-shadow {
     margin: 0;
     width: 100%;
   }
-
   .dropdown:hover .dropdown-content {
     opacity: 1;
     visibility: visible;
   }
-
   /*
  *  SCROLLBAR FOR DROPDOWN */
-
   .dropdown-content::-webkit-scrollbar-track {
     border-radius: 0px;
     background-color: #cacaca;
   }
-
   .dropdown-content::-webkit-scrollbar {
     width: 9px;
     background-color: #f5f5f5;
   }
-
   .dropdown-content::-webkit-scrollbar-thumb {
     border-radius: 0px;
     background-color: #555;
   }
-
   .fixed-header-links {
     height: 100%;
     @include flexbox();
     @include justify-content(flex-end);
     @include align-items(center);
-
     a {
       @include flexbox;
       color: black;
@@ -214,18 +194,15 @@ HEADER STYLES
       font-weight: 400;
       font-size: 15px;
     }
-
-    > a:nth-of-type(3) {
+    >a:nth-of-type(3) {
       margin-right: 0;
       width: 122px;
     }
-
     a:hover {
       cursor: pointer;
       color: #3d3d3d;
     }
   }
-
   img {
     height: 45px;
   }
@@ -263,7 +240,6 @@ HOME PAGE
       display: none;
     }
   }
-
   .splash-inner-container {
     opacity: 0;
     -webkit-transition: opacity 1.5s;
@@ -273,17 +249,13 @@ HOME PAGE
     h1 {
       color: #fff;
     }
-
     h2 {
       color: #fff;
     }
-
     .divider {
       border-bottom: 1px solid #fff;
     }
-
-    .logo {
-    }
+    .logo {}
     .marker.black {
       display: none;
     }
@@ -291,26 +263,21 @@ HOME PAGE
       display: inline-block;
     }
   }
-
   .splash-nav {
     h3 {
       color: #fff;
     }
   }
-
   .main-content {
     @include outer-grid();
   }
   .intro-section {
     @include inner-grid();
     margin-bottom: 67px;
-
-    p {
-    }
+    p {}
   }
-
   .our-industries-section {
-    > h1 {
+    >h1 {
       margin-bottom: 12px;
     }
     @include flexbox();
@@ -326,12 +293,9 @@ HOME PAGE
       max-width: 100%;
       height: 358px;
       margin: 0;
-      img {
-      }
-      .black-overlay {
-      }
-      .inner-container {
-      }
+      img {}
+      .black-overlay {}
+      .inner-container {}
       h1 {
         font-size: 48px;
         line-height: 52px;
@@ -343,16 +307,15 @@ HOME PAGE
 /**************
 COMPANY PROFILE PAGE
 **************/
+
 .main-container.company-profile {
   .header-container {
     display: block;
   }
-
   .splash {
     background-attachment: fixed;
     margin-bottom: 67px;
-    .black-overlay {
-    }
+    .black-overlay {}
     .company-logo {
       margin-bottom: 12px;
     }
@@ -365,38 +328,31 @@ COMPANY PROFILE PAGE
       z-index: 1;
       position: absolute;
     }
-
     .static-header {
       @include flexbox();
       @include justify-content(space-between);
       height: 60px;
       width: 100%;
-
       .static-header-links {
         height: 100%;
         @include flexbox();
         @include align-items(center);
-
         a:nth-of-type(3) {
           margin-right: 0;
         }
-
         a:hover {
           color: #e2e2e2;
         }
-
         .static-dropdown {
           float: left;
           overflow: hidden;
           height: 100%;
-
           span {
             @include flexbox();
             @include align-items(center);
             height: 100%;
           }
         }
-
         .static-dropdown-content {
           display: none;
           position: absolute;
@@ -405,7 +361,6 @@ COMPANY PROFILE PAGE
           box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
           z-index: -1;
         }
-
         .static-dropdown-content a {
           float: none;
           color: white;
@@ -414,16 +369,13 @@ COMPANY PROFILE PAGE
           display: block;
           text-align: left;
         }
-
         .static-dropdown:hover .static-dropdown-content {
           display: block;
         }
       }
-
       img {
         height: 50px;
       }
-
       a {
         color: white;
         margin-right: 40px;
@@ -435,7 +387,6 @@ COMPANY PROFILE PAGE
         font-weight: 400;
         font-size: 15px;
       }
-
       a h3 {
         margin: 0;
         padding-left: 15px;
@@ -444,11 +395,9 @@ COMPANY PROFILE PAGE
         font-size: 19px;
       }
     }
-
     .divider {
       z-index: 2;
     }
-
     .splash-inner-container {
       @include inner-grid();
       z-index: 2;
@@ -458,10 +407,8 @@ COMPANY PROFILE PAGE
       }
     }
   }
-
   .main-content {
     @include outer-grid();
-
     .intro-section {
       @include flexbox();
       @include justify-content(space-between);
@@ -473,28 +420,25 @@ COMPANY PROFILE PAGE
         width: 45%;
         margin: 0 !important;
       }
-
       img {
         width: 495px;
         height: 495px;
         @include object-fit(cover);
       }
     }
-
     .latest-projects-section {
       .column-container {
+        width: 100%;
         @include flexbox();
         @include justify-content(space-between);
       }
-
       .col {
-        width: 30%;
+        width: calc(33.33% - 42px);
+        border-bottom: none;
+        padding-bottom: 0;
       }
-
-      .col:last-child {
-      }
-
-      h1 {
+      .col:last-child {}
+      >h1 {
         text-align: left !important;
         font-size: 34px !important;
         line-height: 32px !important;
@@ -502,30 +446,24 @@ COMPANY PROFILE PAGE
         font-weight: 400 !important;
         letter-spacing: 0.8px !important;
       }
-
       h2 {
         text-align: left !important;
         padding: 0;
       }
-
       p {
         text-align: left;
       }
     }
-    img {
-    }
+    img {}
   }
-
   .profile-details-section {
     .blocks {
       @include outer-grid;
       @include flexbox();
       @include justify-content(space-between);
-
       .divider-outer-container {
         display: none;
       }
-
       .inner-block {
         width: 30%;
         margin-bottom: 0;
@@ -539,15 +477,12 @@ COMPANY PROFILE PAGE
           text-align: left;
           line-height: 23px;
         }
-
         .outline-btn {
           margin: 0 0 10px 0;
         }
-
         .outline-btn:hover {
           background-color: #353535;
         }
-
         .contact {
           @include flexbox();
           @include inline-flex;
@@ -598,38 +533,31 @@ ABOUT US PAGE
       z-index: 1;
       position: absolute;
     }
-
     .static-header {
       @include flexbox();
       @include justify-content(space-between);
       height: 60px;
       width: 100%;
-
       .static-header-links {
         height: 100%;
         @include flexbox();
         @include align-items(center);
-
         a:nth-of-type(3) {
           margin-right: 0;
         }
-
         a:hover {
           color: #e2e2e2;
         }
-
         .static-dropdown {
           float: left;
           overflow: hidden;
           height: 100%;
-
           span {
             @include flexbox();
             @include align-items(center);
             height: 100%;
           }
         }
-
         .static-dropdown-content {
           display: none;
           position: absolute;
@@ -638,7 +566,6 @@ ABOUT US PAGE
           box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
           z-index: -1;
         }
-
         .static-dropdown-content a {
           float: none;
           color: white;
@@ -647,16 +574,13 @@ ABOUT US PAGE
           display: block;
           text-align: left;
         }
-
         .static-dropdown:hover .static-dropdown-content {
           display: block;
         }
       }
-
       img {
         height: 50px;
       }
-
       a {
         color: white;
         margin-right: 40px;
@@ -668,7 +592,6 @@ ABOUT US PAGE
         font-weight: 400;
         font-size: 15px;
       }
-
       a h3 {
         margin: 0;
         padding-left: 15px;
@@ -678,17 +601,13 @@ ABOUT US PAGE
       }
     }
   }
-
   .main-content {
     @include outer-grid;
-
     .intro {
       @include inner-inner-grid;
       margin-top: 80px;
       margin-bottom: 47px;
-    }
-
-    // Timeline
+    } // Timeline
     .cd-timeline__block {
       margin: 4em 0;
     }
@@ -700,12 +619,10 @@ ABOUT US PAGE
     .cd-is-hidden {
       visibility: hidden;
     }
-
     .cd-timeline__img.cd-timeline__img--bounce-in {
       visibility: visible;
       animation: cd-bounce-1 0.6s;
     }
-
     .cd-timeline {
       margin-bottom: 0;
       padding-top: 67px;
@@ -729,7 +646,6 @@ ABOUT US PAGE
       -webkit-animation: cd-bounce-1 0.6s;
       animation: cd-bounce-1 0.6s;
     }
-
     .cd-timeline__content {
       margin-left: 0;
       padding: 1.6em;
@@ -741,7 +657,6 @@ ABOUT US PAGE
         font-size: 24px;
       }
     }
-
     .cd-timeline__read-more {
       float: left;
     }
@@ -755,7 +670,6 @@ ABOUT US PAGE
     .cd-timeline__block:nth-child(even) .cd-timeline__content {
       float: right;
     }
-
     .cd-timeline__block:nth-child(even) .cd-timeline__read-more {
       float: right;
     }
@@ -769,36 +683,28 @@ ABOUT US PAGE
       -webkit-animation: cd-bounce-2 0.6s;
       animation: cd-bounce-2 0.6s;
     }
-
     /* inverse bounce effect on even content blocks */
-    .cd-timeline__block:nth-child(even)
-      .cd-timeline__content.cd-timeline__content--bounce-in {
+    .cd-timeline__block:nth-child(even) .cd-timeline__content.cd-timeline__content--bounce-in {
       -webkit-animation: cd-bounce-2-inverse 0.6s;
       animation: cd-bounce-2-inverse 0.6s;
     }
-
     .board {
       @include outer-grid;
       @include flexbox();
       @include justify-content(space-around);
-
       .director_card {
         width: 165px;
-
         img {
           height: 165px;
           object-fit: cover;
         }
       }
     }
-
     #board {
       padding-top: 67px;
     }
-
     .achievements {
       @include inner-grid;
-
       .awards_images {
         @include flexbox;
         @include justify-content(space-around);
@@ -808,7 +714,6 @@ ABOUT US PAGE
           object-fit: cover;
         }
       }
-
       .awards_txt {
         @include inner-inner-grid;
       }
@@ -819,6 +724,7 @@ ABOUT US PAGE
 /****
 CONTACT US PAGE
 *****/
+
 .main-container.contact-us {
   .splash {
     height: 560px;
@@ -845,7 +751,6 @@ CONTACT US PAGE
       @include inner-grid();
     }
   }
-
   .main-content {
     .contact-block {
       margin-bottom: 67px;

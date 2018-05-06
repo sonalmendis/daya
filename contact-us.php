@@ -8,6 +8,7 @@
 
         <div class="splash">
             <div class="splash-outer-container">
+                <div class="lineTest"></div>
                 <div class="divider-outer-container">
                     <div class="divider">
                         <img class="marker" src="img/diamond-marker.svg " alt="Marker" />
@@ -40,7 +41,7 @@
                 <!-- Google Map -->
                 <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpjZ2EhnbVapLkc-TUZ4-JA2ueL3XOwBc'></script>
                 <div style='overflow:hidden;height:430px;width:100%;'>
-                    <div id='gmap_canvas' style='height:430px;width:100%;'></div>
+                    <div id='gmap_canvas' style='height:430px;width:100%;visibility:visible !important;'></div>
                     <style>
                         #gmap_canvas img {
                             max-width: none !important;
