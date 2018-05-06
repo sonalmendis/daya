@@ -311,6 +311,9 @@ Video output depending on mobile or not
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
     });
+
+    $(".nav-toggle").toggle();
+    $(".nav-toggle-cross").toggle();
   });
 
   // Click listener hamburger, toggles nav-list

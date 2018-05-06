@@ -222,7 +222,7 @@ HEADER STYLES
 
     a:hover {
       cursor: pointer;
-      color: #3d3d3d;
+      color: $green;
     }
   }
 
@@ -382,7 +382,7 @@ COMPANY PROFILE PAGE
         }
 
         a:hover {
-          color: #e2e2e2;
+          color: $green;
         }
 
         .static-dropdown {
@@ -615,7 +615,7 @@ ABOUT US PAGE
         }
 
         a:hover {
-          color: #e2e2e2;
+          color: $green;
         }
 
         .static-dropdown {
@@ -707,7 +707,7 @@ ABOUT US PAGE
     }
 
     .cd-timeline {
-      margin-bottom: 0;
+      margin-bottom: 67px;
       padding-top: 67px;
       padding-bottom: 67px;
     }
@@ -792,8 +792,15 @@ ABOUT US PAGE
       }
     }
 
-    #board {
-      padding-top: 67px;
+    // #board {
+    //   padding-top: 67px;
+    // }
+
+    .anchor{
+      display: block;
+      height: 67px; /*same height as header*/
+      margin-top: -67px; /*same height as header*/
+      visibility: hidden;
     }
 
     .achievements {

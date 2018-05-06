@@ -119,7 +119,8 @@ body {
 }
 
 .companies-pressed {
-  background-color: #e2e2e2!important;
+  // background-color: #e2e2e2!important;
+  background-color: $green!important;
   transition: background-color 0.4s;
 }
 
@@ -369,7 +370,8 @@ HEADER STYLES
           }
 
           > a:only-child:hover, > a:only-child:active {
-            background-color: #e2e2e2;
+            // background-color: #e2e2e2;
+            background-color: $green;
           }
 
           // > a:not(:only-child):hover, a:not(:only-child):active {
@@ -960,8 +962,11 @@ ABOUT US PAGE
       margin-bottom: 47px;
     }
 
-    #board {
-      padding-top: 47px;
+    .anchor{
+      display: block;
+      height: 77px; /*same height as header*/
+      margin-top: -77px; /*same height as header*/
+      visibility: hidden;
     }
 
     .intro {
@@ -995,7 +1000,7 @@ ABOUT US PAGE
       border-top: 1px solid $grey;
       border-bottom: 1px solid $grey;
       margin-top: 47px;
-      margin-bottom: 0;
+      margin-bottom: 67px;
       padding-top: 47px;
       padding-bottom: 47px;
     }

@@ -215,7 +215,8 @@ END OF TEMPLATE
 
 			</div>
 
-			<h1 id="board">Board of Directors</h1>
+			<span class="anchor" id="board"></span>
+			<h1>Board of Directors</h1>
 
 			<div class="board">
 
