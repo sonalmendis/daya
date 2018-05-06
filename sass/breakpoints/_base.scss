@@ -121,7 +121,7 @@ body {
 .companies-pressed {
   // background-color: #e2e2e2!important;
   background-color: $green!important;
-  transition: background-color 0.4s;
+  color: white!important;
 }
 
 /*
@@ -365,13 +365,13 @@ HEADER STYLES
             }
 
             &:not(:only-child) {
-              transition: background-color 0.4s;
+              transition: all 0.4s!important;
             }
           }
 
           > a:only-child:hover, > a:only-child:active {
-            // background-color: #e2e2e2;
             background-color: $green;
+            color: white!important;
           }
 
           // > a:not(:only-child):hover, a:not(:only-child):active {

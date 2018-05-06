@@ -297,11 +297,11 @@ Video output depending on mobile or not
   //
   // Click listener Companies, toggles dropdown
   $("ul li > a:not(:only-child)").click(function(e) {
-    $(".nav-dropdown").slideToggle("400", "swing", function() {
+    $(".nav-dropdown").slideToggle("300", "swing", function() {
       // Animation styles
     });
     $(".nav-list").toggleClass("nav-list-show");
-    $(this).toggleClass("companies-pressed", "400");
+    $(this).toggleClass("companies-pressed");
   });
 
   // Click listener to close the menu when an option has been picked
@@ -337,6 +337,8 @@ Video output depending on mobile or not
       $(".nav-dropdown").hide();
       $(".nav-list").removeClass("nav-list-show");
     });
+
+    $("ul li > a:not(:only-child)").removeClass("companies-pressed");
   });
 
   // Touch listener to close nav-list
