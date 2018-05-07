@@ -684,13 +684,12 @@ HOME PAGE
     @include justify-content(center);
     h3 {
       margin: 0px 12px 13px 12px;
-      color: #fff;
+      color: $black;
     }
-
-    a:hover, a:active {
-      color: $green!important;
+    a:hover,
+    a:active {
+      color: $green !important;
     }
-
   }
   .main-content {
     @include inner-grid();
@@ -1311,6 +1310,7 @@ ABOUT US PAGE
       border-bottom: 1px solid $grey;
       @include outer-grid;
       img {
+        border: 1px solid $grey;
         width: 100%;
         margin-top: 30px;
       }
@@ -1319,8 +1319,12 @@ ABOUT US PAGE
         text-transform: uppercase;
         margin: 0;
         color: $green;
+        border-bottom: 1px solid $green;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
       }
       h2 {
+        font-size: 20px;
         text-align: center;
         margin-bottom: 20px;
         margin-top: 5px;
@@ -1336,8 +1340,13 @@ ABOUT US PAGE
         }
       }
       .awards_txt {
+        text-align: center;
         margin: 65px 0;
+        h1 {
+          margin-bottom: 17px;
+        }
         h2 {
+          margin: 27px auto;
           color: $green;
           text-align: center;
           margin: 65px 0;
@@ -1350,10 +1359,17 @@ ABOUT US PAGE
           margin-top: 40px;
           margin-bottom: 5px;
         }
+        h4 {
+          font-weight: 700;
+          font-family: $neuton;
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
         p {
           text-align: center;
+          margin-bottom: 42px;
         }
-        .p,
+        p,
         span,
         li,
         address,
@@ -1361,13 +1377,9 @@ ABOUT US PAGE
           @extend p;
           text-align: center;
         }
-        h1 {
+        h1,
+        h2 {
           @extend h2;
-        }
-        h4,
-        h5,
-        h6 {
-          @extend h3;
         }
       }
     }
