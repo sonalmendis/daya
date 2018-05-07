@@ -442,7 +442,7 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   //   });
 
 
-  // });
+  });
 
 
 
