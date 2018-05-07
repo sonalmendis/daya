@@ -416,7 +416,10 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   });
 
   // Touch listener to close nav-list
-  $(document).on("touchstart", function () {
+
+  var attrSave
+
+  $(".header-black-overlay").on("touchstart", function () {
     $(".nav-list").slideUp("fast", "swing", function () {
       $(".nav-list").hide();
     });
@@ -426,7 +429,22 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
     $(".nav-toggle-cross").hide();
     $(".header-black-overlay").hide();
 
-  });
+    // Makes sure if an industry-block is clicked during this event, the link is not fired.
+  //   $(".industry-block").on("touchstart", function (e) {
+  //     attrSave = $(this).attr("href");
+
+  //     if (!(attrSave === undefined)) {
+  //       $(this).attr("href", "#!")
+  //     }
+
+  //     console.log(attrSave);
+  //     return attrSave;
+  //   });
+
+
+  // });
+
+
 
   // Touch listener makes sure above is correctly selected
   $(".nav-list, .fixed-header-inner-inner, .fixed-header-inner").on(
@@ -435,6 +453,7 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
       e.stopPropagation();
     }
   );
+
 
   /****
    * CONTACT FORM SUBMIT
