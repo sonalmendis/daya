@@ -29,22 +29,15 @@
 
 	</cms:repeatable>
 
-	<cms:repeatable name='awards_image' label="Award images" desc="Add as many images as you need" order="5">
-
-		<cms:editable name="award_img" label="Image of award" quality="100" show_preview='1' width="300" type="image" />
-
-	</cms:repeatable>
-
 	<cms:editable name="awards_intro" label="Awards Introduction Header" type="text" order="6" />
 
 	<cms:repeatable name='awards' label="Awards" desc="Add as many awards as you need." order="7">
 
-		<cms:editable name="award" label="Award" type="richtext" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
-			<h3>This is the name of the award</h3>
-
-			<p>This is a concise description of it.</p>
+		<cms:editable name="award" label="Award Title" type="text" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
 		</cms:editable>
 
+		<cms:editable name="award_desc" label="Award Description" type="text" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
+		</cms:editable>
 	</cms:repeatable>
 
 </cms:template>
@@ -239,9 +232,7 @@ END OF TEMPLATE
 				<h1>Achievements</h1>
 
 				<div class="awards_images">
-					<cms:show_repeatable 'awards_image'>
-						<img src="<cms:show award_img />" />
-					</cms:show_repeatable>
+					<img src="img/awards-top.jpg" />
 				</div>
 
 				<div class="awards_txt">
@@ -249,7 +240,8 @@ END OF TEMPLATE
 						<cms:show awards_intro /> </h2>
 
 					<cms:show_repeatable 'awards'>
-						<cms:show award />
+						<h4><cms:show award /></h4>
+						<p><cms:show award_desc /></p>
 					</cms:show_repeatable>
 				</div>
 			</div>

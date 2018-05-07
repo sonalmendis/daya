@@ -80,33 +80,42 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   if (viewport.width >= 1030 && $(".main-container.home").length > 0) {
     var videoString = '<video width="320" preload="auto" id="introVideo" height="240" muted loop autoplay="autoplay"> <source src="video/video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>';
 
-      $(".splash").prepend(videoString);
-      var video = document.getElementById("introVideo");
-      video.addEventListener(
-        "loadeddata",
-        function () {
-          $(".preloader").addClass("loaded");
-          setTimeout(() => {
-            $(".preloader").hide();
-          }, 500);
+    $(".splash").prepend(videoString);
+    var video = document.getElementById("introVideo");
+    video.addEventListener("loadeddata", function () {
+        $(".preloader").addClass("loaded");
+        setTimeout(() => {
+          $(".preloader").hide();
+        }, 500);
 
-          setTimeout(() => {
-            $(".splash-inner-container").css({
-              opacity: "1"
-            });
-          }, 1000);
+        setTimeout(() => {
+          $(".splash-inner-container").css({
+            opacity: "1"
+          });
+        }, 1000);
 
-          $(".down-arrows").fadeIn(1000);
-        },
-        false
-      );
-    
-  } else if ($(".main-container.home").length > 0){
-              $(".preloader").addClass("loaded");
-          setTimeout(() => {
-            $(".preloader").hide();
-          }, 500);
+        $(".down-arrows").fadeIn(1000);
+      },
+      false
+    );
+
+  } else if ($(".main-container.home").length > 0) {
+    $(".preloader").addClass("loaded");
+    setTimeout(() => {
+      $(".preloader").hide();
+    }, 500);
   }
+
+  // Fallback loading screen hide
+  setTimeout(() => {
+    if (!$(".preloader").hasClass("loaded")) {
+      $(".preloader").addClass("loaded");
+      setTimeout(() => {
+        $(".preloader").hide();
+      }, 500);
+    }
+
+  }, 8000);
 
   /****
 	 HEADER
@@ -430,16 +439,16 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
     $(".header-black-overlay").hide();
 
     // Makes sure if an industry-block is clicked during this event, the link is not fired.
-  //   $(".industry-block").on("touchstart", function (e) {
-  //     attrSave = $(this).attr("href");
+    //   $(".industry-block").on("touchstart", function (e) {
+    //     attrSave = $(this).attr("href");
 
-  //     if (!(attrSave === undefined)) {
-  //       $(this).attr("href", "#!")
-  //     }
+    //     if (!(attrSave === undefined)) {
+    //       $(this).attr("href", "#!")
+    //     }
 
-  //     console.log(attrSave);
-  //     return attrSave;
-  //   });
+    //     console.log(attrSave);
+    //     return attrSave;
+    //   });
 
 
   });
