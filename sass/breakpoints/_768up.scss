@@ -54,3 +54,9 @@
         }
     }
 }
+
+.main-container.company-profile {
+    .main-content {
+        @include outer-grid();
+    }
+}

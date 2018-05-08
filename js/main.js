@@ -510,10 +510,17 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
    * MASONRY FOR COMPANY PROFILE - LATEST NEWS SECTION
    */
 
-  $('.column-container').masonry({
+
+  // init Masonry
+  var $grid = $('.column-container').masonry({
     // options
     itemSelector: '.col',
     gutter: 42
+  });
+
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress(function () {
+    $grid.masonry('layout');
   });
 
   /****

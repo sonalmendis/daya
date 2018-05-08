@@ -15,6 +15,8 @@
         <script src="js/vendor/ofi.min.js"></script>
         <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
         <script>window.jQuery || document.write("<script src='js/vendor/scrollreveal.min.js'>\x3C/script>")</script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <script>window.jQuery || document.write("<script src='js/vendor/imagesloaded.pkgd.min.js'>\x3C/script>")</script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script>window.jQuery || document.write("<script src='js/vendor/masonry.pkgd.min.js'>\x3C/script>")</script>
         <script src="js/vendor/smooth-scroll.polyfills.min.js"></script>
