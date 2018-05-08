@@ -685,9 +685,7 @@ HOME PAGE
     h3 {
       margin: 0px 12px 13px 12px;
       color: black;
-    } // a:hover, a:active {
-    //   color: $green!important;
-    // }
+    } 
   }
   .main-content {
     @include inner-grid();
@@ -810,6 +808,26 @@ COMPANY PROFILE PAGE
         top: 2px;
       }
     }
+
+    .splash-nav {
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      width: 430px;
+      margin: 0 auto;
+
+      a {
+        z-index: 2;
+      }
+      
+      h3 {
+        margin: 0px 12px 13px 12px;
+        color: white!important;
+        text-decoration: none;
+      }
+    }
+
+
     .splash-inner-container {
       z-index: 2;
       position: relative;
@@ -995,6 +1013,23 @@ ABOUT US PAGE
         top: 2px;
       }
     }
+
+    .splash-nav {
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+
+      a {
+        z-index: 2;
+      }
+      
+      h3 {
+        margin: 0px 12px 13px 12px;
+        color: white!important;
+        text-decoration: none;
+      }
+    }
+
     .splash-outer-container {
       @include outer-grid;
       width: 100%;

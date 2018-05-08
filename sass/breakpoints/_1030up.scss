@@ -401,6 +401,11 @@ COMPANY PROFILE PAGE
     .divider {
       z-index: 2;
     }
+
+    .splash-nav {
+      display: none!important;
+    }
+
     .splash-inner-container {
       @include inner-grid();
       z-index: 2;
@@ -527,6 +532,11 @@ ABOUT US PAGE
     .divider {
       margin: 0;
     }
+
+    .splash-nav {
+      display: none!important;
+    }
+
     .header-container {
       @include flexbox();
       @include justify-content(space-between);
