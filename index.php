@@ -25,7 +25,7 @@
                 <div class="splash-nav">
                     <a href="<cms:link 'about-us.php' />"><h3>About Us</h3></a>
                     <a href="#companies"><h3>Companies</h3></a>
-                    <a href="about-us.php#board"><h3>Board of Directors</h3></a>
+                    <a href="vacancies.php"><h3>Vacancies</h3></a>
                     <a href="<cms:link 'contact-us.php' />"><h3>Contact Us</h3></a>
                 </div>
             </div>

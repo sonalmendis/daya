@@ -129,7 +129,6 @@ $header-height: 60px;
       @include flexbox();
       @include align-items(center);
       height: 100%;
-      width: 133px; //93px text + 40px margin
     }
   }
   .dropdown-content-outer {
@@ -196,7 +195,6 @@ $header-height: 60px;
     }
     >a:nth-of-type(3) {
       margin-right: 0;
-      width: 122px;
     }
     a:hover {
       cursor: pointer;

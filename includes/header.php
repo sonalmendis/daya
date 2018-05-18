@@ -49,7 +49,7 @@
 									<a href="contact-us.php">Contact Us</a>
 								</li>
 								<li>
-									<a href="about-us.php#board">Board of Directors</a>
+									<a href="vacancies.php">Vacancies</a>
 								</li>
 								<li>
 									<a href="#!">Companies &nbsp</a>
@@ -98,7 +98,7 @@
 								</div>
 							</div>
 
-							<a href="about-us.php#board">Board of Directors</a>
+							<a href="vacancies.php">Vacancies</a>
 						</div>
 					</div>
 				</div>
