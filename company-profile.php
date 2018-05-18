@@ -141,32 +141,12 @@
         </div>
         <div class="profile-details-section">
             <div class="blocks">
-                <div class="inner-block">
-                    <h1>
-                        <cms:show k_page_title />
-                    </h1>
-                    <a href="<cms:show company_website />" class="outline-btn">Visit Official Page</a>
-                    <a href="<cms:show company_profile_download />" class="outline-btn">Download Profile</a>
-                </div>
-                <div class="divider-outer-container">
-                    <div class="divider"></div>
-                </div>
-                <div class="inner-block">
-                    <h1>
-                        Where Are We?
-                    </h1>
-                    <p>
-                        <cms:nl2br>
-                            <cms:show company_address /></cms:nl2br>
-                    </p>
-                </div>
-                <div class="divider-outer-container">
-                    <div class="divider"></div>
-                </div>
+
                 <div class="inner-block">
                     <h1>
                         Contact Us
                     </h1>
+
                     <span class="contact">
                         <p class="prefix">
                             <strong>Email: </strong>
@@ -183,7 +163,24 @@
                             <cms:show company_phone />
                         </p>
                     </span>
+
+                    <p>
+                        <cms:nl2br>
+                            <cms:show company_address /></cms:nl2br>
+                    </p>
                 </div>
+
+                <div class="inner-block">
+                    <h1>
+                        <cms:show k_page_title />
+                    </h1>
+                    <a href="<cms:show company_website />" class="outline-btn">Visit Official Page</a>
+                    <a href="<cms:show company_profile_download />" class="outline-btn">Download Profile</a>
+                </div>
+                <div class="divider-outer-container">
+                    <div class="divider"></div>
+                </div>
+
             </div>
         </div>
         <!-- Main container ends in footer -->

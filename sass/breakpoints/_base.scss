@@ -787,6 +787,7 @@ COMPANY PROFILE PAGE
     @include flex-direction(column);
     position: relative;
     margin-bottom: 47px;
+
     .company-logo {
       width: 83%;
       max-width: 184px;
@@ -811,7 +812,7 @@ COMPANY PROFILE PAGE
       @include flexbox();
       @include flex-wrap(wrap);
       @include justify-content(center);
-      width: 430px;
+      max-width: 280px;
       margin: 0 auto;
 
       a {
@@ -936,6 +937,7 @@ COMPANY PROFILE PAGE
     color: #fff;
     padding: 60px 0;
     background-color: #08150a;
+
     .inner-block {
       margin-bottom: 67px;
     }
@@ -949,6 +951,15 @@ COMPANY PROFILE PAGE
     p {
       text-align: center;
     }
+
+    .prefix {
+      margin-bottom: 5px;
+    }
+
+    p:nth-of-type(2) {
+      margin-bottom: 25px;
+    }
+
     .outline-btn {
       border: 1px solid #fff;
       padding: 15px;
@@ -965,8 +976,14 @@ COMPANY PROFILE PAGE
     }
     .outline-btn:hover,
     .outline-btn:active {
-      background-color: #353535;
+      background-color: $green;
     }
+
+    .divider {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   }
 }
 
@@ -1012,10 +1029,16 @@ ABOUT US PAGE
       }
     }
 
+    .second {
+      margin-bottom: 50px;
+    }
+
     .splash-nav {
       @include flexbox();
       @include flex-wrap(wrap);
       @include justify-content(center);
+      max-width: 280px;
+      margin: 0 auto;
 
       a {
         z-index: 2;

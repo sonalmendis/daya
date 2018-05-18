@@ -98,7 +98,7 @@ END OF TEMPLATE
 				</div>
 
 				<div class="divider-outer-container">
-					<div class="divider">
+					<div class="divider second">
 						<img class="marker" src="img/diamond-marker-white.svg " alt="Marker" />
 					</div>
 				</div>
