@@ -4,23 +4,21 @@
 
     <cms:editable name="company_logo" order="1" label='Company Logo' quality="100" show_preview='1' type="image" />
     <cms:editable name="category_for_front_page" order="2" label="Company Industry/Category" desc="The industry this company belongs to" type="text" />
-    <cms:editable name="company_address" order="3" label="Company Address" type="textarea" />
+    <cms:editable name="company_address" order="3" label="Company Address" type="textarea" desc="Make sure to add new lines"/>
     <cms:editable name="company_email" order="4" label="Company Email" type="text" />
     <cms:editable name="company_phone" order="5" label="Company Phone Number" type="text" />
     <cms:editable name="company_website" order="6" label="Company Website" type="text" />
     <cms:editable name="company_profile_download" order="7" label="Company Profile Download File" desc="This could be a PDF of the company's info" type="file" />
 
     <cms:editable name="splash_image" order="8" label='Splash Image' quality="100" desc='The first image that appears on a company profile page and the image used to its corresponding home page block' show_preview='1' width="1600" type="image" />
-    <cms:editable name="intro_image" order="9" label="Intro Image" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+
+    <cms:editable name="intro_image_1" order="9" label="Intro Image (Top Left)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+    <cms:editable name="intro_image_2" order="9" label="Intro Image (Top Right)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+    <cms:editable name="intro_image_3" order="9" label="Intro Image (Bottom Left)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+    <cms:editable name="intro_image_4" order="9" label="Intro Image (Bottom Right)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
 
     <cms:editable name="profile_intro" order="10" label="Intro Text" desc="The opening paragraph text" type="richtext" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />" >
         <h1>Who We Are</h1>
-
-        <p>
-            We are Olympus Tea Company, the most recent addition to the ever-growing Sri Lankan conglomerate, Daya Group of Companies. With an annual turnover in excess of USD 50 million, Daya Group of Companies is emerging as a leader in several areas of business including apparel manufacturing, construction, transport, fashion, micro-banking, household and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.
-        </p>
-
-        <h1>What We Do</h1>
 
         <p>
             We are Olympus Tea Company, the most recent addition to the ever-growing Sri Lankan conglomerate, Daya Group of Companies. With an annual turnover in excess of USD 50 million, Daya Group of Companies is emerging as a leader in several areas of business including apparel manufacturing, construction, transport, fashion, micro-banking, household and consumer electronics, agriculture, plastics, packaging, printing, aviation and tourism.
@@ -114,7 +112,14 @@
                     <cms:show profile_intro />
                 </div>
 
-                <img src="<cms:show intro_image />" alt="Intro Image" />
+                <div class="intro-imgs">
+                    <div class="intro-imgs-inner">
+                        <img src="<cms:show intro_image_1 />" alt="Intro Image" />
+                        <img src="<cms:show intro_image_2 />" alt="Intro Image" />
+                        <img src="<cms:show intro_image_3 />" alt="Intro Image" />
+                        <img src="<cms:show intro_image_4 />" alt="Intro Image" />
+                    </div>
+                </div>
             </div>
 
 

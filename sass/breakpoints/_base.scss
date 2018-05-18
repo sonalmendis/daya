@@ -878,10 +878,31 @@ COMPANY PROFILE PAGE
         text-align: justify;
         width: 100%;
       }
-      img {
+
+      .intro-imgs {
         width: 100%;
-        height: auto;
+        position: relative;
+        padding-top: 100%;
+
+        .intro-imgs-inner{
+          position:  absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          @include flexbox;
+          @include flex-wrap(wrap);
+          @include justify-content(space-between);
+          @include align-content(space-between);
+          
+          img {
+            width: 49.5%;
+            height: 49.5%;
+            object-fit: cover;
+          }
+        }
       }
+
     }
     .latest-projects-section {
       .col {

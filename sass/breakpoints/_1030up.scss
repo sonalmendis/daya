@@ -426,10 +426,10 @@ COMPANY PROFILE PAGE
         width: 45%;
         margin: 0 !important;
       }
-      img {
-        width: 495px;
-        height: 495px;
-        @include object-fit(cover);
+
+      .intro-imgs {
+        width: 45%;
+        padding-top: 45%;
       }
     }
     .latest-projects-section {
