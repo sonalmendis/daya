@@ -2,6 +2,13 @@
 
 <cms:template title="Company Profile" clonable='1'>
 
+    <cms:config_list_view orderby='weight' order='asc'>
+        <cms:field 'k_selector_checkbox' />
+        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'k_up_down' />
+        <cms:field 'k_actions' />
+    </cms:config_list_view>
+
     <cms:editable name="company_logo" order="1" label='Company Logo' quality="100" show_preview='1' type="image" />
     <cms:editable name="category_for_front_page" order="2" label="Company Industry/Category" desc="The industry this company belongs to" type="text" />
     <cms:editable name="company_address" order="3" label="Company Address" type="textarea" desc="Make sure to add new lines"/>
@@ -25,17 +32,16 @@
         </p>
     </cms:editable>
 
-    <cms:repeatable name='latest_project_column' label="Latest Projects" desc="Add as many projects as you need" order="11" >
+<!--     <cms:repeatable name='latest_project_column' label="Latest Projects" desc="Add as many projects as you need" order="11" >
     <div class="col">
             <cms:editable name="column_content" label="Project text" type="nicedit" >
-            <!-- css='/css/templates/latest-news.css | /css/templates/latest-news-text.css' -->
                 <h2>Golden Panda Range</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin lorem id nisl sollicitudin, et pellentesque lacus cursus. Aliquam pellentesque eros eros, vitae convallis sem scelerisque vel. Integer sit amet nibhligula. Praesent purus leo, ullamcorper id tellus eget, vehicula hendrerit ante.</p>
             </cms:editable>
             <cms:editable name="latest_project_image" label="Project Image" width="400" type="image" />
 
         </div>
-    </cms:repeatable>
+    </cms:repeatable> -->
 
 
 
@@ -123,7 +129,7 @@
             </div>
 
 
-            <div class="divider">
+<!--             <div class="divider">
             </div>
 
 
@@ -141,7 +147,7 @@
 
                     </cms:show_repeatable>
                 </div>
-            </div>
+            </div> -->
 
         </div>
         <div class="profile-details-section">

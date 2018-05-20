@@ -55,7 +55,7 @@
 									<a href="#!">Companies &nbsp</a>
 									<div class="nav-dropdown">
 										<div class="dropdown-content">
-											<cms:pages masterpage='company-profile.php'>
+											<cms:pages masterpage='company-profile.php' orderby='weight' order='asc'>
 												<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
 													<h3>
 														<cms:show k_page_title />
@@ -84,7 +84,7 @@
 
 								<div class="dropdown-content-outer">
 									<div class="dropdown-content">
-										<cms:pages masterpage='company-profile.php'>
+										<cms:pages masterpage='company-profile.php' orderby='weight' order='asc'>
 											<a class="hvr-grow-shadow" href="<cms:show k_page_link />">
 												<h3>
 													<cms:show k_page_title />

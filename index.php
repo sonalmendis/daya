@@ -52,7 +52,7 @@
             <div class="our-industries-section">
                 <h1>Our Companies & Industries</h1>
                 <h3>Click below to find out more</h3>
-                <cms:pages masterpage='company-profile.php'>
+                <cms:pages masterpage='company-profile.php' orderby='weight' order='asc'>
                     <div class="industry-outer-container hvr-grow-shadow">
                         <a href="<cms:show k_page_link />" class="industry-block">
 
