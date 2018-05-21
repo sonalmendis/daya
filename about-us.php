@@ -58,7 +58,7 @@ END OF TEMPLATE
 
 			<div class="black-overlay" style="<cms:show black_overlay_toggle />"></div>
 
-			<div class="header-container">
+			<div style="display:none;" class="header-container">
 				<div class="static-header">
 					<a href="index.php">
 						<img src="img/logo.svg" alt="Logo" />

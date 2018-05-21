@@ -28,14 +28,30 @@
         </div>
 
         <div class="main-content">
-            <div class="contact-block email">
-                <h3>Email:</h3>
-                <h2>dayagroup@daya-group.com</h2>
+
+            <div class="left-block">
+                <div class="contact-block email">
+                    <h3>Email:</h3>
+                    <h2>dayagroup@daya-group.com</h2>
+                </div>
+                <div class="contact-block phone">
+                    <h3>Phone:</h3>
+                    <h2>+94 (0)115 390 100</h2>
+                </div>
+
+
+                <form id="contact-form-desktop" class="contact-block" action="includes/phpmailer/phpscript/smtp.php" method="post">
+                    <h3>Contact Form:</h3>
+
+                    <input type="text" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" name="name" />
+                    <input type="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" name="email" />
+                    <textarea name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'"></textarea>
+
+                    <button class="btn">Submit</button>
+                </form>
             </div>
-            <div class="contact-block phone">
-                <h3>Phone:</h3>
-                <h2>+94 (0)115 390 100</h2>
-            </div>
+
+
             <div class="contact-block address">
                 <h3>Address:</h3>
                 <!-- Google Map -->
@@ -60,7 +76,10 @@
                         var myOptions = {
                             zoom: 14,
                             center: new google.maps.LatLng(6.8568054, 79.89030839999998),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            mapTypeControlOptions: {
+                                mapTypeIds: []
+                            }
                         };
                         map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
                         marker = new google.maps.Marker({
@@ -68,11 +87,12 @@
                             position: new google.maps.LatLng(6.8568054, 79.89030839999998)
                         });
                         infowindow = new google.maps.InfoWindow({
-                            content: '<strong style="font-size:18px;margin-bottom:6px;">Daya Group Head Office</strong><br><br>No 362,<br>Colombo Road,<br>Pepiliyana Rd, <br>Boralesgamuwa<br>'
+                            content: '<a target="_blank" href="https://www.google.com/maps/place/Daya+Group+Head+Office/@6.8570383,79.8888301,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae25a58abcfc81b:0x10031b6fc1f08e75!8m2!3d6.8570383!4d79.8910188" style="color:black;text-decoration:none;font-family:sans-serif;"><strong style="font-size:18px;margin-bottom:6px;">Daya Group Head Office</strong><br><br>No 362,<br>Colombo Road,<br>Pepiliyana Rd, <br>Boralesgamuwa<br></a>'
                         });
                         google.maps.event.addListener(marker, 'click', function () {
                             infowindow.open(map, marker);
                         });
+
                         infowindow.open(map, marker);
                     }
                     google.maps.event.addDomListener(window, 'load', init_map);
@@ -86,12 +106,14 @@
                 <h1>Contact Form</h1>
                 <h2>Feel free to contact us using the form below</h2>
                 <input type="text" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" name="name" />
-                <input type="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" name="email"
-                />
+                <input type="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" name="email" />
                 <textarea name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'"></textarea>
 
                 <button class="btn">Submit</button>
             </form>
+
+
+
 
         </div>
         <!-- /main content -->

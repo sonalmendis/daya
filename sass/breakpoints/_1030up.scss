@@ -146,19 +146,29 @@ $header-height: 60px;
     right: -82px;
     position: absolute;
     background-color: white;
-    min-width: 330px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    min-width: 282px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.09);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.09);
     z-index: -1;
     max-height: 400px;
     overflow: scroll;
     overflow-x: hidden;
     a {
-      padding: 20px 0;
-      border-bottom: 1px solid $grey;
+      transition: all 0.4s;
+      padding: 20px 20px;
       height: auto;
+      text-align: left;
+      display: block !important;
       h3 {
+        transition: all 0.4s;
         font-size: 18px;
         color: black;
+      }
+    }
+    a:hover {
+      background-color: $green;
+      h3 {
+        color: #fff !important;
       }
     }
   }
@@ -317,6 +327,7 @@ COMPANY PROFILE PAGE
     display: block;
   }
   .splash {
+    margin-top: 60px;
     background-attachment: fixed;
     margin-bottom: 67px;
     .black-overlay {}
@@ -402,11 +413,9 @@ COMPANY PROFILE PAGE
     .divider {
       z-index: 2;
     }
-
     .splash-nav {
-      display: none!important;
+      display: none !important;
     }
-
     .splash-inner-container {
       @include inner-grid();
       z-index: 2;
@@ -429,7 +438,6 @@ COMPANY PROFILE PAGE
         width: 45%;
         margin: 0 !important;
       }
-
       .intro-imgs {
         width: 45%;
         padding-top: 45%;
@@ -467,33 +475,31 @@ COMPANY PROFILE PAGE
   }
   .profile-details-section {
     padding: 39px 0;
-
     .blocks {
+      text-align: left;
       @include outer-grid;
-      max-width: 900px;
-      @include flexbox();
-      @include justify-content(space-between);
       .divider-outer-container {
         display: none;
       }
       .inner-block {
-        width: 45%;
-        margin: 0 2.5%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
         h1 {
           margin-bottom: 25px;
           text-align: left;
           font-size: 36px;
         }
-
         p {
           text-align: left;
           line-height: 23px;
         }
-        > p {
+        >p {
           margin-top: 20px;
         }
         .outline-btn {
           margin: 0 0 10px 0;
+          text-align: center;
         }
         .outline-btn:hover {
           // background-color: #353535;
@@ -521,11 +527,13 @@ COMPANY PROFILE PAGE
 ABOUT US PAGE
 **************/
 
-.main-container.about-us {
+.main-container.about-us,
+.main-container.vacancies {
   .main-wrapper {
     height: auto;
   }
   .splash {
+    margin-top: 60px;
     height: 560px;
     background-attachment: fixed;
     h1 {
@@ -540,11 +548,9 @@ ABOUT US PAGE
     .divider {
       margin: 0;
     }
-
     .splash-nav {
-      display: none!important;
+      display: none !important;
     }
-
     .header-container {
       @include flexbox();
       @include justify-content(space-between);
@@ -777,27 +783,100 @@ CONTACT US PAGE
     }
     .splash-outer-container {
       @include inner-grid();
+      max-width: 943px;
     }
     .divider-outer-container {
       @include inner-grid();
+      max-width: 943px;
+      .divider {}
     }
   }
   .main-content {
+    margin-bottom: 67px;
+    text-align: left;
+    @include inner-grid();
+    max-width: 843px;
+    @include flexbox();
+    @include justify-content(space-between);
     .contact-block {
-      margin-bottom: 67px;
+      text-align: left !important;
+      margin-bottom: 37px;
+    }
+    #contact-form-desktop {
+      display: block;
+      padding: 0;
+      .btn {
+        padding: 10px 22px !important;
+        width: 120px !important;
+        margin: 0 !important;
+      }
     }
     .contact-block:not(.address) {
       @include inner-grid();
       h2 {
-        font-size: 26px;
+        font-size: 17px;
       }
     }
+    .contact-block.address {
+      padding-left: 27px;
+    }
+    .left-block {
+      padding-right: 27px;
+      border-right: 1px solid $grey;
+    }
+    .left-block,
+    .contact-block.address {
+      @include flex(0, 1, 50%);
+    }
     #contact-form {
+      display: none;
       margin-bottom: 87px;
       @include inner-grid();
       button.btn {
         width: auto;
       }
+    }
+  }
+}
+
+.main-container.vacancies {
+  .splash {}
+  .introText {
+    @include inner-grid();
+    h1 {}
+    p {}
+  }
+  .vacanciesBoxContainer {
+    iframe {}
+  }
+}
+
+/**************
+FOOTER
+**************/
+
+.footer-container {
+  padding: 27px 0;
+  footer {
+    @include outer-grid();
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+  .left-col {
+    margin-bottom: 0;
+    .inner-col {
+      display: inline-block;
+    }
+    .copyright-col {
+      margin-right: 4px;
+      padding-right: 9px;
+      border-right: 1px solid white;
+    }
+  }
+  .right-col {
+    img {
+      height: 37px;
     }
   }
 }

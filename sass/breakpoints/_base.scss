@@ -346,6 +346,7 @@ HEADER STYLES
 }
 
 .fixed-header-bar {
+  top: 0;
   height: 72px;
   position: fixed;
   background-color: white;
@@ -431,6 +432,7 @@ HEADER STYLES
     .fixed-header-mobile {
       width: 100%;
       ul {
+        background: white;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -565,7 +567,7 @@ HEADER STYLES
       font-size: 18px;
       font-family: $neuton;
       font-weight: 400;
-      color: #fff;
+      color: $black;
       z-index: 2;
     }
   }
@@ -683,7 +685,7 @@ HOME PAGE
     h3 {
       margin: 0px 12px 13px 12px;
       color: black;
-    } 
+    }
   }
   .main-content {
     @include inner-grid();
@@ -775,6 +777,7 @@ COMPANY PROFILE PAGE
     display: none;
   }
   .splash {
+    margin-top: 72px;
     text-align: center;
     height: 90%;
     width: 100%;
@@ -787,7 +790,6 @@ COMPANY PROFILE PAGE
     @include flex-direction(column);
     position: relative;
     margin-bottom: 47px;
-
     .company-logo {
       width: 83%;
       max-width: 184px;
@@ -807,26 +809,21 @@ COMPANY PROFILE PAGE
         top: 2px;
       }
     }
-
     .splash-nav {
       @include flexbox();
       @include flex-wrap(wrap);
       @include justify-content(center);
       max-width: 280px;
       margin: 0 auto;
-
       a {
         z-index: 2;
       }
-      
       h3 {
         margin: 0px 12px 13px 12px;
-        color: white!important;
+        color: white !important;
         text-decoration: none;
       }
     }
-
-
     .splash-inner-container {
       z-index: 2;
       position: relative;
@@ -878,13 +875,11 @@ COMPANY PROFILE PAGE
         text-align: justify;
         width: 100%;
       }
-
       .intro-imgs {
         width: 100%;
         position: relative;
         padding-top: 100%;
-
-        .intro-imgs-inner{
+        .intro-imgs-inner {
           position: absolute;
           top: 0;
           left: 0;
@@ -894,7 +889,6 @@ COMPANY PROFILE PAGE
           @include flex-wrap(wrap);
           @include justify-content(space-between);
           @include align-content(space-between);
-          
           img {
             width: 49.5%;
             height: 49.5%;
@@ -902,7 +896,6 @@ COMPANY PROFILE PAGE
           }
         }
       }
-
     }
     .latest-projects-section {
       .col {
@@ -931,7 +924,6 @@ COMPANY PROFILE PAGE
       h4,
       h5,
       h6 {
-        @extend h2;
         color: $green;
         font-weight: 400;
         text-align: center;
@@ -945,7 +937,6 @@ COMPANY PROFILE PAGE
       pre {
         margin-bottom: 27px;
         text-align: justify;
-        @extend p;
       }
       img {
         width: 100%;
@@ -958,7 +949,6 @@ COMPANY PROFILE PAGE
     color: #fff;
     padding: 60px 0;
     background-color: #08150a;
-
     .inner-block {
       margin-bottom: 67px;
     }
@@ -972,15 +962,12 @@ COMPANY PROFILE PAGE
     p {
       text-align: center;
     }
-
     .prefix {
       margin-bottom: 5px;
     }
-
     p:nth-of-type(2) {
       margin-bottom: 25px;
     }
-
     .outline-btn {
       border: 1px solid #fff;
       padding: 15px;
@@ -999,12 +986,10 @@ COMPANY PROFILE PAGE
     .outline-btn:active {
       background-color: $green;
     }
-
     .divider {
       margin-left: auto;
       margin-right: auto;
     }
-
   }
 }
 
@@ -1012,12 +997,14 @@ COMPANY PROFILE PAGE
 ABOUT US PAGE
 **************/
 
-.main-container.about-us {
+.main-container.about-us,
+.main-container.vacancies {
   .header-container {
     display: none;
   }
   .main-wrapper {}
   .splash {
+    margin-top: 72px;
     margin-bottom: 27px;
     text-align: center;
     height: 90%;
@@ -1049,29 +1036,24 @@ ABOUT US PAGE
         top: 2px;
       }
     }
-
     .second {
       margin-bottom: 50px;
     }
-
     .splash-nav {
       @include flexbox();
       @include flex-wrap(wrap);
       @include justify-content(center);
       max-width: 280px;
       margin: 0 auto;
-
       a {
         z-index: 2;
       }
-      
       h3 {
         margin: 0px 12px 13px 12px;
-        color: white!important;
+        color: white !important;
         text-decoration: none;
       }
     }
-
     .splash-outer-container {
       @include outer-grid;
       width: 100%;
@@ -1130,15 +1112,12 @@ ABOUT US PAGE
       h3,
       h4,
       h5,
-      h6 {
-        @extend h1;
-      }
+      h6 {}
       .p,
       span,
       li,
       address,
       pre {
-        @extend p;
         font-size: 20px;
       }
     } // Timeline
@@ -1449,13 +1428,10 @@ ABOUT US PAGE
         li,
         address,
         pre {
-          @extend p;
           text-align: center;
         }
         h1,
-        h2 {
-          @extend h2;
-        }
+        h2 {}
       }
     }
   }
@@ -1539,6 +1515,9 @@ CONTACT US PAGE
         font-size: 18px;
       }
     }
+    #contact-form-desktop {
+      display: none;
+    }
     .contact-block:not(.address) {
       @include inner-grid();
       text-align: center;
@@ -1546,7 +1525,8 @@ CONTACT US PAGE
     #gmap_canvas {
       visibility: visible !important;
     }
-    #contact-form {
+    #contact-form,
+    #contact-form-desktop {
       margin-bottom: 47px;
       @include inner-grid();
       h1 {
@@ -1567,10 +1547,10 @@ CONTACT US PAGE
         background-color: #e4e4e4;
         outline: none;
         border: none;
-        padding: 14px 12px;
+        padding: 11px 12px;
         color: #4d4d4d;
         width: 100%;
-        margin-bottom: 22px;
+        margin-bottom: 18px;
         font-size: 18px;
       }
       input:focus,
@@ -1657,12 +1637,33 @@ CONTACT US PAGE
   }
 }
 
+.main-container.vacancies {
+  .splash {
+    margin-bottom: 67px;
+  }
+  .introText {
+    margin-bottom: 47px;
+    h1 {
+      margin-bottom: 22px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .vacanciesBoxContainer {
+    margin-bottom: 47px;
+    iframe {
+      width: 100%;
+    }
+  }
+}
+
 /**************
 FOOTER
 **************/
 
 .footer-container {
-  height: 70px;
+  padding: 27px 15px;
   background-color: $green;
   text-align: center;
   @include flexbox();
@@ -1671,4 +1672,13 @@ FOOTER
   color: #fff;
   font-family: $montserrat;
   font-size: 13px;
+  .left-col {
+    margin-bottom: 22px;
+  }
+  .right-col {
+    img {
+      height: 37px;
+      margin-right: 8px;
+    }
+  }
 }

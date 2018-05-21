@@ -152,14 +152,14 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   }
 
   // Check if contact us page, to change fixed header settings.
-  var pagePathname = window.location.pathname.split("/").slice(-1)[0];
-  if (pagePathname === 'contact-us.php') {
+
+  if (!$(".main-container").hasClass("home")) {
     $(".fixed-header-bar").css({
       "margin-top": "0",
       "transition": "none",
-      "-webkit-box-shadow": "none",
-      "-moz-box-shadow": "none",
-      "box-shadow": "none"
+      "-webkit-box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.06)",
+      "-moz-box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.06)",
+      "box-shadow": "0px 2px 8px 0px rgba(0, 0, 0, 0.06)"
     });
   }
 
@@ -475,6 +475,42 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
       event.preventDefault();
 
       var $this = $("#contact-form .btn");
+      if ($this.hasClass("active") || $this.hasClass("success")) {
+        return false;
+      }
+      // Init loding
+      $this.addClass("active");
+      //Loading
+      $this.addClass("loader");
+
+      /* get some values from elements on the page: */
+      var $form = $(this),
+        name_value = $form.find('input[name="name"]').val(),
+        email_value = $form.find('input[name="email"]').val(),
+        message_value = $form.find('textarea[name="message"]').val(),
+        url = $form.attr("action");
+
+      /* Send the data using post */
+      var posting = $.post(url, {
+        name: name_value,
+        email: email_value,
+        message: message_value
+      });
+
+      posting.done(function (data) {
+        //Success
+        $this.removeClass("loader active");
+        $this.text("Your message has been sent successfully");
+        $this.addClass("success animated pulse");
+      });
+    });
+
+
+    $("#contact-form-desktop").submit(function (event) {
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      var $this = $("#contact-form-desktop .btn");
       if ($this.hasClass("active") || $this.hasClass("success")) {
         return false;
       }
