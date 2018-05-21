@@ -89,8 +89,8 @@
 												<h3>
 													<cms:show k_page_title />
 												</h3>
-												<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
-												<div class="black-overlay"></div>
+<!-- 												<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
+												<div class="black-overlay"></div> -->
 
 											</a>
 										</cms:pages>
