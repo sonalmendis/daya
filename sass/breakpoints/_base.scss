@@ -800,7 +800,7 @@ COMPANY PROFILE PAGE
       height: 100%;
       position: absolute;
       background: #000;
-      opacity: 0.7;
+      opacity: 0.78;
     }
     .divider {
       margin-bottom: 27px;
@@ -855,14 +855,14 @@ COMPANY PROFILE PAGE
       h4,
       h5,
       h6 {
-        @extend h1;
+        // @extend h1;
       }
       .p,
       span,
       li,
       address,
       pre {
-        @extend p;
+        // @extend p;
       }
       .intro-text {
         width: 100%;
@@ -946,9 +946,7 @@ COMPANY PROFILE PAGE
   }
   .profile-details-section {
     text-align: center;
-    color: #fff;
     padding: 60px 0;
-    background-color: #08150a;
     .inner-block {
       margin-bottom: 67px;
     }
@@ -956,8 +954,15 @@ COMPANY PROFILE PAGE
       margin-bottom: 0;
     }
     h1 {
-      color: #fff;
-      margin-bottom: 27px;
+      margin-bottom: 4px;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: 300;
+      font-family: $montserrat;
+      letter-spacing: 0;
+      color: $green;
+      margin-bottom: 22px;
     }
     p {
       text-align: center;
@@ -969,27 +974,32 @@ COMPANY PROFILE PAGE
       margin-bottom: 25px;
     }
     .outline-btn {
-      border: 1px solid #fff;
-      padding: 15px;
-      color: #fff;
+      border: 1px solid grey;
+      letter-spacing: 0.6px;
+      padding: 14px 13px;
+      color: $black;
       font-family: $montserrat;
       font-weight: 300;
       text-transform: uppercase;
-      width: 226px;
+      width: 186px;
       display: block;
       margin: 0 auto 17px auto;
-      font-size: 14px;
+      font-size: 12px;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-tap-highlight-color: transparent;
     }
     .outline-btn:hover,
     .outline-btn:active {
-      background-color: $green;
+      text-decoration: underline;
     }
     .divider {
       margin-left: auto;
       margin-right: auto;
     }
+  }
+  #companyProfileMap {
+    width: 100%;
+    height: 420px;
   }
 }
 
@@ -1633,6 +1643,10 @@ CONTACT US PAGE
           transform: rotateZ(360deg);
         }
       }
+    } // MAP
+    #contactusMap {
+      width: 100%;
+      height: 482px;
     }
   }
 }

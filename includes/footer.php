@@ -10,8 +10,8 @@
         </div>
 
         <div class="right-col">
-            <a href="https://www.facebook.com/dayagroup/"> <img src="img/facebook.svg" alt="Facebook icon" /> </a>
-            <a href="https://www.linkedin.com/company/daya-group-of-companies-pvt-ltd-/"> <img src="img/linkedin.svg" alt="LinkedIn icon" /> </a>
+            <a target="_blank" href="https://www.facebook.com/dayagroup/"> <img src="img/facebook.svg" alt="Facebook icon" /> </a>
+            <a target="_blank" href="https://www.linkedin.com/company/daya-group-of-companies-pvt-ltd-/"> <img src="img/linkedin.svg" alt="LinkedIn icon" /> </a>
 
         </div>
 
@@ -59,6 +59,7 @@
     ga('create', 'UA-XXXXX-X', 'auto');
     ga('send', 'pageview');
 </script>
+
 </body>
 
 </html>

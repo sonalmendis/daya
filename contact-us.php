@@ -54,50 +54,9 @@
 
             <div class="contact-block address">
                 <h3>Address:</h3>
-                <!-- Google Map -->
-                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpjZ2EhnbVapLkc-TUZ4-JA2ueL3XOwBc'></script>
-                <div style='overflow:hidden;height:430px;width:100%;'>
-                    <div id='gmap_canvas' style='height:430px;width:100%;visibility:visible !important;'></div>
-                    <style>
-                        #gmap_canvas img {
-                            max-width: none !important;
-                            background: none !important
-                        }
 
-                        .gm-style-pbt {
-                            text-align: center;
-                        }
-                    </style>
-                </div>
-                <a style="color:white!important;" href='https://www.embedmap.net/'>adding google maps to my website</a>
-                <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=192e6f7122683ffbec648b20455913b73260d5cb'></script>
-                <script type='text/javascript'>
-                    function init_map() {
-                        var myOptions = {
-                            zoom: 14,
-                            center: new google.maps.LatLng(6.8568054, 79.89030839999998),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP,
-                            mapTypeControlOptions: {
-                                mapTypeIds: []
-                            }
-                        };
-                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-                        marker = new google.maps.Marker({
-                            map: map,
-                            position: new google.maps.LatLng(6.8568054, 79.89030839999998)
-                        });
-                        infowindow = new google.maps.InfoWindow({
-                            content: '<a target="_blank" href="https://www.google.com/maps/place/Daya+Group+Head+Office/@6.8570383,79.8888301,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae25a58abcfc81b:0x10031b6fc1f08e75!8m2!3d6.8570383!4d79.8910188" style="color:black;text-decoration:none;font-family:sans-serif;"><strong style="font-size:18px;margin-bottom:6px;">Daya Group Head Office</strong><br><br>No 362,<br>Colombo Road,<br>Pepiliyana Rd, <br>Boralesgamuwa<br></a>'
-                        });
-                        google.maps.event.addListener(marker, 'click', function () {
-                            infowindow.open(map, marker);
-                        });
-
-                        infowindow.open(map, marker);
-                    }
-                    google.maps.event.addDomListener(window, 'load', init_map);
-                </script>
-                <!-- /google map-->
+                <iframe id="contactusMap" width="450" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjNoeRP6fg715vPUyqiiRfLItOdl9qSHs&q=Daya+Group+of+Companies" allowfullscreen>
+                </iframe>
             </div>
             <!-- /contact block -->
             <!--Contact Form-->

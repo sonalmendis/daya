@@ -464,6 +464,8 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   );
 
 
+
+
   /****
    * CONTACT FORM SUBMIT
    ****/
@@ -567,3 +569,21 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   }, 800);
 
 }); // end of document ready, put everything inside here
+
+/*** CONTACT US MAPS (has to be done outside of document ready) */
+// if ($(".main-container").hasClass("contact-us")) {
+//   function initMap() {
+//     var dayahq = {
+//       lat: 6.857092,
+//       lng: 79.891019
+//     };
+//     var map = new google.maps.Map(document.getElementById('contactusMap'), {
+//       zoom: 14,
+//       center: dayahq
+//     });
+//     var marker = new google.maps.Marker({
+//       position: dayahq,
+//       map: map
+//     });
+//   }
+// }
