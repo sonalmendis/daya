@@ -11,13 +11,20 @@
 
     <cms:editable name="company_logo" order="1" label='Company Logo' quality="100" show_preview='1' type="image" />
     <cms:editable name="category_for_front_page" order="2" label="Company Industry/Category" desc="The industry this company belongs to" type="text" />
-    <cms:editable name="company_address" order="3" label="Company Address" type="textarea" desc="Make sure to add new lines" />
+    <cms:editable name="company_address" order="3" label="Company Address" type="textarea" desc="Make sure to add new lines" >
+        No 362<br>
+        Colombo Road<br>
+        Pepiliyana Rd<br>
+        Boralesgamuwa
+    </cms:editable>
     <cms:editable name="googlemaps_query" order="4" label="Company Location (For Google Maps)" type="text" desc="The location/address when searched on https://www.google.com/maps e.g. 'Daya Group of Companies' will work for Daya HQ">Daya Group of Companies</cms:editable>
     <cms:editable name="googlemaps_coord" order="5" label="Company Coordinates (ONLY IF ABOVE DOESN'T WORK)" type="text" desc="If the above doesn't work you can use the direct coordinates of the location. E.g. Daya HQ's coordinates are 6.857088, 79.891006, you can get these from https://www.google.com/maps by right clicking and clicking 'What's Here?'" />
 
     <cms:editable name="company_email" order="6" label="Company Email" type="text" />
     <cms:repeatable name='company_phone_repeatable' label='Company Phone Number' order='7' desc="If you have multiple phone numbers please press the + button and add more" >
-        <cms:editable type='text' name='company_phone' label='Company Phone Number' />
+        <cms:editable type='text' name='company_phone' label='Company Phone Number' >
+            +94 11 539 0100
+        </cms:editable>
     </cms:repeatable>
     <cms:editable name="company_website" order="8" label="Company Website" type="text" />
     <cms:editable name="company_profile_download" order="9" label="Company Profile Download File" desc="This could be a PDF of the company's info" type="file" />
