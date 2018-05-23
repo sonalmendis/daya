@@ -20,7 +20,9 @@
     <cms:editable name="googlemaps_query" order="4" label="Company Location (For Google Maps)" type="text" desc="The location/address when searched on https://www.google.com/maps e.g. 'Daya Group of Companies' will work for Daya HQ">Daya Group of Companies</cms:editable>
     <cms:editable name="googlemaps_coord" order="5" label="Company Coordinates (ONLY IF ABOVE DOESN'T WORK)" type="text" desc="If the above doesn't work you can use the direct coordinates of the location. E.g. Daya HQ's coordinates are 6.857088, 79.891006, you can get these from https://www.google.com/maps by right clicking and clicking 'What's Here?'" />
 
-    <cms:editable name="company_email" order="6" label="Company Email" type="text" />
+    <cms:editable name="company_email" order="6" label="Company Email" type="text" >
+        daya@daya-group.com
+    </cms:editable>
     <cms:repeatable name='company_phone_repeatable' label='Company Phone Number' order='7' desc="If you have multiple phone numbers please press the + button and add more" >
         <cms:editable type='text' name='company_phone' label='Company Phone Number' >
             +94 11 539 0100
