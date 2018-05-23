@@ -54,6 +54,7 @@ body {
 }
 
 .preloader {
+  top: 0;
   position: absolute;
   position: fixed;
   width: 100%;
@@ -842,6 +843,9 @@ COMPANY PROFILE PAGE
     }
   }
   .main-content {
+    margin-bottom: 27px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid $grey;
     @include inner-grid();
     .intro-section {
       margin-bottom: 47px;
@@ -946,7 +950,6 @@ COMPANY PROFILE PAGE
   }
   .profile-details-section {
     text-align: center;
-    padding: 60px 0;
     .inner-block {
       margin-bottom: 67px;
     }
@@ -954,7 +957,8 @@ COMPANY PROFILE PAGE
       margin-bottom: 0;
     }
     h1 {
-      margin-bottom: 4px;
+      margin-bottom: 0px;
+      font-size: 30px;
     }
     h2 {
       font-size: 15px;
@@ -966,6 +970,7 @@ COMPANY PROFILE PAGE
     }
     p {
       text-align: center;
+      font-size: 18px;
     }
     .prefix {
       margin-bottom: 5px;
@@ -998,6 +1003,7 @@ COMPANY PROFILE PAGE
     }
   }
   #companyProfileMap {
+    display: block;
     width: 100%;
     height: 420px;
   }
@@ -1454,11 +1460,10 @@ CONTACT US PAGE
 .main-container.contact-us {
   height: auto;
   .splash {
+    height: 520px;
     position: relative;
     margin-bottom: 27px;
     text-align: center;
-    height: 340px;
-    height: 90vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1483,7 +1488,6 @@ CONTACT US PAGE
     }
     .splash-outer-container {
       @include outer-grid;
-      margin-top: -67px;
       width: 100%;
     }
     .splash-inner-container {
@@ -1510,19 +1514,20 @@ CONTACT US PAGE
       opacity: 0;
       transition: opacity 0.4s;
       text-align: center;
-      margin-bottom: 47px;
+      margin-bottom: 37px;
       h3 {
-        font-size: 14px;
+        font-size: 12px;
         text-transform: uppercase;
         font-family: $montserrat;
         font-weight: 300;
-        margin-bottom: 8px;
+        margin-bottom: 0px;
       }
       h2 {
         font-family: $montserrat;
         font-weight: 700;
         margin: 0;
-        font-size: 18px;
+        font-size: 15px;
+        line-height: 21px;
       }
     }
     #contact-form-desktop {

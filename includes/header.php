@@ -46,12 +46,6 @@
 									<a href="about-us.php">About Us</a>
 								</li>
 								<li>
-									<a href="contact-us.php">Contact Us</a>
-								</li>
-								<li>
-									<a href="vacancies.php">Vacancies</a>
-								</li>
-								<li>
 									<a href="#!">Companies &nbsp</a>
 									<div class="nav-dropdown">
 										<div class="dropdown-content">
@@ -67,13 +61,20 @@
 										</div>
 									</div>
 								</li>
+								<li>
+									<a href="vacancies.php">Vacancies</a>
+								</li>
+
+								<li>
+									<a href="contact-us.php">Contact Us</a>
+								</li>
 							</ul>
 						</div>
 
 
 						<div class="fixed-header-links">
 							<a href="about-us.php">About Us</a>
-							<a href="contact-us.php">Contact Us</a>
+
 
 							<div class="dropdown">
 
@@ -88,7 +89,7 @@
 												<h3>
 													<cms:show k_page_title />
 												</h3>
-<!-- 												<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
+												<!-- 												<img src="<cms:thumbnail splash_image width='400' height='400' crop='1'/>" alt="<cms:show k_page_title /> Image" />
 												<div class="black-overlay"></div> -->
 
 											</a>
@@ -98,6 +99,8 @@
 							</div>
 
 							<a href="vacancies.php">Vacancies</a>
+
+														<a href="contact-us.php">Contact Us</a>
 						</div>
 					</div>
 				</div>

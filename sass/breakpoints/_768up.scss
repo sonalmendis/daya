@@ -29,7 +29,8 @@
     }
 }
 
-.main-container.about-us {
+.main-container.about-us,
+.main-container.vacancies {
     .main-content {
         @include outer-grid();
         .intro {

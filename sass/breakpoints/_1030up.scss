@@ -113,7 +113,7 @@ $header-height: 60px;
       }
       a {
         h3 {
-          font-size: 19px;
+          font-size: 17px;
         }
       }
     }
@@ -420,8 +420,14 @@ COMPANY PROFILE PAGE
     }
   }
   .main-content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
     @include outer-grid();
     .intro-section {
+      margin-bottom: 12px;
+      padding-bottom: 67px;
+      border-bottom: 1px solid $grey;
       @include flexbox();
       @include justify-content(space-between);
       @include align-items(center);
@@ -468,10 +474,20 @@ COMPANY PROFILE PAGE
     img {}
   }
   .profile-details-section {
-    padding: 39px 0;
+    padding: 33px 0;
+    margin-bottom: 37px;
+    .title-container {
+      width: 100%;
+      h1 {
+        text-align: left;
+      }
+    }
     .blocks {
       text-align: left;
       @include outer-grid;
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include justify-content(space-between);
       .divider-outer-container {
         display: none;
       }
@@ -480,7 +496,6 @@ COMPANY PROFILE PAGE
         vertical-align: top;
         margin: 0;
         h1 {
-          margin-bottom: 25px;
           text-align: left;
           font-size: 36px;
         }
@@ -497,7 +512,7 @@ COMPANY PROFILE PAGE
         }
         .outline-btn:hover {
           // background-color: #353535;
-          background-color: $green;
+          // background-color: $green;
         }
         .contact {
           @include flexbox();
@@ -512,6 +527,16 @@ COMPANY PROFILE PAGE
             margin-bottom: 0;
           }
         }
+      }
+      .inner-block.contact-details {
+        padding-right: 27px;
+        @include flex(0, 1, 27.5%);
+      }
+      .inner-block.contact-buttons {
+        @include flex(1, 0, auto);
+      }
+      #companyProfileMap {
+        @include flex(0, 1, 45%);
       }
     }
   }
@@ -531,6 +556,7 @@ ABOUT US PAGE
     height: 560px;
     background-attachment: fixed;
     h1 {
+      font-size: 52px;
       margin: 57px 0 62px 0;
     }
     .splash-outer-container {
@@ -764,7 +790,7 @@ CONTACT US PAGE
     }
     h1 {
       margin: 57px 0 62px 0;
-      font-size: 56px;
+      font-size: 52px;
     }
     .header-container {
       @include flexbox();
@@ -776,6 +802,7 @@ CONTACT US PAGE
       position: absolute;
     }
     .splash-outer-container {
+      margin-top: -27px;
       @include inner-grid();
       max-width: 943px;
     }
@@ -794,7 +821,7 @@ CONTACT US PAGE
     @include justify-content(space-between);
     .contact-block {
       text-align: left !important;
-      margin-bottom: 37px;
+      margin-bottom: 27px;
     }
     #contact-form-desktop {
       display: block;
@@ -807,9 +834,7 @@ CONTACT US PAGE
     }
     .contact-block:not(.address) {
       @include inner-grid();
-      h2 {
-        font-size: 17px;
-      }
+      h2 {}
     }
     .contact-block.address {
       padding-left: 27px;
@@ -829,6 +854,9 @@ CONTACT US PAGE
       button.btn {
         width: auto;
       }
+    }
+    #contactusMap {
+      height: 605px;
     }
   }
 }

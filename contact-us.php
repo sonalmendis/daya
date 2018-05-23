@@ -38,6 +38,10 @@
                     <h3>Phone:</h3>
                     <h2>+94 (0)115 390 100</h2>
                 </div>
+                <div class="contact-block address2 opacity-visible">
+                    <h3>Address:</h3>
+                    <h2>No 362,<br>Colombo Road,<br>Pepiliyana, <br>Boralesgamuwa,<br>Sri Lanka </h2>
+                </div>
 
 
                 <form id="contact-form-desktop" class="contact-block" action="includes/phpmailer/phpscript/smtp.php" method="post">
@@ -53,7 +57,7 @@
 
 
             <div class="contact-block address">
-                <h3>Address:</h3>
+                <h3>Location:</h3>
 
                 <iframe id="contactusMap" width="450" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjNoeRP6fg715vPUyqiiRfLItOdl9qSHs&q=Daya+Group+of+Companies" allowfullscreen>
                 </iframe>

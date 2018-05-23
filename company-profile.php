@@ -15,18 +15,20 @@
     <cms:editable name="googlemaps_query" order="4" label="Company Location (For Google Maps)" type="text" desc="The location/address when searched on https://www.google.com/maps e.g. 'Daya Group of Companies' will work for Daya HQ">Daya Group of Companies</cms:editable>
     <cms:editable name="googlemaps_coord" order="5" label="Company Coordinates (ONLY IF ABOVE DOESN'T WORK)" type="text" desc="If the above doesn't work you can use the direct coordinates of the location. E.g. Daya HQ's coordinates are 6.857088, 79.891006, you can get these from https://www.google.com/maps by right clicking and clicking 'What's Here?'" />
 
-    <cms:editable name="company_email" order="6" label="Company Email" type="text" />
-    <cms:editable name="company_phone" order="7" label="Company Phone Number" type="text" />
+    <cms:editable name="company_email" order="6" label="Company Email" type="text" desc="If you have multiple phone numbers please press the + button and add more" />
+    <cms:repeatable name='company_phone_repeatable' label='Company Phone Number' order='7'>
+        <cms:editable type='text' name='company_phone' label='Company Phone Number' />
+    </cms:repeatable>
     <cms:editable name="company_website" order="8" label="Company Website" type="text" />
     <cms:editable name="company_profile_download" order="9" label="Company Profile Download File" desc="This could be a PDF of the company's info" type="file" />
 
     <cms:editable name="splash_image" order="10" label='Splash Image' quality="100" desc='The first image that appears on a company profile page and the image used to its corresponding home page block' show_preview='1' width="1600" type="image" />
     <cms:editable name="profile_intro" order="11" label="Intro Text" desc="The opening paragraph text" type="richtext" css='/css/main.css' toolbar='custom' custom_toolbar="<cms:embed 'no_format.inc' />">
 
-    <cms:editable name="intro_image_1" order="12" label="Intro Image (Top Left)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
-    <cms:editable name="intro_image_2" order="12" label="Intro Image (Top Right)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
-    <cms:editable name="intro_image_3" order="12" label="Intro Image (Bottom Left)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
-    <cms:editable name="intro_image_4" order="12" label="Intro Image (Bottom Right)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+        <cms:editable name="intro_image_1" order="12" label="Intro Image (Top Left)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+        <cms:editable name="intro_image_2" order="12" label="Intro Image (Top Right)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+        <cms:editable name="intro_image_3" order="12" label="Intro Image (Bottom Left)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
+        <cms:editable name="intro_image_4" order="12" label="Intro Image (Bottom Right)" quality="100" desc="The image that accompanies the opening paragraph" show_preview='1' crop="1" height="495" width="495" type="image" />>
 
         <h1>Who We Are</h1>
 
@@ -134,14 +136,17 @@
         </div>
         <div class="profile-details-section">
             <div class="blocks">
-
-                <div class="inner-block">
+                <div class="title-container">
                     <h1>
                         Contact Us
                     </h1>
                     <h2>
                         <cms:show k_page_title />
                     </h2>
+                </div>
+
+                <div class="inner-block contact-details">
+
 
                     <span class="contact">
                         <p class="prefix">
@@ -156,32 +161,46 @@
                             <strong>Telephone: </strong>
                         </p>
                         <p>
-                            <cms:show company_phone />
+                            <cms:show_repeatable 'company_phone_repeatable'>
+                                <cms:show company_phone />
+                                <br>
+                            </cms:show_repeatable>
+
                         </p>
                     </span>
+                    <p class="prefix">
+                        <strong>Address: </strong>
+                    </p>
 
-                    <p>
+                    <p style="    margin-top: 0;">
                         <cms:nl2br>
                             <cms:show company_address /></cms:nl2br>
                     </p>
                 </div>
 
-                <div class="inner-block">
-                    <a href="<cms:show company_website />" class="outline-btn">Visit Official Page</a>
-                    <a href="<cms:show company_profile_download />" class="outline-btn">Download Profile</a>
+                <div class="inner-block contact-buttons">
+                    <cms:if company_website>
+                        <a href="<cms:show company_website />" class="outline-btn">Visit Official Page</a>
+                    </cms:if>
+                    <cms:if company_profile_download>
+                        <a href="<cms:show company_profile_download />" class="outline-btn">Download Profile</a>
+                    </cms:if>
+
                 </div>
+
 
 
                 <cms:if googlemaps_coord>
                     <iframe id="companyProfileMap" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDjNoeRP6fg715vPUyqiiRfLItOdl9qSHs&zoom=13&center=<cms:show googlemaps_coord />" allowfullscreen>
                     </iframe>
                     <cms:else />
+
                     <iframe id="companyProfileMap" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDjNoeRP6fg715vPUyqiiRfLItOdl9qSHs&zoom=13&q=<cms:show googlemaps_query />" allowfullscreen>
                     </iframe>
                 </cms:if>
-
-
             </div>
+
         </div>
+
         <!-- Main container ends in footer -->
         <?php include './includes/footer.php' ?>

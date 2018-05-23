@@ -255,16 +255,44 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
    *
    * ****/
   window.sr = ScrollReveal();
-  sr.reveal(".intro-section", {
+
+  // Home
+
+  sr.reveal(".main-container.home .intro-section h1", {
+    viewFactor: 0.5,
     duration: 1000
   });
-  sr.reveal(".intro", {
+  sr.reveal(".main-container.home .intro-section p", {
+    viewFactor: 0.2,
     duration: 1000
   });
-  sr.reveal(".industry-block");
+  sr.reveal(".main-container.home .our-industries-section h1,.main-container.home .our-industries-section h3", {
+    viewFactor: 0.2,
+    duration: 1000
+  });
+
+  sr.reveal(".main-container.home .industry-block");
+
+  //Company profiles
+  sr.reveal(".company-profile .intro-imgs img", {
+    duration: 1000,
+    viewFactor: 1
+  }, 50);
+
+  sr.reveal(".company-profile .intro-text h1", {
+    viewFactor: 0.5
+  });
+  sr.reveal(".company-profile .intro-text p", {
+    viewFactor: 0.1
+  });
+
+  //About Us
   sr.reveal(".director_card", {
     duration: 1000
   });
+
+
+
   // sr.reveal(".industry-block", { duration: 1000, viewFactor: 0.1 }, 50);
 
 
@@ -287,6 +315,9 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   //
   //
   var scroll = new SmoothScroll('a[href*="#"]');
+
+
+
 
   /**** TIMELINE - About Us ****/
   (function () {
@@ -544,6 +575,22 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
     });
   }
 
+  /********
+   *  COMPANY PROFILE 
+   *  Re-layout bottom part if no website or profile is present
+   */
+
+  if ($(".inner-block.contact-buttons a").length == 0) {
+    $("#companyProfileMap").css({
+      "flex": "1 1 45%"
+    });
+    $(".inner-block.contact-buttons").css({
+      "flex": "0 1 auto"
+    });
+
+  }
+
+
   /****
    * MASONRY FOR COMPANY PROFILE - LATEST NEWS SECTION
    */
@@ -569,21 +616,3 @@ HOME PAGE VIDEO & HOME PAGE PRELOADER
   }, 800);
 
 }); // end of document ready, put everything inside here
-
-/*** CONTACT US MAPS (has to be done outside of document ready) */
-// if ($(".main-container").hasClass("contact-us")) {
-//   function initMap() {
-//     var dayahq = {
-//       lat: 6.857092,
-//       lng: 79.891019
-//     };
-//     var map = new google.maps.Map(document.getElementById('contactusMap'), {
-//       zoom: 14,
-//       center: dayahq
-//     });
-//     var marker = new google.maps.Marker({
-//       position: dayahq,
-//       map: map
-//     });
-//   }
-// }

@@ -25,23 +25,23 @@ $mail->SMTPDebug = 0;
 //Ask for HTML-friendly debug output
 $mail->Debugoutput = 'html';
 //Set the hostname of the mail server
-$mail->Host = "mail.sonalmendis.com";
+$mail->Host = "mail.dayagroupofcompanies.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
 $mail->Port = 25;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = "contactform@sonalmendis.com";
+$mail->Username = "dayagroup@daya-group.com";
 //Password to use for SMTP authentication
-$mail->Password = "Klop123az3ery";
+$mail->Password = "password";
 //Set who the message is to be sent from
-$mail->setFrom('contactform@sonalmendis.com', 'Portfolio :D');
+$mail->setFrom('dayagroup@daya-group.com', 'Daya Contact Form');
 //Set an alternative reply-to address
-$mail->addReplyTo('the_jack_sparrow@hotmail.co.uk', 'Portfolio :D');
+$mail->addReplyTo('dayagroup@daya-group.com', 'Daya Contact Form');
 //Set who the message is to be sent to
-$mail->addAddress('sonal.cmendis@gmail.com', 'SCM');
+$mail->addAddress('dayagroup@daya-group.com', 'SCM');
 //Set the subject line
-$mail->Subject = 'Contact Form Submission';
+$mail->Subject = 'Daya Contact Form Submission';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
